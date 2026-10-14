@@ -16,5 +16,5 @@
 
 ## 維護者
 
-亞馬遜歐洲站 客戶經理 [removed]
+亞馬遜全球開店 歐洲站客戶經理 [removed]
 ✉️ [removed] · 💬 LINE：#
