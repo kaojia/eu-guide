@@ -373,7 +373,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     <a href="https://kaojia.github.io/amazon-seller-guides/au-seller-guide/">🇦🇺 前往澳洲站 →</a>
     <a href="https://kaojia.github.io/amazon-seller-guides/mena-seller-guide/">🌐 前往中東站 →</a>
   </div>
-  <div class="who">編輯者：亞馬遜全球開店 歐洲站客戶經理 <b>Jenny Kao</b></div>
+  <div class="who">編輯者：亞馬遜全球開店 歐洲站客戶經理 <b>Jenny Kao</b>　·　最後更新：2026/10</div>
   <div class="contact">
     <span>✉️ <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a></span>
     <span>💬 <a href="https://line.me/ti/p/8Waszfsct_" target="_blank" rel="noopener">LINE 加好友</a></span>
@@ -669,7 +669,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
           <td class="ctr"><span class="yes">£40</span></td><td class="ctr"><span class="yes">✔（金額以後台為準）</span></td></tr>
       </tbody>
     </table></div>
-    <div class="note danger">
+    <div class="note danger" data-expires="2026-11-01">
       <b>🔴 舊版新品入倉計畫的賣家：2026/10/31 前要確認報名。</b>
       舊版 New Selection 已於 2026/7/30 停止接受新 ASIN；原本已加入的賣家，7/30 起自動進入新方案的試用期（至 10/31）。要在 10/31 之後，讓<b>新上架且符合資格的品牌、new-to-FBA ASIN</b> 繼續拿到新方案優惠，須在 <b>2026/10/31 前</b>到後台按 Enroll、接受新條款。已經取得權益的 ASIN，會延續到各自的優惠窗口到期。
       <a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GB36EVK8V94P8J5D" target="_blank" rel="noopener">官方說明</a>
@@ -2403,6 +2403,12 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
   });
   tt.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
 })();
+</script>
+<script>
+// 有期限的提醒（data-expires=到期日 YYYY-MM-DD）過期後自動隱藏
+document.querySelectorAll('[data-expires]').forEach(function (el) {
+  if (new Date() >= new Date(el.getAttribute('data-expires') + 'T00:00:00')) el.hidden = true;
+});
 </script>
 </body>
 </html>
