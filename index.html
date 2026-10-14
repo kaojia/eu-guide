@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亞馬遜歐洲站 — 經營指導手冊</title>
+<style>
+:root{
+  --navy:#0F2E4C; --navy-2:#1B4771; --ink:#1F2937; --ink-2:#4B5563; --ink-3:#6B7280;
+  --line:#E3E8EE; --bg:#F7F9FB; --card:#FFFFFF;
+  --amber:#B45309; --amber-bg:#FFF8EB; --amber-line:#F0C987;
+  --red:#B42318; --red-bg:#FEF3F2; --red-line:#F3B4AE;
+  --green:#0E7A4F; --green-bg:#EFFAF4; --green-line:#A7DCC1;
+  --blue:#1B4771; --blue-bg:#EEF4FA;
+  --s1:#0E7A4F; --s2:#1B4771; --s3:#B45309; --s4:#4B5563;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:150px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Microsoft JhengHei","Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;
+  font-size:14px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+a{color:var(--navy-2)}
+a:hover{color:var(--amber)}
+
+/* ---------- disclaimer ---------- */
+.disclaimer{background:#FFFBEB; border-bottom:1px solid var(--amber-line); font-size:12.5px; color:#7C4A03; padding:9px 0}
+.disclaimer .wrap{display:flex; gap:8px; align-items:flex-start}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#173A5E 55%,#1B4771 100%); color:#fff; padding:34px 0 30px}
+.hero h1{margin:0 0 6px; font-size:29px; line-height:1.3; letter-spacing:.3px}
+.hero .sub{color:#C6D6E6; font-size:14px}
+.hero .who{margin-top:14px; font-size:13px; color:#DCE7F1}
+.hero .who b{color:#fff}
+.hero .contact{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px 18px; font-size:13px}
+.hero .contact a{color:#FFD9A0; text-decoration:none; border-bottom:1px dotted #FFD9A0}
+.mk{display:flex; flex-wrap:wrap; gap:6px; margin-top:16px}
+.mk span{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:3px 11px; font-size:12.5px}
+.mk span.core{background:#F0A020; border-color:#F0A020; color:#3B2200; font-weight:700}
+
+/* ---------- side nav (JP style) ---------- */
+.sidenav{
+  position:fixed; top:0; left:0; width:212px; height:100vh; z-index:70;
+  background:#fff; border-right:1px solid var(--line); display:flex; flex-direction:column;
+  transform:translateX(-100%); transition:transform .25s ease;
+}
+.sidenav .sn-head{
+  background:linear-gradient(160deg,var(--navy),#1B4771); color:#fff;
+  padding:14px 16px 12px; flex:0 0 auto;
+}
+.sidenav .sn-head .t{font-size:14px; font-weight:700; line-height:1.4}
+.sidenav .sn-head .s{font-size:11px; color:#C6D6E6; margin-top:2px}
+.sidenav .sn-list{flex:1 1 auto; overflow-y:auto; padding:8px 8px 16px}
+.sidenav .sn-stage{font-size:11px; font-weight:700; color:var(--ink-3); padding:10px 8px 3px; letter-spacing:.5px}
+.sidenav a{
+  display:flex; gap:8px; align-items:baseline; padding:5px 9px; border-radius:7px;
+  text-decoration:none; color:var(--ink-2); font-size:12.5px; line-height:1.4;
+}
+.sidenav a:hover{background:var(--blue-bg); color:var(--navy)}
+.sidenav a .n{flex:0 0 auto; width:20px; font-size:11px; font-weight:700; color:var(--ink-3)}
+.sidenav a.active{background:var(--navy); color:#fff; font-weight:700}
+.sidenav a.active .n{color:#FFD9A0}
+.sn-backdrop{position:fixed; inset:0; background:rgba(15,46,76,.4); z-index:65; display:none}
+.sn-backdrop.show{display:block}
+.navtoggle{
+  position:fixed; right:18px; bottom:66px; z-index:60; width:40px; height:40px; border-radius:50%;
+  background:#fff; color:var(--navy); border:1px solid var(--line); cursor:pointer; font-size:17px;
+  box-shadow:0 3px 10px rgba(0,0,0,.18);
+}
+@media(min-width:1200px){
+  body{padding-left:212px}
+  .sidenav{transform:none}
+  .navtoggle{display:none}
+  .sn-backdrop{display:none !important}
+}
+
+/* ---------- control bar ---------- */
+.bar{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); backdrop-filter:blur(6px)}
+.bar .wrap{padding:10px 20px}
+.bar-row{display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center}
+.search{flex:1 1 240px; min-width:200px; position:relative}
+.search input{width:100%; padding:8px 12px 8px 32px; border:1px solid var(--line); border-radius:8px; font-size:13.5px; font-family:inherit; background:#fff}
+.search input:focus{outline:2px solid #BBD3E9; border-color:var(--navy-2)}
+.search::before{content:"🔍"; position:absolute; left:10px; top:7px; font-size:13px; opacity:.6}
+.seg{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-3)}
+.seg b{color:var(--ink-2); font-weight:700; margin-right:2px}
+.chip{border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 11px; font-size:12.5px; cursor:pointer; font-family:inherit; color:var(--ink-2)}
+.chip:hover{border-color:var(--navy-2)}
+.chip.on{background:var(--navy); border-color:var(--navy); color:#fff; font-weight:700}
+.prog{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--ink-2); flex:0 0 auto}
+.progbar{width:120px; height:7px; background:#E7ECF1; border-radius:99px; overflow:hidden}
+.progbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,#0E7A4F,#2FA36B); transition:width .3s}
+.btn-reset{border:none; background:none; color:var(--ink-3); font-size:12px; cursor:pointer; text-decoration:underline; font-family:inherit}
+
+/* ---------- generic blocks ---------- */
+section.block{margin:26px 0}
+.card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-bottom:16px}
+h2.h{font-size:19px; margin:0 0 4px; color:var(--navy); letter-spacing:.2px}
+h3{font-size:15.5px; margin:20px 0 8px; color:var(--navy-2)}
+h4{font-size:14px; margin:16px 0 6px; color:var(--ink)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 0; padding-left:22px}
+li{margin:4px 0}
+small,.small{font-size:12.5px; color:var(--ink-3)}
+/* 淺底色區塊內的小字改用較深的灰，確保對比達 AA 4.5:1 */
+.note small,.note .small,.keypoint small,.keypoint .small,
+.checklist small,.checklist .small,.tool small,.tool .small,
+.result small,.result .small,.acc-body small,.acc-body .small{color:var(--ink-2)}
+.mono{font-family:Consolas,"Courier New",monospace; background:#F1F4F7; padding:1px 5px; border-radius:4px; font-size:12.5px}
+
+/* ---------- TOC ---------- */
+.toc{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 22px}
+.toc h2{margin:0 0 12px; font-size:16px; color:var(--navy)}
+.toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+.toc-col .st{font-size:12.5px; font-weight:700; padding:3px 9px; border-radius:6px; display:inline-block; margin-bottom:7px}
+.st.s1{background:var(--green-bg); color:var(--s1)} .st.s2{background:var(--blue-bg); color:var(--s2)}
+.st.s3{background:var(--amber-bg); color:var(--s3)} .st.s4{background:#F1F3F5; color:var(--s4)}
+.toc-col ol{list-style:none; margin:0; padding:0}
+.toc-col li{margin:3px 0}
+.toc-col ol a{display:block; padding:4px 8px; border-radius:6px; text-decoration:none; color:var(--ink-2); font-size:13.5px}
+.toc-col ol a:hover{background:var(--blue-bg); color:var(--navy)}
+.toc-tools{margin-top:14px; font-size:12.5px; line-height:1.9; color:var(--ink-3)}
+.toc-tools a{color:var(--navy-2); text-decoration:none; border-bottom:1px dotted #A9C2D8}
+.toc-tools a:hover{color:var(--amber); border-color:var(--amber)}
+.toc-tools b{color:var(--ink-2); display:block; margin-top:8px}
+.toc-col a .n{display:inline-block; width:26px; color:var(--ink-3); font-size:12px}
+
+/* ---------- path cards ---------- */
+.paths{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.path{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 20px; border-top:4px solid var(--navy-2)}
+.path.newb{border-top-color:var(--s1)}
+.path h3{margin:0 0 3px; font-size:15.5px}
+.path .tag{font-size:12.5px; color:var(--ink-3); margin-bottom:10px}
+.path ol{margin:0; padding-left:20px; font-size:13.5px}
+.path ol li{margin:5px 0}
+.path .hi{color:var(--red); font-weight:700}
+
+/* ---------- timeline ---------- */
+.tl{position:relative; margin:14px 0 0; padding-left:8px}
+.tl-item{display:grid; grid-template-columns:104px 1fr; gap:14px; padding:12px 0; border-bottom:1px dashed var(--line)}
+.tl-item:last-child{border-bottom:none}
+.tl-when{font-weight:700; font-size:13px; color:var(--navy)}
+.tl-when em{display:block; font-style:normal; font-size:11.5px; color:var(--ink-3); font-weight:400}
+.tl-what ul{margin:0; padding-left:18px}
+
+/* ---------- chapters ---------- */
+.chapter{background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:16px; overflow:hidden}
+.chapter.hide{display:none}
+.ch-head{display:flex; gap:14px; align-items:flex-start; padding:18px 22px 14px; border-bottom:1px solid var(--line); background:#FCFDFE}
+.ch-num{flex:0 0 auto; width:34px; height:34px; border-radius:9px; background:var(--navy); color:#fff; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center}
+.chapter[data-stage="1"] .ch-num{background:var(--s1)}
+.chapter[data-stage="2"] .ch-num{background:var(--s2)}
+.chapter[data-stage="3"] .ch-num{background:var(--s3)}
+.chapter[data-stage="4"] .ch-num{background:var(--s4)}
+.ch-t{flex:1}
+.ch-t h2{margin:0; font-size:18px; color:var(--navy)}
+.ch-t .badges{margin-top:5px; display:flex; gap:6px; flex-wrap:wrap}
+.badge{font-size:11.5px; padding:2px 8px; border-radius:999px; background:#F1F4F7; color:var(--ink-2); border:1px solid var(--line)}
+.badge.eu{background:#FFF1E6; color:#8A4B00; border-color:#F3CBA5; font-weight:700}
+.ch-body{padding:18px 22px 22px}
+.keypoint{background:var(--blue-bg); border-left:4px solid var(--navy-2); padding:11px 14px; border-radius:0 8px 8px 0; margin:0 0 16px; font-size:13.5px}
+.keypoint b{color:var(--navy)}
+
+/* ---------- stage band (JP style full-width divider) ---------- */
+.stage-band{
+  margin:30px 0 16px; padding:13px 22px; border-radius:10px;
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  color:#fff; box-shadow:0 1px 3px rgba(15,46,76,.12);
+}
+.stage-band.hide{display:none}
+.stage-band .sb-t{font-size:17px; font-weight:700; letter-spacing:.5px}
+.stage-band .sb-d{font-size:13px; opacity:.92}
+.stage-band[data-stage="1"]{background:linear-gradient(100deg,#0E7A4F,#159C64)}
+.stage-band[data-stage="2"]{background:linear-gradient(100deg,#1B4771,#2A6098)}
+.stage-band[data-stage="3"]{background:linear-gradient(100deg,#B45309,#D9750F)}
+.stage-band[data-stage="4"]{background:linear-gradient(100deg,#4B5563,#6B7280)}
+
+/* ---------- 5 steps flow (JP style) ---------- */
+.steps{display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin:16px 0 6px}
+.step{position:relative; background:#fff; border:1px solid var(--line); padding:14px 12px 13px; text-align:center}
+.step:first-child{border-radius:10px 0 0 10px}
+.step:last-child{border-radius:0 10px 10px 0}
+.step + .step{border-left:none}
+.step .sn{font-size:11px; font-weight:700; color:var(--amber); letter-spacing:1px}
+.step .si{font-size:22px; line-height:1.4; margin:2px 0}
+.step .sh{font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:5px}
+.step ul{margin:0; padding:0; list-style:none; font-size:12px; color:var(--ink-2); line-height:1.65}
+.step::after{
+  content:"›"; position:absolute; right:-9px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; border-radius:50%; background:var(--navy); color:#fff;
+  font-size:12px; line-height:18px; text-align:center; z-index:2;
+}
+.step:last-child::after{display:none}
+@media(max-width:760px){
+  .steps{grid-template-columns:1fr}
+  .step{border-radius:0 !important; border-left:1px solid var(--line) !important}
+  .step:first-child{border-radius:10px 10px 0 0 !important}
+  .step:last-child{border-radius:0 0 10px 10px !important}
+  .step + .step{border-top:none}
+  .step::after{right:50%; top:auto; bottom:-9px; transform:translateX(50%) rotate(90deg)}
+}
+
+/* ---------- FAQ numbering (JP style) ---------- */
+.faq{counter-reset:faq}
+.faq details.acc>summary{counter-increment:faq}
+.faq details.acc>summary::before{
+  content:counter(faq) "."; color:var(--amber); font-weight:700; font-size:13px;
+  min-width:15px; text-align:right;
+}
+.faq details.acc[open]>summary::before{content:counter(faq) "."}
+
+/* ---------- 其他資訊 (JP style chapter footer) ---------- */
+details.more{border:1px dashed var(--line); border-radius:8px; margin:16px 0 0; background:#FCFDFE}
+details.more>summary{cursor:pointer; padding:10px 14px; font-size:13px; font-weight:700; color:var(--ink-2); list-style:none}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"▸ "; color:var(--amber)}
+details.more[open]>summary::before{content:"▾ "}
+details.more .acc-body{padding:4px 15px 14px}
+
+/* ---------- callouts ---------- */
+.note{border-radius:8px; padding:12px 15px; margin:14px 0; font-size:13.5px; border:1px solid}
+.note.warn{background:var(--amber-bg); border-color:var(--amber-line); color:#6B3F02}
+.note.danger{background:var(--red-bg); border-color:var(--red-line); color:#7A1C13}
+.note.ok{background:var(--green-bg); border-color:var(--green-line); color:#0A5537}
+.note.info{background:var(--blue-bg); border-color:#C3D8EA; color:#173A5E}
+.note b{font-weight:700}
+.note ul{margin:6px 0 0}
+
+/* ---------- checklist ---------- */
+.checklist{background:#FBFCFD; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:14px 0}
+.checklist .ttl{font-size:13px; font-weight:700; color:var(--navy); margin-bottom:8px}
+.checklist label{display:flex; gap:9px; align-items:flex-start; padding:5px 0; font-size:13.5px; cursor:pointer}
+.checklist input{margin-top:4px; width:15px; height:15px; accent-color:#0E7A4F; flex:0 0 auto; cursor:pointer}
+.checklist input:checked + span{color:var(--ink-3); text-decoration:line-through}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto; margin:14px 0}
+table{border-collapse:collapse; width:100%; font-size:13px; background:#fff}
+th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top}
+th{background:#F4F7FA; color:var(--navy); font-weight:700; font-size:12.5px; white-space:nowrap}
+td.ctr,th.ctr{text-align:center}
+tbody tr:nth-child(even){background:#FCFDFE}
+.yes{color:var(--green); font-weight:700}
+.no{color:var(--ink-3)}
+
+/* ---------- accordion ---------- */
+details.acc{border:1px solid var(--line); border-radius:8px; margin:8px 0; background:#fff}
+details.acc>summary{cursor:pointer; padding:11px 14px; font-size:13.5px; font-weight:700; color:var(--navy-2); list-style:none; display:flex; gap:9px; align-items:center}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary::before{content:"▸"; color:var(--amber); font-size:12px; flex:0 0 auto}
+details.acc[open]>summary::before{content:"▾"}
+details.acc[open]>summary{border-bottom:1px solid var(--line); background:#FCFDFE}
+.acc-body{padding:12px 15px 15px; font-size:13.5px}
+.acc-body>*:first-child{margin-top:0}
+
+/* ---------- links row ---------- */
+.links{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0}
+.links a{display:inline-block; background:#fff; border:1px solid var(--line); border-radius:8px; padding:7px 12px; font-size:13px; text-decoration:none; color:var(--navy-2)}
+.links a:hover{border-color:var(--navy-2); background:var(--blue-bg)}
+
+/* ---------- tool (interactive) ---------- */
+.tool{background:linear-gradient(180deg,#F4F8FC,#FFFFFF); border:1px solid #C9DCEC; border-radius:12px; padding:18px 20px; margin:16px 0}
+.tool h3{margin:0 0 3px; font-size:15.5px; color:var(--navy)}
+.tool .lead{font-size:12.5px; color:var(--ink-3); margin-bottom:12px}
+.q{margin:12px 0}
+.q .qt{font-size:13.5px; font-weight:700; color:var(--ink); margin-bottom:6px}
+.opts{display:flex; flex-wrap:wrap; gap:7px}
+.opt{border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; font-family:inherit; color:var(--ink-2)}
+.opt:hover{border-color:var(--navy-2)}
+.opt.on{background:var(--navy-2); border-color:var(--navy-2); color:#fff; font-weight:700}
+.result{margin-top:14px; padding:14px 16px; border-radius:10px; background:#fff; border:1px solid var(--line); font-size:13.5px; display:none}
+.result.show{display:block}
+.result h4{margin:0 0 6px; color:var(--navy); font-size:14.5px}
+.result .pill{display:inline-block; background:var(--green-bg); color:var(--s1); border:1px solid var(--green-line); border-radius:999px; padding:2px 10px; font-size:12.5px; font-weight:700; margin-bottom:8px}
+.result ul{margin:8px 0 0; padding-left:20px}
+.cbs{display:flex; flex-wrap:wrap; gap:6px 14px}
+.cbs label{display:flex; gap:6px; align-items:center; font-size:13px; cursor:pointer; background:#fff; border:1px solid var(--line); border-radius:8px; padding:5px 11px}
+.cbs input{accent-color:#1B4771; cursor:pointer}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy); color:#C6D6E6; margin-top:34px; padding:26px 0 30px; font-size:13px}
+footer a{color:#FFD9A0}
+footer .fw{display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:flex-start}
+footer .fd{font-size:12px; color:#93AABF; margin-top:14px; border-top:1px solid rgba(255,255,255,.14); padding-top:12px; line-height:1.7}
+.totop{position:fixed; right:18px; bottom:18px; z-index:60; background:var(--navy); color:#fff; border:none; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:16px; box-shadow:0 3px 10px rgba(0,0,0,.2); display:none}
+.totop.show{display:block}
+.nores{background:#fff; border:1px dashed var(--line); border-radius:10px; padding:22px; text-align:center; color:var(--ink-3); font-size:13.5px; display:none}
+.nores.show{display:block}
+mark{background:#FFF1A8; color:inherit; padding:0 1px}
+
+@media(max-width:760px){
+  .paths{grid-template-columns:1fr}
+  .hero h1{font-size:23px}
+  .tl-item{grid-template-columns:1fr; gap:4px}
+  .prog{order:9}
+}
+@media print{
+  .bar,.totop,.tool .opts,.sidenav,.navtoggle,.sn-backdrop,.search,.prog{display:none !important}
+  body{background:#fff; padding-left:0 !important; font-size:12px}
+  .chapter{page-break-inside:avoid; border:1px solid #ccc; margin-bottom:10px}
+  .stage-band{break-after:avoid; box-shadow:none; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .hero{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .steps{break-inside:avoid}
+  details.acc>summary,details.more>summary{break-after:avoid}
+  a[href^="http"]::after{content:" (" attr(href) ")"; font-size:9px; color:#555; word-break:break-all}
+  a[href^="#"]::after{content:""}
+}
+</style>
+</head>
+<body>
+
+<div class="disclaimer"><div class="wrap">
+  <span>⚠️</span>
+  <span>本手冊為亞馬遜客戶經理為輔導客戶額外整理之參考資料，內容僅供輔助理解，<b>不構成法律、稅務或合規意見</b>。費率、優惠與法規時程請一律以
+  <a href="https://sellercentral-europe.amazon.com/" target="_blank" rel="noopener">賣家後台</a>、
+  <a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">亞馬遜全球開店官方公告</a>
+  及各國主管機關最新公告為準。稅務與合規事項請與您的稅代／合規顧問確認。</span>
+</div></div>
+
+<nav class="sidenav" id="sidenav" aria-label="章節導覽">
+  <div class="sn-head">
+    <div class="t">🇪🇺 歐洲站經營手冊</div>
+    <div class="s">01–15 章節快速跳轉</div>
+  </div>
+  <div class="sn-list">
+    <div class="sn-stage">🟢 準備期</div>
+    <a href="#sec01"><span class="n">01</span>入駐歐洲站優惠</a>
+    <a href="#sec02"><span class="n">02</span>開通帳號與 KYC</a>
+    <a href="#sec03"><span class="n">03</span>成本預估</a>
+    <a href="#sec04"><span class="n">04</span>稅務 VAT/EORI/OSS</a>
+    <a href="#sec05"><span class="n">05</span>產品合規與 EPR</a>
+    <a href="#sec06"><span class="n">06</span>金流與收款</a>
+    <div class="sn-stage">🔵 上架期</div>
+    <a href="#sec07"><span class="n">07</span>品牌註冊與授權</a>
+    <a href="#sec08"><span class="n">08</span>上架與免費翻譯</a>
+    <a href="#sec09"><span class="n">09</span>物流 EFN/Pan-EU</a>
+    <div class="sn-stage">🟡 成長期</div>
+    <a href="#sec10"><span class="n">10</span>廣告</a>
+    <a href="#sec11"><span class="n">11</span>促銷與檔期</a>
+    <a href="#sec12"><span class="n">12</span>銷售持續成長</a>
+    <a href="#sec13"><span class="n">13</span>企業購 B2B</a>
+    <div class="sn-stage">⚪ 資源</div>
+    <a href="#sec14"><span class="n">14</span>常見問題</a>
+    <a href="#sec15"><span class="n">15</span>其他資源與消息</a>
+  </div>
+</nav>
+<div class="sn-backdrop" id="snBackdrop"></div>
+<button class="navtoggle" id="navToggle" title="章節導覽" aria-label="開啟章節導覽">☰</button>
+
+<header class="hero"><div class="wrap">
+  <h1>亞馬遜歐洲站 — 經營指導手冊</h1>
+  <div class="sub">從 KYC 到 Pan-EU：台灣賣家開站歐洲的完整路徑圖</div>
+  <div class="mk">
+    <span class="core">🇬🇧 英國</span><span class="core">🇩🇪 德國</span><span class="core">🇫🇷 法國</span>
+    <span class="core">🇮🇹 義大利</span><span class="core">🇪🇸 西班牙</span>
+  </div>
+  <div class="who">編輯者：亞馬遜歐洲站 客戶經理 <b>Jenny Kao</b></div>
+  <div class="contact">
+    <span>✉️ <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a></span>
+    <span>💬 <a href="https://line.me/ti/p/8Waszfsct_" target="_blank" rel="noopener">LINE 加好友</a></span>
+  </div>
+</div></header>
+
+<div class="bar"><div class="wrap"><div class="bar-row">
+  <div class="search"><input id="q" type="search" aria-label="搜尋章節內容" placeholder="搜尋章節：KYC、稅號、EPR、Pan-EU、GPSR…" autocomplete="off"></div>
+  <div class="seg"><b>👥 身分</b>
+    <button class="chip on" data-who="all">全部</button>
+    <button class="chip" data-who="new">🆕 新賣家</button>
+    <button class="chip" data-who="exist">🔄 既有賣家</button>
+  </div>
+  <div class="seg"><b>🎯 階段</b>
+    <button class="chip on" data-stage="all">全部</button>
+    <button class="chip" data-stage="1">🟢 準備</button>
+    <button class="chip" data-stage="2">🔵 上架</button>
+    <button class="chip" data-stage="3">🟡 成長</button>
+    <button class="chip" data-stage="4">⚪ 資源</button>
+  </div>
+  <div class="prog">
+    <span id="ptext">0 / 0</span>
+    <div class="progbar"><i id="pbar"></i></div>
+    <button class="btn-reset" id="preset">清除</button>
+  </div>
+</div></div></div>
+
+<div class="wrap">
+
+<!-- ============ TOC ============ -->
+<section class="block">
+<div class="toc">
+  <h2>📑 章節目錄</h2>
+  <div class="toc-grid">
+    <div class="toc-col">
+      <span class="st s1">🟢 階段一：準備期</span>
+      <ol>
+        <li><a href="#sec01"><span class="n">01</span>入駐歐洲站優惠</a></li>
+        <li><a href="#sec02"><span class="n">02</span>開通帳號與 KYC 驗證</a></li>
+        <li><a href="#sec03"><span class="n">03</span>成本預估</a></li>
+        <li><a href="#sec04"><span class="n">04</span>稅務：VAT / EORI / OSS</a></li>
+        <li><a href="#sec05"><span class="n">05</span>產品合規與 EPR</a></li>
+        <li><a href="#sec06"><span class="n">06</span>金流與收款</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <span class="st s2">🔵 階段二：上架期</span>
+      <ol>
+        <li><a href="#sec07"><span class="n">07</span>品牌註冊與品牌授權</a></li>
+        <li><a href="#sec08"><span class="n">08</span>上架與免費翻譯</a></li>
+        <li><a href="#sec09"><span class="n">09</span>物流：EFN／Pan-EU 抉擇</a></li>
+      </ol>
+      <span class="st s3" style="margin-top:12px">🟡 階段三：成長期</span>
+      <ol>
+        <li><a href="#sec10"><span class="n">10</span>廣告</a></li>
+        <li><a href="#sec11"><span class="n">11</span>促銷與歐洲檔期</a></li>
+        <li><a href="#sec12"><span class="n">12</span>銷售持續成長</a></li>
+        <li><a href="#sec13"><span class="n">13</span>企業購 B2B</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <span class="st s4">⚪ 階段四：資源與支援</span>
+      <ol>
+        <li><a href="#sec14"><span class="n">14</span>常見問題</a></li>
+        <li><a href="#sec15"><span class="n">15</span>其他資源與官方消息</a></li>
+      </ol>
+      <div class="toc-tools">
+        <b>🛠 本頁互動工具</b>
+        <a href="#tool-logistics">物流方案決策器</a>　該申請幾國稅號？<br>
+        <a href="#tool-compliance">合規清單產生器</a>　我的商品要辦什麼？
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ 歐洲站與其他站點最大的三個不同 ============ -->
+<section class="block">
+<div class="card" style="border-left:4px solid var(--amber)">
+  <h2 class="h">🧭 先看這裡：歐洲站與美／日站最大的三個不同</h2>
+  <p class="small" style="margin-top:2px">如果你已經在美國站或日本站賣得不錯，歐洲站會卡住你的通常不是上架，而是下面三件事。<b>它們都需要「提前」處理</b>。</p>
+  <div class="tw"><table>
+    <thead><tr><th style="width:130px">差異點</th><th>歐洲站的狀況</th><th style="width:150px">要提前多久</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>KYC 賣家資質審核</b></td>
+        <td>歐洲站特有。註冊完成進到後台就會開始，需要公司章程、股權結構（受益人 ≥25%）、90 天內的公用事業帳單等一整套彩色掃描文件。文件不齊會反覆被退。</td>
+        <td>帳號開通後<b>立刻</b>開始備件</td>
+      </tr>
+      <tr>
+        <td><b>VAT 稅號</b></td>
+        <td>只要在某國<b>擺放庫存</b>就必須有該國稅號。實務上申請要 <b>2–4 個月</b>（西班牙分兩段：先取得本土稅號，再另外申請歐盟交易資格並等稅局審核，兩段各需多久請向稅代確認），沒有稅號不能合規入倉。</td>
+        <td>開賣前 <b>3 個月</b>起跑</td>
+      </tr>
+      <tr>
+        <td><b>合規：EPR + 歐代 + 產品法規</b></td>
+        <td>EPR（包裝／電子電器／電池…）要<b>每個銷售國、每個類別各別註冊</b>；GPSR 要求非歐盟賣家指定<b>歐盟責任人</b>。缺件會直接下架，不是罰錢而已。</td>
+        <td>上架前 <b>1–2 個月</b></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <div class="note danger">
+    <b>🔴 最常見的誤解：「亞馬遜幫我代繳 EPR 環保款，就等於我合規了。」</b><br>
+    不是。代繳只解決「錢」，不解決「註冊義務」。<b>產品標籤合規</b>與<b>平台上架資格（EPR 註冊）</b>是兩件不同的事，而且代繳費用最後仍會向你收取。
+  </div>
+</div>
+</section>
+
+<!-- ============ PATHS ============ -->
+<section class="block">
+<h2 class="h" style="margin-bottom:10px">📌 你是哪種賣家？選擇你的閱讀路徑</h2>
+<div class="paths">
+  <div class="path newb">
+    <h3>🆕 新賣家</h3>
+    <div class="tag">第一次在亞馬遜上銷售</div>
+    <ol>
+      <li><a href="#sec01">【01】入駐優惠</a> — 佣金抵扣在英國站與歐洲四國站<b>各算一份</b></li>
+      <li><a href="#sec02">【02】開通帳號 + KYC</a> — <span class="hi">歐洲最大關卡</span></li>
+      <li><a href="#sec03">【03】成本預估</a> — 5 項固定 + 4 項一次性費用</li>
+      <li><a href="#sec04">【04】稅務 VAT</a> — <span class="hi">先辦，要 2–4 個月</span></li>
+      <li><a href="#sec05">【05】產品合規</a> — CE／歐代／EPR</li>
+      <li><a href="#sec06">【06】金流</a> — 選擇收款方式</li>
+      <li><a href="#sec07">【07】品牌註冊</a> — 商標 + 品牌備案</li>
+      <li><a href="#sec08">【08】上架</a> — 用官方免費翻譯</li>
+      <li><a href="#sec09">【09】物流</a> — 先 EFN 單國入倉開賣</li>
+      <li><a href="#sec10">【10】廣告</a>／<a href="#sec11">【11】促銷</a></li>
+    </ol>
+  </div>
+  <div class="path">
+    <h3>🔄 既有賣家</h3>
+    <div class="tag">已有美國／日本／其他站點帳號</div>
+    <ol>
+      <li><a href="#sec01">【01】入駐優惠</a> — 確認新站點禮包資格</li>
+      <li><a href="#sec02">【02】開通歐洲站</a> — 歐洲聯合帳戶 + <span class="hi">KYC</span></li>
+      <li><a href="#sec04">【04】稅務 VAT</a> — <span class="hi">決定要在幾國擺庫存</span></li>
+      <li><a href="#sec05">【05】產品合規</a> — <span class="hi">EPR／GPSR 歐代是新增義務</span></li>
+      <li><a href="#sec07">【07】品牌授權</a> — 從美／日站授權到歐洲（最快）</li>
+      <li><a href="#sec08">【08】跨站點上架</a> — LOSG／BIL 一鍵同步 + 免費翻譯</li>
+      <li><a href="#sec09">【09】物流</a> — <span class="hi">EFN vs Pan-EU 決策</span>；英國與歐盟是兩個庫存池</li>
+      <li><a href="#sec03">【03】成本預估</a> — 歐洲費率與美／日不同</li>
+      <li><a href="#sec11">【11】促銷</a> — 歐洲檔期與美站不完全同步</li>
+      <li><a href="#sec13">【13】企業購</a> — 歐洲 B2B 佔比高</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- ============ 5 STEPS ============ -->
+<section class="block">
+<div class="card">
+  <h2 class="h">🅰 開店五步驟</h2>
+  <p class="small" style="margin-top:2px">歐洲版的五步驟與其他站點最大的差別在 <b>STEP 1</b>：合規與稅務不是「開賣後再補」，而是<b>第一步就要啟動</b>，因為它決定你能不能入倉。</p>
+  <div class="steps">
+    <div class="step">
+      <div class="sn">STEP 1</div><div class="si">🧭</div>
+      <div class="sh">開賣評估</div>
+      <ul><li>成本測算</li><li>市場與品類調查</li><li><b>合規盤點</b></li><li><b>啟動 VAT 申請</b></li></ul>
+    </div>
+    <div class="step">
+      <div class="sn">STEP 2</div><div class="si">🧮</div>
+      <div class="sh">申請帳號</div>
+      <ul><li>經理寄註冊連結</li><li>提交公司文件</li><li><b>通過 KYC 驗證</b></li></ul>
+    </div>
+    <div class="step">
+      <div class="sn">STEP 3</div><div class="si">📄</div>
+      <div class="sh">準備上架</div>
+      <ul><li>產品圖與文案</li><li>條碼／品牌註冊</li><li><b>官方免費翻譯</b></li><li>歐盟責任人資訊</li></ul>
+    </div>
+    <div class="step">
+      <div class="sn">STEP 4</div><div class="si">🚚</div>
+      <div class="sh">發貨至 FBA</div>
+      <ul><li>建立 FBA 貨件</li><li>打包並貼 FNSKU</li><li>頭程與清關</li><li><b>COO／MRN／IEN</b></li></ul>
+    </div>
+    <div class="step">
+      <div class="sn">STEP 5</div><div class="si">📈</div>
+      <div class="sh">提升銷量</div>
+      <ul><li>註冊 Vine</li><li>設定廣告</li><li>設定優惠券</li><li>優化商品頁</li></ul>
+    </div>
+  </div>
+  <p class="small" style="margin-top:12px">💚 全程可獲得的免費資源：<b>1 對 1 顧問諮詢</b>　·　<b>手把手註冊教學</b>　·　<b>上架與發貨輔導</b>　·　<b>官方 Listing 翻譯</b>　·　<b>新賣家入門大禮包</b>（見 <a href="#sec01">01</a>）</p>
+</div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="block">
+<div class="card">
+  <h2 class="h">📋 歐洲開站 90 天行動計畫</h2>
+  <div class="note warn" style="margin-top:10px">
+    <b>為什麼是 90 天而不是 30 天？</b>因為歐洲的關鍵路徑（critical path）是<b>稅號</b>：VAT 申請實務要 2–4 個月，且沒有稅號不能合規入倉。
+    正確做法是<b>稅號與合規先跑，帳號、上架、素材同時平行進行</b>，不要等前一件做完才開始下一件。
+  </div>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-when">T-90 天<em>最先啟動</em></div>
+      <div class="tl-what"><ul>
+        <li><b>啟動 VAT 稅號申請</b>（找稅代；EORI 會同步申請）— 決定要在哪一國擺庫存就辦哪一國</li>
+        <li>啟動<b>合規盤點</b>：用「合規性參考」工具查你的品類要過哪些檢驗（見 <a href="#sec05">05</a>）</li>
+        <li>若要走 ES：POA 需公證，<b>最先啟動</b>（最耗時的一環）</li>
+      </ul></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">第 1–2 週</div>
+      <div class="tl-what"><ul>
+        <li>找客戶經理取得註冊連結 → 完成帳號註冊（新賣家）／從現有後台開通歐洲站（既有賣家）</li>
+        <li><b>開始備齊 KYC 文件</b>（公司章程、股權結構、90 天內帳單…）並提交</li>
+        <li>設定存款方式、改用 Google Authenticator 兩步驗證</li>
+      </ul></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">第 3–5 週</div>
+      <div class="tl-what"><ul>
+        <li>申請商標／從其他站點<b>授權品牌身分</b>（可先用品牌工具，不必等商標下來）</li>
+        <li><b>EPR 註冊</b>：按「銷售國 × 類別」逐一註冊，取號後上傳後台合規門戶</li>
+        <li>指定<b>歐盟責任人（EU RP）</b>並在 Listing 上揭露；賣英國者依品類法規確認是否需要英國負責人</li>
+        <li>準備上架素材，送交<b>官方免費翻譯</b>（LOSG／BIL／GSO）</li>
+      </ul></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">第 6–9 週</div>
+      <div class="tl-what"><ul>
+        <li>用 Revenue Calculator 試算 FBA 成本與售價（含當地 VAT）</li>
+        <li>上架第一批商品（跨站點賣家用 LOSG／BIL 同步）</li>
+        <li>洽談頭程物流服務商；確認清關方式與所需合規文件</li>
+      </ul></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">第 10–12 週<em>稅號到位後</em></div>
+      <div class="tl-what"><ul>
+        <li>稅號上傳後台驗證通過 → <b>建立第一批 FBA 貨件</b>（包裝、貼 FNSKU、頭程發運）</li>
+        <li>註冊 Vine、啟動 Sponsored Products 廣告、設定 Coupon</li>
+        <li>確認新賣家禮包各項優惠已觸發（後台「賣家福利／Incentives」頁面）</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="note ok">
+    <b>✅ 不必等稅號到齊才開賣。</b>只要在其中一國（例如 DE）持有 FBA 庫存並有該國稅號，就能用 <b>EFN／遠程配送</b>把商品賣給其他歐盟站點的買家，訂單<b>仍具 Prime 資格</b>。透過 Amazon 賣給歐盟消費者、貨已在歐盟境內的 B2C 訂單，非歐盟設立賣家的 VAT 多由 <b>Amazon 代收代繳</b>（視同供應商規則）；其他通路的跨境 B2C 要不要走 OSS，請與稅代確認（見 <a href="#sec04">04</a>）。
+    建議路徑：<b>先單國入倉 EFN 開賣驗證需求 → 量體起來再加辦稅號轉在地入倉／Pan-EU</b>。
+  </div>
+</div>
+</section>
+
+<div class="stage-band" data-stage="1">
+  <span class="sb-t">🟢 階段一：準備期</span>
+  <span class="sb-d">01–06　優惠、開帳號與 KYC、成本、稅務、合規、金流　—　<b>歐洲的成敗在這個階段就決定了</b></span>
+</div>
+
+<!-- ==================== 01 ==================== -->
+<article class="chapter" id="sec01" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">01</div>
+    <div class="ch-t">
+      <h2>入駐歐洲站優惠 🎁</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">佣金抵扣：英國站與歐洲四國站各一份</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>2026/3/26 起，新賣家禮包的<b>佣金抵扣（New Brand Bonus）</b>把 <b>英國站</b> 與 <b>歐洲四國站（法／德／義／西）</b> 分成兩個區域、各自計算資格——兩區都符合條件，佣金抵扣就能<b>各領一份</b>；其他優惠（FBA、廣告、Vine）維持原規則。佣金抵扣由「事後返還」改為<b>直接發放預付抵扣額</b>，銷售首月就能抵扣。⚠️ 2026/3/26 前已領過新賣家禮包的帳號，兩區都不能再領。</div>
+
+    <div class="checklist" data-cl="01">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已到後台「賣家福利／Incentives」頁面確認自己的資格與額度</span></label>
+      <label><input type="checkbox"><span>已確認首個可購買 ASIN 的上線時間符合資格門檻</span></label>
+      <label><input type="checkbox"><span>已規劃在首個 ASIN 上線後 6 個月內完成品牌註冊（拿佣金抵扣券的前提）</span></label>
+      <label><input type="checkbox"><span>已規劃讓首批 FBA 貨件在首個 ASIN 上線後 90 天內<b>到倉並被 Amazon 接收</b>（拿物流優惠的前提；第一批貨件的入庫配送費照收）</span></label>
+    </div>
+
+    <div class="links">
+      <a href="https://sellercentral.amazon.com/incentives" target="_blank" rel="noopener">🔗 後台：查看我的福利與額度</a>
+      <a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">🔗 亞馬遜全球開店（台灣）</a>
+    </div>
+
+    <h3>英國站與歐洲四國站，逐項比對</h3>
+    <div class="tw"><table>
+      <thead><tr>
+        <th>優惠項目</th>
+        <th class="ctr">🇬🇧 英國站</th>
+        <th class="ctr">🇩🇪🇫🇷🇮🇹🇪🇸 歐洲四國站</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><b>預付佣金抵扣額（New Brand Bonus）</b><br><small>英國：前 £40,000 合格品牌銷售額按 10% 抵扣，接下來 £760,000 按 5%，總額上限 £42,000</small></td>
+          <td class="ctr"><span class="yes">£42,000</span></td><td class="ctr"><span class="yes">最高 €47,250</span></td></tr>
+        <tr><td><b>Vine 抵扣額</b><br><small>抵扣 Vine 註冊費用</small></td>
+          <td class="ctr"><span class="yes">£160</span></td><td class="ctr"><span class="yes">✔（金額以後台為準）</span></td></tr>
+        <tr><td><b>物流費用優惠</b><br><small>英國：首批貨件用 Amazon 合作承運人（Partnered Courier），得 £80 入庫配送費抵扣額；或用 Amazon Global Logistics（AGL），得 £160 FBA 配送費抵扣額</small></td>
+          <td class="ctr"><span class="yes">£80 或 £160</span></td><td class="ctr"><span class="yes">✔（金額以後台為準）</span></td></tr>
+        <tr><td><b>新品入倉優惠計畫（New Selection Programme 2026）</b><br><small>符合資格的品牌、new-to-FBA 父 ASIN：首次入倉後 120 天內的前 200 件，佣金前 100 件按 10%、次 100 件按 5%（原費率更低時取較低者）；免倉儲費、免倉儲利用率附加費、免低庫存費、免退貨處理費、免清算費；另有 Vine 與 Coupon 費用抵扣額</small></td>
+          <td class="ctr"><span class="yes">✔</span></td><td class="ctr"><span class="yes">✔</span></td></tr>
+        <tr><td><b>前 365 天免倉儲利用率附加費 + 免低量庫存費</b></td>
+          <td class="ctr"><span class="yes">✔</span></td><td class="ctr"><span class="yes">✔</span></td></tr>
+        <tr><td><b>商品推廣廣告抵扣額</b><br><small>英國階梯式：花 £37 得 £37／花 £150 得 £150／花 £750 以上得 £750</small></td>
+          <td class="ctr"><span class="yes">最高 £750</span></td><td class="ctr"><span class="yes">✔（金額以後台為準）</span></td></tr>
+        <tr><td><b>優惠券（Coupon）費用抵扣額</b></td>
+          <td class="ctr"><span class="yes">£40</span></td><td class="ctr"><span class="yes">✔（金額以後台為準）</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="note danger">
+      <b>🔴 舊版新品入倉計畫的賣家：2026/10/31 前要確認報名。</b>
+      舊版 New Selection 已於 2026/7/30 停止接受新 ASIN；原本已加入的賣家，7/30 起自動進入新方案的試用期（至 10/31）。要在 10/31 之後，讓<b>新上架且符合資格的品牌、new-to-FBA ASIN</b> 繼續拿到新方案優惠，須在 <b>2026/10/31 前</b>到後台按 Enroll、接受新條款。已經取得權益的 ASIN，會延續到各自的優惠窗口到期。
+      <a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GB36EVK8V94P8J5D" target="_blank" rel="noopener">官方說明</a>
+    </div>
+    <div class="note ok">
+      <b>✅ 這張表最重要的一件事：佣金抵扣在英國與歐盟分開計算。</b>
+      如果你打算同時經營英國與歐盟，且兩區都符合首個 ASIN 上線日等條件，<b>佣金抵扣可以在兩區各領一份</b>（英國最高 £42,000、歐盟最高 €47,250）。其他優惠（FBA、廣告、Vine）維持原規則。這是規劃開站順序時值得先算進去的。
+    </div>
+    <p class="small">💱 英國站金額為英鎊，取自官方說明頁；歐洲四國站以歐元發放，佣金抵扣最高 €47,250，<b>歐盟站其餘各項額度以後台 NSI 頁為準</b>。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GXMJ38VA95GUN5XU" target="_blank" rel="noopener">官方說明</a></p>
+
+    <div class="note danger">
+      <b>⚠️ 三個最容易錯過資格的地方：</b>
+      <ul>
+        <li><b>佣金抵扣（New Brand Bonus）在歐洲四國「整個板塊」只能領一次</b>：德、法、義、西合計算一份。已有德國站的賣家，<b>不能再靠開法國站多領一次</b>。</li>
+        <li><b>首個 ASIN 上線時間有門檻</b>：英國站與歐洲四國站需在 <b>2026/03/26 或之後</b>發布首個可購買 ASIN。在此之前上線的，適用舊版（返還機制）規則；2026/3/26 前已領過新賣家禮包的帳號，英國與歐盟兩區都不能再領。</li>
+        <li><b>品牌註冊 6 個月內完成</b>，且你必須被認定為該品牌的<b>第一位品牌所有者</b>，才能疊加佣金抵扣券。</li>
+      </ul>
+    </div>
+
+    <h3>❓ 常見問題</h3>
+    <div class="faq">
+    <details class="acc"><summary>佣金抵扣券怎麼算？會不會用不完？</summary><div class="acc-body">
+      <p>以英國站為例分兩段：<b>前 £40,000</b> 合格品牌銷售額，每筆訂單按訂單金額的 <b>10%</b> 抵扣佣金；<b>接下來 £760,000</b> 按 <b>5%</b>。總額上限 £42,000。歐洲四國站最高 €47,250，各段歐元門檻以後台 NSI 頁為準。</p>
+      <p><b>試算：</b>訂單 £100、佣金率 8% = 佣金 £8。抵扣按訂單金額 10% = £10，但單筆抵扣取「佣金金額」與「抵扣額」中的較小者，所以實際抵掉 £8，該筆<b>實付佣金 £0</b>。</p>
+      <p>⏱️ 預付代金券<b>發放後 12 個月到期</b>。無需額外操作，符合條件的訂單自動抵扣。</p>
+    </div></details>
+    <details class="acc"><summary>Vine 優惠的時間點很關鍵，怎麼抓？</summary><div class="acc-body">
+      <p>必須在<b>完成品牌註冊後 90 天內</b>（或首個可購買 ASIN 上線後 90 天內，取<b>較晚者</b>）註冊 Vine 計畫，才能拿到這筆費用優惠。這裡有三個不同的期限：</p>
+      <ul>
+        <li><b>申請期限</b>：取得品牌權益資格後 90 天內加入 Vine。</li>
+        <li><b>抵扣額期限</b>：抵扣額<b>一年內未使用才會過期</b>。</li>
+        <li><b>首五天限制</b>：取得資格後 5 天內就登錄 Vine 的 ASIN，雖然會拿到抵扣額，但那些 ASIN 的 Vine 註冊費照收；第 5 天之後登錄的 ASIN 才會用到抵扣額。</li>
+      </ul>
+      <p>Vine 是亞馬遜的優質評論家計畫：你提供免費商品給評論家，他們寫下真實評論（<b>好評負評都可能</b>）。對新品累積初期評論非常有效。</p>
+    </div></details>
+    <details class="acc"><summary>廣告折扣券的階梯怎麼跑最划算？</summary><div class="acc-body">
+      <p>需在首個可購買 ASIN 上線後 <b>90 天內</b>設定一個廣告活動，之後按 <b>30 天內累計廣告花費</b>分三檔發抵扣額（英國站）：花 £37–149.99 得 £37、花 £150–749.99 得 £150、花 £750 以上得 £750。歐洲四國站各檔金額以後台為準。</p>
+      <p>抵扣額在 <b>30 天累計期結束後 14 天內</b>發到廣告帳戶，<b>發放後 30 天內未使用會過期</b>——所以拿到券後要有對應的投放計畫，不要放到過期。</p>
+      <p class="small">⚠️ 新版廣告福利的適用時間：英國站與歐洲四國站需在 2025/08/20（太平洋時間）之後建立商品推廣廣告。</p>
+    </div></details>
+    </div>
+
+    <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
+      <ul>
+        <li>禮包各項優惠的<b>發放與使用進度</b>都可在後台<a href="https://sellercentral.amazon.com/incentives" target="_blank" rel="noopener">賣家福利／Incentives</a> 頁面查看，含可下載「符合佣金抵扣的 ASIN 清單」。</li>
+        <li>該頁面除了新賣家禮包，也會顯示你符合資格的<b>其他福利，包括邀請制的限時活動</b>——值得每月看一次。</li>
+        <li>新版介面在左側「了解賣家權益」模組；舊版介面在首頁「查看激勵優惠」圖示。</li>
+      </ul>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 02 ==================== -->
+<article class="chapter" id="sec02" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">02</div>
+    <div class="ch-t">
+      <h2>開通帳號與 KYC 驗證 🔐</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">KYC 為歐洲站獨有</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>歐洲是<b>一個「歐洲聯合帳戶」操作英國與歐盟各站</b>，月費只收一次。真正的關卡是註冊完成後啟動的 <b>KYC 賣家資質審核</b>——這是歐洲站獨有流程，文件不齊會反覆退件，卡住整個開賣時程。</div>
+
+    <div class="note info">
+      <b>🇪🇺 什麼是歐洲聯合帳戶（European Unified Account）？</b><br>
+      一組帳號即可在 <b>英國、德國、法國、義大利、西班牙</b> 等歐洲站點銷售，後台可自由切換站點，<b>專業賣家月費只收一次</b>（見 <a href="#sec03">03 成本預估</a>）。
+      <br><small>📌 歐洲聯合帳戶另涵蓋荷蘭、瑞典、波蘭等站點，本手冊聚焦上述五個核心站；有意加開其他站點時再找我討論。</small>
+      <br><br>
+      ⚠️ 但要注意：<b>英國脫歐後，英國與歐盟在稅務、合規、庫存上是兩套系統</b>——UKCA 與 CE 是不同標記、英國 EPR 與歐盟 EPR 要分開註冊、英國 FBA 庫存與歐盟 FBA 庫存是<b>兩個獨立庫存池</b>，不能互相調撥（需分別入倉，或用遠程配送）。
+    </div>
+
+    <h3>🧭 第一步：你是哪種情況？</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:120px">你的情況</th><th>怎麼開通</th></tr></thead>
+      <tbody>
+        <tr><td><b>🆕 全新賣家</b></td><td>把公司名稱、聯絡人姓名／電話／email、負責人姓名／email、註冊帳號用的 email 提供給亞馬遜客戶經理，<b>由經理發出註冊連結</b>，你必須從該連結完成註冊，才具備完整輔導權限與優惠資格。<br><small>⚠️ 註冊連結一旦發出，綁定的 email 無法更改；要改就得請經理重發新連結。建議一開始就用<b>公用信箱</b>，避免人員異動後登不進去。</small></td></tr>
+        <tr><td><b>🔄 既有賣家</b></td><td>先找客戶經理確認欲開設站點的<b>輔導資格與優惠</b>，再由賣家後台點擊上方【店鋪名稱｜站點】下拉切換／新增歐洲站點。<br><small>若北美與歐洲帳號分屬不同帳戶，也可維持分開，但跨站點上架與品牌授權的做法不同（見 <a href="#sec07">07</a>、<a href="#sec08">08</a>）。</small></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>🔐 KYC 賣家資質審核（歐洲站獨有）</h3>
+    <p>KYC（Know Your Customer）是歐洲金融法規要求的身分查核，<b>在你註冊完成、進入 Seller Central 的當下就會開始</b>。</p>
+    <div class="note warn">
+      <b>操作路徑：</b>不論你主要操作哪個歐洲站點，<b>一律從英國站 Seller Central 完成 KYC</b>。<br>
+      登入 UK 後台 → 右上角【齒輪 ⚙️】→【Account Info】→ Business Information 區塊 →【Identity Information】→ 開始 KYC 流程。
+    </div>
+
+    <h4>需要準備的文件（先全部備齊，不要邊做邊找）</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="width:170px">文件</th><th>要求與眉角</th></tr></thead>
+      <tbody>
+        <tr><td><b>公司負責人護照／身分證</b></td><td>建議<b>優先使用護照</b>。姓名須與公司登記表上的法定代表人、以及後台填的姓名<b>完全一致</b>。</td></tr>
+        <tr><td><b>公司設立／變更登記表</b></td><td>彩色掃描。亞馬遜會比對<b>英文名稱、統一編號、登記地址、受益人</b>。<br><b>行號（非公司）主體</b>要改提供<b>商業登記核准函 + 商業登記抄本兩份一起</b>（核准函證明合法註冊、抄本證明目前仍有效）。</td></tr>
+        <tr><td><b>公司公用事業帳單</b><br><small>（二審備查）</small></td><td><b>90 天內</b>的水／電／天然氣／網路費／銀行對帳單。帳單上須有公司名與詳細地址，且<b>公司名與地址須與營業執照一致</b>，收件者也要是公司或負責人。<br>優先序：水／電／天然氣帳單為主，網路費／銀行對帳單次要。</td></tr>
+        <tr><td><b>公司章程</b><br><small>（含股份分配表）</small></td><td>若有<b>母公司持股 ≥25%</b>，母公司的股份分配表也要一併提供。</td></tr>
+        <tr><td><b>主要聯絡人與受益人的護照／身分證</b></td><td><b>受益人 = 持有公司股份 ≥25% 的股東。</b></td></tr>
+        <tr><td><b>主要聯絡人與受益人的個人費用帳單</b></td><td><b>90 天內</b>：電話費／信用卡／銀行對帳單皆可。<b>地址須與後台填的居住地址一致</b>（不一定要與戶籍地相同）。</td></tr>
+        <tr><td><b>授權函</b></td><td>當主要聯絡人<b>不是</b>公司法定代表人或受益人時，需另外提供。</td></tr>
+        <tr><td><b>銀行對帳單／證明信</b></td><td><b>180 天內</b>。要對上亞馬遜收款帳戶的<b>持有人與銀行代碼</b>。</td></tr>
+        <tr><td><b>國際信用卡</b><br><small>（支援多幣別）</small></td><td>扣月費、促銷預扣、廣告費用。📌 <b>KYC 期間卡片過期或額度不足會連動出問題</b>，送件前先確認卡況。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note info">
+      <b>📅 審核時效：</b>初審約 <b>1–3 個工作日</b>，完整流程約 <b>10 個工作日</b>。<br>
+      <b>📌 第三方收款（Payoneer／WorldFirst／PingPong 等）要另外做 BAV（Bank Account Verification），那跟 KYC 是兩條獨立的線。</b>兩邊都要過，不要以為 KYC 通過就結束了。
+    </div>
+
+    <h4>📌「主要營業地址」驗證（多數賣家還不知道）</h4>
+    <div class="note warn">
+      <b>「主要營業地址」（primary operating address）與工商登記的「註冊地址」是兩個不同欄位</b>，可以相同也可以不同。企業要填的是<b>實際進行主要日常營業活動的實體地址</b>（例如行政管理在那裡進行、員工在那裡）；<b>獨資／個人賣家則以住宅地址作為主要營業地址</b>。亞馬遜用它判斷你在歐盟／英國的稅務設立狀態，連帶決定 VAT 等稅務處理方式。
+      <ul>
+        <li>✅ <b>台灣賣家照實際營業地點填寫即可</b>——不需要、也不應該填一個歐洲地址。主要營業地址在歐盟／英國以外者，可能被要求補交證明文件。</li>
+        <li>📌 審核在<b>全部必要資料提交後 3 天內</b>完成；資料沒交齊，審核不會開始。驗證方式與所需文件依後台通知。</li>
+        <li>⚠️ 被要求驗證時，期限通常是 <b>60–90 天</b>，以 Account Health 頁面顯示的期限為準；<b>逾期未完成會被扣留撥款並停用帳號</b>。</li>
+        <li>⚠️ 地址要是實際營運的實體地點；只用來收信的掛名地址不符合官方定義。</li>
+      </ul>
+      <small>依據：<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G95AUZN6EGUDPW5Q" target="_blank" rel="noopener">Understanding your primary operating address to sell in the EU and UK</a>。<b>實際要求請以後台通知為準</b>。</small>
+    </div>
+
+    <div class="note warn">
+      <b>⚠️ 改後台資訊會重新觸發 KYC。</b>地址、Email、電話變更都會觸發重審，實務上常見的狀況是<b>文件還沒補齊，帳號就先被限制銷售</b>。
+      所以：不要在旺季備貨期或大促前夕改這些欄位；真要改，先把文件備齊再動。
+    </div>
+
+    <div class="note danger">
+      <b>⚠️ 退件多數不是資格問題，是規格問題。送件前逐項核對：</b>
+      <ul>
+        <li>全部要<b>彩色掃描</b>（不能是黑白影本）</li>
+        <li><b>不接受電子帳單、不接受螢幕截圖</b></li>
+        <li><b>不能有修改紀錄，不能壓浮水印</b>；掃描不可模糊、反光</li>
+        <li>掃描時文件邊緣<b>不可與檔案邊緣切齊</b>，要看得出四周留邊，否則會被判定文件不完整</li>
+        <li><b>姓名拼音一致性</b>：身分證明、登記表、後台三處的英文拼音要完全一致。實務上有多起退件單純源於拼音不同（例如護照用 CHU、後台填 Chu Hsiang-Chih 但登記表是另一種拼法）。</li>
+        <li><b>所有受益人都要上傳</b>：常見退件是「只上傳了部分 BO」。系統會依公司登記上列出的<b>每一位</b>受益人逐一比對。</li>
+        <li>📌 文件時效：實務上超過約 <b>90 天</b>的文件常被要求重新提交（亞馬遜未明文公告此門檻，但案例一致）。</li>
+        <li><b>千萬不要做假資料。</b>KYC 是金融法規查核，造假的後果不是退件而是停權。</li>
+      </ul>
+    </div>
+
+    <details class="acc"><summary>沒有任何股東持股達 25%，受益人怎麼填？</summary><div class="acc-body">
+      <p>順序是：<b>先找持股 ≥25% 的自然人</b>；若無人達 25%，改申報<b>實際控制人</b>，或<b>高階主管</b>（董事長／CEO／CFO／董事）。</p>
+      <p>可用兩種格式擇一提交：<b>最終受益人確認函（UBO Declaration Letter）</b>，或<b>股權結構表（Investment Chart）</b>用表格直接證明無人持股超過 25%。</p>
+      <p>確認函須用<b>公司抬頭紙</b>、日期在<b>近 180 天內</b>、由總法律顧問簽署（台灣公司多無此職位，可先問客戶經理能否由外部律師或負責人簽署）。範本可向客戶經理索取。</p>
+    </div></details>
+    <details class="acc"><summary>KYC 一直被退，怎麼辦？</summary><div class="acc-body">
+      <p>先逐項對照上面的「上傳規格」紅框——實務上約八成退件是規格問題（黑白、截圖、有浮水印、地址不一致、帳單超過 90 天），而不是資格問題。</p>
+      <p>再確認三個一致性：①身分證明姓名＝登記表法定代表人姓名＝後台姓名；②帳單上的公司名與地址＝營業執照；③個人帳單地址＝後台填的居住地址。</p>
+      <p>仍卡關就把被退的訊息截圖給客戶經理，我可以協助判讀退件原因並在內部協助跟進。</p>
+    </div></details>
+
+    <h3>✅ 帳號開通後 — 共通設定</h3>
+    <div class="checklist" data-cl="02">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已從客戶經理發出的註冊連結完成註冊（新賣家）／已切換開通歐洲站（既有賣家）</span></label>
+      <label><input type="checkbox"><span>已備齊 KYC 全套文件並提交（彩色掃描、90 天內、無浮水印）</span></label>
+      <label><input type="checkbox"><span>已通過 KYC 驗證</span></label>
+      <label><input type="checkbox"><span>已設定存款方式並指派給各歐洲站點</span></label>
+      <label><input type="checkbox"><span>已改用 Google Authenticator 兩步驗證（跨國簡訊常收不到）</span></label>
+      <label><input type="checkbox"><span>已維護稅務資訊欄位（VAT 稅號取得後回來補）</span></label>
+      <label><input type="checkbox"><span>已設定使用者權限（避免共用同一組帳密）</span></label>
+    </div>
+    <div class="links">
+      <a href="https://sellercentral-europe.amazon.com/" target="_blank" rel="noopener">🔗 歐洲站賣家後台登入</a>
+      <a href="https://gs.amazon.com.tw/blog/google-authenticator-230927" target="_blank" rel="noopener">🔗 Google Authenticator 綁定教學</a>
+    </div>
+
+    <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
+      <ul>
+        <li><b>可向我索取：</b>KYC Guidebook（逐項文件範例與退件原因）、UBO 最終受益人確認函範本、股權結構表（Investment Chart）範本。</li>
+        <li><b>註冊期間的技術禁忌：</b>嚴禁使用 <b>VPN／VPS／虛擬瀏覽器</b>。亞馬遜會偵測網路環境，使用代理工具可能被判定為潛在欺詐。</li>
+        <li><b>信用卡：</b>建議使用法人名下、支援多幣別的 VISA 卡；不接受預付卡、禮券、PayPal 等替代付款方式。</li>
+        <li><b>註冊過程可以暫停，但無法回上一步</b>——填寫前先把資料備齊再開始。</li>
+        <li><b>視訊驗證</b>（如被要求）記得攜帶負責人證件正本；負責人無法出席需備委託書。</li>
+      </ul>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 03 ==================== -->
+<article class="chapter" id="sec03" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">03</div>
+    <div class="ch-t">
+      <h2>成本預估 💰</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>歐洲成本 = <b>亞馬遜端 5 項</b>（月費 + 銷售佣金 + FBA 物流倉儲 + 廣告 + 促銷）<b>＋ 歐洲獨有的 4 項一次性／週期性支出</b>（VAT 申請與申報、EPR 註冊與環保款、產品認證與歐代、商標）。第二組是美／日站賣家最容易低估的部分。</div>
+
+    <div class="checklist" data-cl="03">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已用 Revenue Calculator 試算 FBA 成本與利潤</span></label>
+      <label><input type="checkbox"><span>已把 VAT 稅率含入售價（各國稅率不同）</span></label>
+      <label><input type="checkbox"><span>已把 EPR 環保款、稅代年費、歐代年費列入成本模型</span></label>
+      <label><input type="checkbox"><span>已確認自己的品類佣金費率（非一律 15%）</span></label>
+    </div>
+
+    <h3>A. 亞馬遜端的 5 項費用</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">費用</th><th>金額／機制</th></tr></thead>
+      <tbody>
+        <tr><td><b>1. 專業賣家月費</b></td><td><b>英國 £25／月</b>（未含 VAT）；<b>歐盟 €39／月</b>（未含 VAT）。<br><b>歐洲聯合帳戶下各站點共用一筆月費，不會隨站點數增加。</b><br><small>另有數位服務費（Digital Services Fee），2026/3/20 起按銷售站點計：台灣這類在英、法、義、西以外國家設立的賣家，英國站加 2%（銷售費用與 FBA 配送費都加）、法國站加 3%（銷售費用與 FBA 配送費都加）、義大利與西班牙站加 3%（只加在銷售費用）、德國站不加。請以後台費用明細為準。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GU67J5DQJRK9V5KD" target="_blank" rel="noopener">官方說明</a></small></td></tr>
+        <tr><td><b>2. 銷售佣金<br>（Referral Fee）</b></td><td>依品類與售價，<b>多數落在 8%–15%</b>，少數品類另有更低或更高的費率與最低收費。<b>務必查自己的品類</b>，不要一律用 15% 估。</td></tr>
+        <tr><td><b>3. FBA 配送費 + 倉儲費</b></td><td>依<b>商品最小發送單位的材積與重量</b>分級距收費。<br><b>關鍵差異：境內配送（Pan-EU）費率明顯低於跨境配送（EFN）</b>，同一件商品的配送費會因你選哪個方案而不同（見 <a href="#sec09">09</a>）。<br>倉儲費按平均每日占用體積按月收取，Q4 旺季費率較高。<br><small>📌 2026/4/17 起，FBA 配送費加收 <b>1.5% 燃油與物流附加費</b>；送達日在 <b>2026/10/15–2027/1/14</b> 的部分英國、德國 FBA 訂單（小件與標準件包裹等，不含超大件與低價商品）將加收<b>旺季配送費</b>。</small></td></tr>
+        <tr><td><b>4. 廣告費</b></td><td>按點擊計費，可設每日預算上限。新品階段建議投入銷售額的 <b>10%–20%</b>。</td></tr>
+        <tr><td><b>5. 促銷費</b></td><td>Coupon、Deal 的費用＝<b>前置費＋依成交額計的變動費</b>（Coupon 的變動費有上限），和你設定的<b>折扣預算分開計算</b>——預算控制的是給買家的折扣，不是這筆費用。Deal 的前置費<b>即使沒有成交也照收</b>（見 <a href="#sec11">11</a>、<a href="#sec15">15</a>）。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">
+      <b>💚 亞馬遜向賣家收取的費用就是上面這些。</b>官方課程、客戶經理輔導、官方翻譯服務（見 <a href="#sec08">08</a>）皆<b>不另收費</b>。
+      <br>📌 <b>但費率會調整。</b>2026 年歐洲多個品類的費用調整已自 2025/12/15 起分階段生效（部分品類如家居用品於 2026/02/01 生效）。之後的變動：數位服務費 2026/3/20 起改按銷售站點計、FBA 1.5% 燃油與物流附加費 2026/4/17 起、英國與德國旺季配送費 2026/10/15–2027/1/14。實際費率一律以後台費用頁與官方公告為準。
+    </div>
+    <div class="links">
+      <a href="https://sellercentral-europe.amazon.com/hz/fba/profitabilitycalculator/index" target="_blank" rel="noopener">🧮 FBA Revenue Calculator（歐洲）</a>
+      <a href="https://sell.amazon.co.uk/pricing" target="_blank" rel="noopener">🔗 英國站費用頁</a>
+      <a href="https://sell.amazon.de/preisgestaltung" target="_blank" rel="noopener">🔗 德國站費用頁</a>
+    </div>
+
+    <h3>B. 歐洲獨有的支出：把「一次性」和「年度維持」分開看</h3>
+    <div class="note info">
+      <b>💡 這是估算歐洲成本最重要的一個觀念。</b>很多人把兩種性質完全不同的錢加在一起，得出一個嚇人的總數，然後就不做了。實際上：
+      <ul>
+        <li><b>一次性支出</b>裡有相當比例，你的工廠端本來就已經做過了（例如 CE 測試報告、FCM 聲明）。<b>那些是「待確認」，不是「待支出」。</b>先去問供應商拿現有文件，往往能砍掉一大塊。</li>
+        <li><b>年度維持費</b>才是真正會逐年累積的固定成本，做損益模型時要看的是這一組。</li>
+      </ul>
+    </div>
+
+    <h4>B-1　一次性支出（多數可先向供應商索取現有文件）</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">項目</th><th>約略區間</th><th>備註</th></tr></thead>
+      <tbody>
+        <tr><td><b>CE 標記／測試報告</b></td><td>低風險品類可自我聲明；需第三方公告機構者<b>差距極大</b></td><td>先問供應商有沒有現成的測試報告與技術文件——這是最常「其實已經有了」的一項。</td></tr>
+        <tr><td><b>商標申請</b></td><td>依 EUIPO／UKIPO 官方規費 + 代辦費</td><td>EUIPO 一案涵蓋全歐盟；<b>英國需另向 UKIPO 申請</b>。可先用品牌授權過渡（見 <a href="#sec07">07</a>）。</td></tr>
+        <tr><td><b>EPR 各類別註冊費</b></td><td>約 <b>€0–250／類別</b>（依 PRO 而定；德國 LUCID 註冊本身免費）</td><td>「銷售國 × 類別」各一組，組數會比你想的多。用下方合規清單產生器估組數。</td></tr>
+        <tr><td><b>EORI 申請</b></td><td>官方<b>免費</b>；代辦約 US$110–330</td><td>通常與 VAT 一起辦。⚠️ EORI 要向首次報關地申請，不能任選國家，見 <a href="#sec04">04</a>。</td></tr>
+        <tr><td><b>UKCA</b></td><td><b>多數賣家 $0</b></td><td>✅ 已有 EU CE 者<b>多數不需要另做 UKCA</b>，別重複付這筆錢。詳見 <a href="#sec05">05</a>。</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>B-2　年度維持費（這組才是真正的固定成本）</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">項目</th><th>約略區間</th><th>備註</th></tr></thead>
+      <tbody>
+        <tr><td><b>VAT 申報服務</b><br><small>（每個有稅號的國家各一份）</small></td><td>約 US$330–1,300／年／國<br><small>UK 約 $390–910｜DE 約 $330–880｜FR 約 $440–1,100｜ES 約 $440–990｜IT 約 $550–1,300</small></td><td>含稅號申請、申報、稅法諮詢。<b>國家越多，這筆越貴</b>——這是「該不該多辦一國稅號」的成本面。</td></tr>
+        <tr><td><b>歐盟責任人（EU RP／GPSR）</b></td><td>約 US$220–1,100／年</td><td>非歐盟賣家<b>必辦</b>。</td></tr>
+        <tr><td><b>英國責任人（英代）</b></td><td>約 US$550–2,200／年</td><td>賣英國（GB 市場）時是否必須指定，<b>依品類適用的法規而定</b>；需要時<b>與歐盟 RP 是兩套、不能互相取代</b>。</td></tr>
+        <tr><td><b>EPR 環保款</b></td><td>依銷量／重量計算，按月／季／年申報</td><td>各國各類別約 US$60–550／年／國起，量大則按量走。</td></tr>
+        <tr><td><b>WEEE／電池 EPR</b></td><td>約 US$110–550／年／國</td><td>只有賣電子電器／含電池商品才需要。</td></tr>
+        <tr><td><b>商業責任保險</b></td><td>約 US$550–3,850／年（視品類風險）</td><td>📌 <b>不是一開站就要</b>——<b>任一月份</b>銷售額超過門檻（或亞馬遜要求）後，30 天內須投保。詳見 <a href="#sec12">12</a>。</td></tr>
+        <tr><td><b>義大利保證金</b></td><td><b>€50,000</b>（僅在義大利入倉才需要）</td><td>非歐盟企業須<b>持續維持</b>。詳見 <a href="#sec04">04</a>。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">
+      <b>⚠️ 上表為方向性區間</b>（來源含服務商報價整理），實際依主體、品類與服務商差異很大，<b>請以實際報價為準</b>。只列必辦項目；「視品類」的選用項不計入，避免把估算墊高。
+    </div>
+    <div class="note danger">
+      <b>⚠️ 定價務必含當地 VAT。</b>歐洲各國 VAT 稅率不同（德國 19%、法國 20%、義大利 22%、西班牙 21%、英國 20%，以主管機關公告為準）。
+      前台售價是<b>含稅價</b>，如果你直接把美國站的未稅價搬過來，等於自己吸收了 19–22% 的稅——這是跨站點賣家最常見、也最痛的定價錯誤。
+    </div>
+
+    <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
+      <ul>
+        <li><b>FBA 還是 FBM？</b>用 Revenue Calculator 直接比較兩者的費用與最終利潤。歐洲 FBA 的額外價值是 <b>Prime 標籤</b>——它同時影響轉化率與流量分配，不只是配送方式的差異。</li>
+        <li><b>倉儲費 Q4 較高</b>：做全年財務模型時不要用單一月費率去乘 12。</li>
+        <li><b>月費的收費起點</b>：帳號開通時先收一次，之後通常要等到帳號實際可販售才會持續收取——實際收費節奏請以後台費用明細為準。</li>
+        <li><b>可向我索取：</b>亞馬遜物流歐洲費用價目表（中文版，含境內 Pan-EU 與跨境 EFN 兩種費率對照表、月度倉儲費）、亞馬遜營運成本分類。</li>
+      </ul>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 04 ==================== -->
+<article class="chapter" id="sec04" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">04</div>
+    <div class="ch-t">
+      <h2>稅務：VAT / EORI / OSS 🧾</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">關鍵路徑：最先啟動</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>一句話記住規則——<b>你只需要為「庫存擺放國」申請 VAT 稅號；單純的銷售行為不需要。</b>申請實務要 2–4 個月，沒有稅號不能合規入倉，所以這是整個開站的關鍵路徑。</div>
+
+    <div class="checklist" data-cl="04">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已決定要在哪些國家擺放庫存（決定要辦哪幾國稅號）</span></label>
+      <label><input type="checkbox"><span>已媒合稅代服務商並啟動申請（含 EORI）</span></label>
+      <label><input type="checkbox"><span>已了解哪些 B2C 交易由 Amazon 代收代繳 VAT、哪些可能要走 OSS</span></label>
+      <label><input type="checkbox"><span>（有站外通路等跨境 B2C 時）已與稅代確認要不要註冊 OSS、註冊在哪一國（＝貨物起運國；選定後綁定當年度與其後兩個年度）</span></label>
+      <label><input type="checkbox"><span>取得稅號後已上傳後台並顯示「已驗證」</span></label>
+      <label><input type="checkbox"><span>已確認申報週期與稅代的交件節奏</span></label>
+    </div>
+
+    <h3>核心規則：稅號跟著「庫存」跑，不跟著「銷售」跑</h3>
+    <div class="note ok">
+      <b>舉例：</b>你申請了<b>法國</b> VAT，把庫存合法擺在法國 FBA。除了滿足法國站的訂單，你還可以用法國 FBA 透過 <b>EFN</b> 去配送德國、義大利、西班牙等站點的訂單。
+      <br><br>
+      這時候你需要德、義、西的稅號嗎？<b>不需要</b>——因為你沒有在那些國家擺放庫存。（台灣這類非歐盟設立賣家透過 Amazon 賣給歐盟消費者、貨已在歐盟境內的 B2C 訂單，VAT 多由 <b>Amazon 依視同供應商規則代收代繳</b>；法國庫存本身的 VAT 義務仍要自己處理。）
+    </div>
+
+    <div class="tw"><table>
+      <thead><tr><th style="width:130px">概念</th><th>是什麼／什麼時候需要</th></tr></thead>
+      <tbody>
+        <tr><td><b>VAT 稅號</b></td><td>在該國擺放庫存（用該國 FBA、或當地第三方倉）就必須有。<b>申請時程 2–4 個月</b>，請最早啟動。</td></tr>
+        <tr><td><b>EORI 號</b></td><td>進出口報關用的經濟營運者註冊識別號，<b>一號通用全歐盟</b>。申請 VAT 時通常同步辦理（官方免費，1–3 週）。<b>英國 EORI 與歐盟分開</b>（GB + 編號，GOV.UK 線上申請，1–5 個工作天、免費）。<br>⚠️ <b>EORI 不能任選國家。</b>非歐盟設立的業者，要向<b>首次辦理報關（或首次申請海關決定）所在的會員國</b>申請。若在德國申請被拒，先確認被拒原因與首次報關地，再向有管轄權的海關申請（例如首次報關在法國或荷蘭，就向當地申請）。</td></tr>
+        <tr><td><b>OSS<br>（One Stop Shop）</b></td><td>歐盟 B2C 跨境銷售的<b>單一申報</b>機制。讓你不必為每個「銷售目的國」各自申報，只在一國申報全部歐盟跨境 B2C 銷售。<b>它取代不了「庫存所在國」的當地稅號義務。</b><br>📌 要不要用 OSS，看三件事：① 這筆 B2C 交易是否已由平台代收代繳 VAT（非歐盟設立賣家透過 Amazon、貨在歐盟境內的訂單，多由 Amazon 代收代繳）② 是否賣到其他會員國 ③ 貨從哪一國出貨。有自營官網等其他通路時，請稅代依你的實際通路判斷。</td></tr>
+        <tr><td><b>IOSS</b></td><td>針對從歐盟境外直送、單筆價值 €150 以下的 B2C 進口簡化申報機制。若你走境外直發（非 FBA）模式會用到。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note">
+      <b>📌（有站外通路、需要 OSS 時）台灣公司要在「哪一國」註冊 OSS？</b>
+      <p class="small">先確認你需不需要：透過 Amazon、貨已在歐盟境內的 B2C 訂單，VAT 多由 Amazon 代收代繳，通常不經你的 OSS 申報；下面這段是給同時有自營官網或其他通路跨境 B2C 銷售的賣家參考。要不要註冊，請稅代依你的通路確認。</p>
+      <p>台灣公司在歐盟沒有設立據點，仍然<b>可以使用 Union OSS 申報歐盟境內跨境 B2C 的「貨物」銷售</b>（服務不行——B2C 服務要用 Union OSS 需在歐盟設有據點）。但註冊國不是你自由挑：</p>
+      <ul>
+        <li><b>註冊國（Member State of Identification）＝ 貨物「起運國」</b>。你的 FBA 庫存放德國、從德國發貨，OSS 就在德國註冊。</li>
+        <li><b>在多國都有庫存時，可以任選其中一個起運國</b>——但<b>選定後會被綁住「當年度 + 之後兩個完整年度」</b>（約三個年度），不能想換就換。</li>
+        <li>要換註冊國的前提是<b>你在至少兩個成員國有庫存</b>；變更於<b>當季季末生效</b>，且綁定期會重新起算。實務上是「舊國退出 + 新國重新註冊」。</li>
+        <li>📌 Union OSS 使用你在<b>註冊國既有的 VAT 號碼</b>（也就是你在該國用於庫存的稅號），不會另發一組；非歐盟企業申報「服務」用的 Non-Union OSS 識別號是另一回事，兩者不要混用。</li>
+      </ul>
+      <p><b>行動含意：</b>如果你確定需要 OSS，而長期主力倉會落在德國，就別為了「先開賣」把 OSS 註冊在一個過渡性的起運國——那會把你綁在該國三個年度的申報節奏與稅代費用上。決定第一個入倉國時，順手把這件事一起問稅代。</p>
+      <p class="small">依據：歐盟執委會 VAT One Stop Shop 官方說明（Union scheme 註冊規則）。實際登記程序與文件請以稅代與該國稅局要求為準。</p>
+    </div>
+
+    <h3>🇪🇸🇮🇹 南歐兩個實務門檻（很多賣家在這裡放棄）</h3>
+    <details class="acc"><summary>🇪🇸 西班牙：兩階段登記，只有本土號時填進後台會被拒絕——這是正常的</summary><div class="acc-body">
+      <div class="note danger">
+        <b>ES 的本國稅號與歐盟交易資格（VIES 登記）要分開確認，順序不可逆：</b><br>
+        ① <b>本土稅號 NIF</b>（<span class="mono">N</span> 開頭，僅限境內、<b>VIES 查不到</b>）先發 → ② <b>另外申請 ROI 登記</b>，通過後同一組號碼加上 <span class="mono">ES</span> 前綴（NIF-IVA）才能在 VIES 驗證、用於跨境交易。這不是另一組新號碼。
+      </div>
+      <p>⚠️ <b>最常見的中途放棄點：本土號填入 Seller Central 會被系統拒絕，但你必須先有它才能申請 ROI 登記。</b>賣家看到拒絕訊息常誤判為「申請失敗」而整案放棄。<b>那個畫面是正常的。</b></p>
+      <p>另一個容易白等一輪的<b>格式陷阱</b>：填本土號時<b>不要加國碼</b>——<span class="mono">N1234567F</span> ✓ ／ <span class="mono">ESN1234567F</span> ✗（會回 VIES Rejected，那是格式錯誤，需刪除重新上傳）。兩種拒絕訊息看起來很像，處理方式完全不同。</p>
+      <div class="note warn">
+        <b>📅 時程與硬性限制（會決定你的排程）：</b>
+        <ul>
+          <li>時程分兩段計：① 取得本土稅號；② 送出 ROI 登記後，等 AEAT 審核。兩段各需多久依稅局與服務商而定，請向稅代確認，排程時兩段要分開估。<br><small>📌 法規給 AEAT 的期限是 <b>3 個月</b>，且逾期未答復<b>視為駁回</b>（非視為通過）——所以要主動追，不要以為沒消息就是在排隊。</small></li>
+          <li>📌 <b>沒有「一年只能某幾個月申請」的限制</b>（AEAT 官方頁未設申請期間）。ROI 登記隨時可送：表格 <b>Modelo 036</b>，勾選<b>欄位 582</b>（申請加入 ROI），並在<b>欄位 584</b> 填首次跨境交易的<b>預計日期</b>。</li>
+          <li>📌 實務上申請歐盟稅號常被要求提供<b>B2B 訂單或跨境交易證明</b>（這是稅局審核慣例，非表格欄位要求），先跟稅代確認手上有什麼證據。</li>
+          <li>POA 須公證，通常最耗時，<b>建議最先啟動</b>。</li>
+        </ul>
+      </div>
+      <p><b>⚠️ 沒有歐盟稅號的後果：無法入倉西班牙，且需在 30 天內移除當地庫存。</b></p>
+      <p><b>建議路徑：</b>先拿本土稅號 → 商品放其他國家 FBA 用 EFN 賣西班牙 → 有 B2B 訂單後再申請歐盟稅號轉在地入倉。</p>
+      <div class="note ok"><b>✅ 好消息：不必等稅號到齊才能開賣西班牙。</b>只要在其他已有稅號的國家（如德國）持有 FBA 庫存，即可用 <b>EFN／遠程配送</b>賣給西班牙客戶，訂單<b>仍具 Prime 資格</b>。<br><b>ES VAT 號決定的是「能不能在西班牙存貨」（Pan-EU／MCI），不是「能不能賣到西班牙」。</b></div>
+    </div></details>
+    <details class="acc"><summary>🇮🇹 義大利：€50,000 保證金（已在執行中，且須持續維持）</summary><div class="acc-body">
+      <div class="note warn">
+        <b>📌 自 2025/04/14 起執行中：</b>非歐盟／非 EEA 企業（含台灣、中國、美國等）<b>透過義大利稅務代表</b>申請或維持 <b>VIES 登記</b>，需<b>持續維持 €50,000 保證金</b>（每一位被代理的外國主體各 €50,000）。
+        <b>未維持有效保證金的後果：VIES 登記會被取消，Pan-EU 計畫也會一併中止。</b>
+      </div>
+      <ul>
+        <li><b>形式：</b>銀行擔保（Fideiussione Bancaria）或保險擔保（Polizza Fideiussoria），須用義大利稅務局官方模板，<b>效期至少 36 個月</b>。</li>
+        <li><b>對象：</b>新申請者於 VAT 註冊時一併提交；<b>現役賣家須持續維持</b>。</li>
+        <li>✅ <b>豁免：</b>EEA 國家（含挪威、冰島、列支敦士登）與英國企業不受此要求。</li>
+        <li>義大利另需指定<b>稅務代表（Fiscal Representative）</b>，且申請前須先備妥 Listing + Shipment 截圖。處理時程約 6–12 週。</li>
+      </ul>
+      <div class="note ok">
+        <b>✅ 替代方案很單純：不在義大利入倉。</b>這個門檻卡的是「能不能在義大利存貨」，<b>不是「能不能賣到義大利」</b>。
+        用德國或法國庫存透過 EFN 跨境配送義大利客戶，先驗證需求；量體起來再評估 €50,000 的資金占用是否值得換取當地配送費率。
+      </div>
+      <p class="small">來源：Agenzia delle Entrate 局長令 Prot. No. 178713/2025（2025/04/14 發布，訂出保證金的操作規則）／DPR 633/1972 Art. 35(7-quater)。具體金額與形式請與稅代確認。</p>
+    </div></details>
+    <details class="acc"><summary>🇫🇷 法國：非歐盟企業需指定稅務代表</summary><div class="acc-body">
+      <p>法國要求非歐盟企業指定 <b>Fiscal Representative</b>（稅務代表），處理時程約 <b>4–12 週</b>，比德國久。稅率 20%。</p>
+      <p>📌 另外，從歐盟境外發貨到法國運營中心（或已開 Pan-EU、發往任何歐盟運營中心）還有<b>獨立的進口資料（MRN／EORI）申報義務</b>——那是進口記錄要求，與 VAT 是兩件事，詳見 <a href="#sec09">09 物流</a>。</p>
+    </div></details>
+    <details class="acc"><summary>🇩🇪🇬🇧 德國與英國：相對單純</summary><div class="acc-body">
+      <p><b>🇩🇪 德國</b>（稅率 19%）：稅務局效率較高，約 <b>4–8 週</b>。需填 Fragebogen zur steuerlichen Erfassung（稅務登記問卷），建議透過稅代辦理。<br>
+      ⚠️ 但德國有兩個要注意的地方：① <b>EORI</b> 要向首次報關地申請，不一定是德國（見上方表格）；② <b>德國沒有補號寬限期</b>——其他歐盟國家有最低通知期，但在德國，還沒有有效的德國 VAT 號就把商品存放在當地或從德國出貨，帳號可能<b>立即</b>受影響。</p>
+      <p><b>🇬🇧 英國</b>（稅率 20%）：<b>不要求稅務代表</b>、可線上申請、HMRC 處理效率高，約 <b>2–6 週</b>。<b>英國是五個核心站中最好辦稅號的。</b></p>
+      <p>💡 這也是為什麼「先開英國或德國」是最常見的起手式——稅務阻力最小。</p>
+    </div></details>
+
+    <h3>上傳稅號到後台</h3>
+    <p>取得稅號後：後台【設定 ⚙️】→ 帳戶資訊 → 稅務資訊 → 增值稅資訊 → 新增各國 VAT 登記號。</p>
+    <div class="note warn">⚠️ <b>務必選對國家／地區</b>，選錯會導致稅號被拒。狀態顯示<b>【已驗證】</b>才算完成。報稅需要的發票可在【數據報告】→【稅務文件庫】下載。</div>
+
+    <div class="note info">
+      <b>找誰辦？</b>透過亞馬遜全球開店台灣團隊提供的<b>歐洲第三方服務商清單</b>媒合稅代（清單第 3 頁之後的「稅務會計」分類，例如 AVASK Accounting、J&amp;P、維易 SaaS、英特遜 Interxun 等）。
+      詢價時確認服務範疇含<b>稅號申請 + 稅務申報 + 稅法諮詢</b>三塊，並問清楚年費與逾期申報的處理方式。
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 05 ==================== -->
+<article class="chapter" id="sec05" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">05</div>
+    <div class="ch-t">
+      <h2>產品合規與 EPR ⚖️</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">歐洲最容易下架的原因</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>歐洲合規要分成三層看：① <b>產品本身</b>（CE／UKCA、各品類法規）② <b>責任人</b>（GPSR 要求的歐盟責任人；英國依品類法規可能需要英國負責人）③ <b>環境義務 EPR</b>（包裝、電子電器、電池…按國別與類別各別註冊）。三層各自獨立，缺任一層都可能被下架。</div>
+
+    <div class="checklist" data-cl="05">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已用「合規性參考」工具查出我的品類需要哪些檢驗</span></label>
+      <label><input type="checkbox"><span>已取得產品測試報告與符合性聲明（DoC）</span></label>
+      <label><input type="checkbox"><span>已指定歐盟責任人（EU RP），並在 Listing 上揭露其資訊</span></label>
+      <label><input type="checkbox"><span>已完成「銷售國 × 類別」的全部 EPR 註冊並上傳後台</span></label>
+      <label><input type="checkbox"><span>已把合規文件提供給頭程物流服務商供清關使用</span></label>
+      <label><input type="checkbox"><span>已確認包裝／標籤符合各國標示要求</span></label>
+    </div>
+
+    <h3>第一步：怎麼知道我的商品要過哪些檢驗？</h3>
+    <div class="note ok">
+      <b>用亞馬遜的「合規性參考（Compliance Reference）」工具。</b>選擇商品「從哪裡運到哪裡」，再用關鍵字或商品分類搜尋，工具會告訴你在
+      <b>商品合規性、危險品合規性、出口貿易合規性、進口貿易合規性</b> 四個面向要準備什麼，並直接列出可聯繫的服務商。
+      <br>這比「先上架看會不會被要求補件」省太多時間，也避免你花錢準備一個根本不能在目標站點賣的商品。
+    </div>
+
+    <!-- ===== TOOL: compliance checklist ===== -->
+    <div class="tool" id="tool-compliance">
+      <h3>🛠 合規清單產生器</h3>
+      <div class="lead">勾選你的商品特性與銷售國，產生你要處理的合規項目清單。<b>結果為方向性指引，正式送件前請與合規顧問或客戶經理確認。</b></div>
+      <div class="q">
+        <div class="qt">1. 你的商品特性（可多選）</div>
+        <div class="cbs" id="cp-attr">
+          <label><input type="checkbox" value="pack" checked> 有包裝／外箱</label>
+          <label><input type="checkbox" value="eee"> 電子電器（插電／充電）</label>
+          <label><input type="checkbox" value="batt"> 含電池</label>
+          <label><input type="checkbox" value="wireless"> 有無線功能（藍牙／WiFi）</label>
+          <label><input type="checkbox" value="toy"> 兒童玩具</label>
+          <label><input type="checkbox" value="textile"> 紡織品／服飾／鞋靴</label>
+          <label><input type="checkbox" value="furniture"> 傢俱</label>
+          <label><input type="checkbox" value="ppe"> 個人防護／醫療相關</label>
+          <label><input type="checkbox" value="food"> 食品接觸材質／化妝品</label>
+        </div>
+      </div>
+      <div class="q">
+        <div class="qt">2. 你要銷售的國家（可多選）</div>
+        <div class="cbs" id="cp-mk">
+          <label><input type="checkbox" value="UK"> 🇬🇧 英國</label>
+          <label><input type="checkbox" value="DE" checked> 🇩🇪 德國</label>
+          <label><input type="checkbox" value="FR"> 🇫🇷 法國</label>
+          <label><input type="checkbox" value="IT"> 🇮🇹 義大利</label>
+          <label><input type="checkbox" value="ES"> 🇪🇸 西班牙</label>
+        </div>
+      </div>
+      <div class="result show" id="cp-out"></div>
+    </div>
+
+    <h3>層次一：產品本身的合規標記</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">標記</th><th>適用範圍</th><th>要注意</th></tr></thead>
+      <tbody>
+        <tr><td><b>CE</b></td><td>歐盟 27 國</td><td>由製造商／品牌商自行宣告符合適用指令，並簽署<b>符合性聲明（DoC）</b>。部分品類需第三方公告機構介入。</td></tr>
+        <tr><td><b>UKCA</b><br><span class="badge" style="background:#EFFAF4;color:#0E7A4F;border-color:#A7DCC1">多數賣家不需要</span></td><td>英國（英格蘭、蘇格蘭、威爾斯）</td><td>✅ <b>2024 年英國法規修訂後，多數消費品類「持續接受」CE 標記且未設終止日，UKCA 屬可選方案。</b><br><b>已有 EU CE 的賣家多數不需要另做 UKCA，不必重複付這筆錢。</b><br><small>· UKCA 標籤可貼在文件而非產品本身的寬限期：至 <b>2027/12/31 23:00</b>（自 EEA 進口者的進口商資訊亦可標在包裝或文件上，同一期限）<br>· <b>醫療器材有各自期限，不是一律 2030</b>：舊指令（MDD／AIMDD）CE 器材至 <b>2028/06/30</b> 或證書到期日（取較早）；EU MDR 器材與 IVD（IVDD／IVDR）至 <b>2030/06/30</b>。英國曾就「無限期承認醫療器材 CE」提案辦理諮詢（2026/2/16–4/10，已結束），結果待公布；正式定案前，上述期限仍有效。<br>· 下列品類的 UKCA 標示位置有獨立規則，不適用上述文件標示彈性：<b>建築產品、醫療器材、纜車、船舶設備、鐵路產品、可攜式壓力設備、無人機系統</b><br>依據：The Product Safety and Metrology (Amendment) Regulations 2024／GOV.UK「Using the UKCA marking」與「Regulating medical devices in the UK」</small></td></tr>
+        <tr><td><b>符合性聲明 DoC</b></td><td>絕大多數受規範品類</td><td>必備文件。須包含：<b>製造商資訊、產品資訊（品牌／型號）、適用法規標準、簽署人姓名職位簽名日期</b>，並隨附與申請商品一致的產品照片。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note info">
+      <b>💡 提高審核通過率的做法：</b>360 度拍攝商品與包裝所有側面；確保圖片清楚拍到標記、型號與製造商資訊；<b>包裝盒上的資訊與 DoC 一一對應</b>——這一點能大幅縮短審核時間。組合包／捆綁商品要為<b>每一個組件</b>都提供圖片。
+    </div>
+
+    <h3>層次二：責任人 — 歐盟 RP 與英國英代是兩套</h3>
+    <div class="note danger">
+      <b>GPSR（歐盟通用產品安全法規，(EU) 2023/988）自 2024 年 12 月起生效，且持續在下架不合規商品。</b><br>
+      非歐盟賣家<b>必須指定一位歐盟責任人（EU Responsible Person）</b>，其名稱與聯絡方式須標示在產品／包裝上，<b>線上 listing 也要顯示 RP 與製造商聯絡方式</b>。
+      適用於幾乎所有非食品消費品。時程約 2–4 週，年費約 US$220–1,100。
+    </div>
+    <div class="note warn">
+      <b>🇬🇧 英國的兩個常見誤解，都會讓你付錯錢或漏掉義務：</b>
+      <ul>
+        <li>❌「有歐盟 RP 就不用英代」——<b>歐盟 RP 替代不了英國端</b>。英國要不要指定授權代表、技術文件由誰保存，<b>依品類適用的法規確認</b>（GOV.UK：授權代表依法規可能是強制、也可能是自願）。英代年費約 US$550–2,200。</li>
+        <li>❌「英國永久接受 CE 標誌，所以不需要英國責任人」——<b>標誌認可與責任人義務是兩回事。</b>UKCA 可以不做，但英國責任人要不要有，仍要依品類法規確認。</li>
+      </ul>
+      📌 <b>GPSR 本身不適用英格蘭／蘇格蘭／威爾斯</b>，但依溫莎架構<b>適用北愛爾蘭</b>；而 <b>FBA 無法關閉北愛出貨</b>，所以英國站賣家實務上也常被要求提供 GPSR 資訊。<br>
+      🇮🇪 北愛爾蘭走歐盟規則，需要的是 EU／北愛 RP 而非英代。
+    </div>
+    <p class="small">💡 找英代時確認是否同時提供 UKCA 文件審核與亞馬遜合規欄位填報協助，可省一輪來回。各品類責任人義務不同（玩具、電子、PPE 等各有法規），細節以 GOV.UK 對應品類指引為準。</p>
+
+    <h3>層次三：EPR 生產者責任延伸</h3>
+    <p>EPR 是環境政策，要求「生產者」對商品整個生命週期負責（含廢棄物收集處理）。</p>
+    <div class="note warn">
+      <b>先搞懂：你很可能就是「生產者」。</b>生產者<b>不等於</b>製造商。只要你在某國銷售受 EPR 規範的商品，<b>而你並未在該國設立公司</b>，你就是該國的生產者——台灣賣家絕大多數屬於這種情況。
+    </div>
+
+    <h4>EPR 三步驟（缺一不可）</h4>
+    <ol>
+      <li><b>註冊</b>：向各國、各類別對應的生產者責任組織（PRO）註冊，取得 EPR 註冊號，並上傳到後台 EPR 合規門戶。</li>
+      <li><b>申報</b>：在適用報告週期內向 PRO 申報銷售量（件數／重量）。</li>
+      <li><b>付款</b>：向 PRO 支付環保款項（按月／季／年，依類別與 PRO 而定）。</li>
+    </ol>
+    <div class="note danger">
+      <b>⚠️ 只把註冊號給亞馬遜，不等於合規完成。</b>申報與付款是你自己的持續義務。<br>
+      ⚠️ <b>EPR 須「每個銷售國、每個類別」各別註冊，不能通用。</b>同一件商品在德國與法國銷售，就要在兩國分別註冊。<br>
+      ⚠️ <b>亞馬遜代繳 ≠ 已合規。</b>法國若你未提供有效 UIN，亞馬遜會代你向 PRO 支付環保款<b>並向你收取該筆金額</b>；德國則會直接<b>暫停</b>你在 EPR 類別下的不合規商品。
+    </div>
+
+    <details class="acc"><summary>實例：一台藍牙擴音器同時在德、法銷售，要註冊幾個 EPR？</summary><div class="acc-body">
+      <p><b>答：6 個。</b>商品本身涉及三個類別——<b>包裝、電氣和電子設備（EEE）、電池</b>——而德國與法國必須<b>分開註冊</b>，所以 3 × 2 = 6 組註冊號。</p>
+      <p><b>再一例：一件服裝同時在德、法銷售 → 共 3 個。</b>德國 1 個（包裝）、法國 2 個（包裝 + 紡織品）。<br>差異來自：法國把紡織品列為 EPR 類別，德國沒有。</p>
+      <p class="small">⚠️ 即使你的商品本身不屬於任何特殊 EPR 類別，只要你<b>用包裝包裹商品或在運輸中保護商品</b>，就必須註冊包裝類別。實務上幾乎沒有賣家能豁免。</p>
+    </div></details>
+    <details class="acc"><summary>德國／法國的 EPR 類別與生產者責任組織（PRO）</summary><div class="acc-body">
+      <div class="tw"><table>
+        <thead><tr><th>EPR 類別</th><th class="ctr">🇩🇪 德國</th><th class="ctr">🇫🇷 法國</th><th>主要 PRO</th></tr></thead>
+        <tbody>
+          <tr><td>包裝</td><td class="ctr"><span class="yes">✔</span></td><td class="ctr"><span class="yes">✔</span></td><td>DE: <a href="https://lucid.verpackungsregister.org/" target="_blank" rel="noopener">LUCID</a>／FR: <a href="https://www.citeo.com" target="_blank" rel="noopener">Citeo</a>、Leko</td></tr>
+          <tr><td>電氣和電子設備（EEE）</td><td class="ctr"><span class="yes">✔</span></td><td class="ctr"><span class="yes">✔</span></td><td>DE: <a href="https://www.ear-system.de/ear-portal/" target="_blank" rel="noopener">EAR (stiftung ear)</a>／FR: Ecosystem、Ecologic</td></tr>
+          <tr><td>電池</td><td class="ctr"><span class="yes">✔</span></td><td class="ctr"><span class="yes">✔</span></td><td>FR: Corepile、Screlec</td></tr>
+          <tr><td>傢俱</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>Eco-mobilier、Valdelia</td></tr>
+          <tr><td>紡織品／鞋靴</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>Refashion</td></tr>
+          <tr><td>紙（印刷品）</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>Citeo</td></tr>
+          <tr><td>輪胎</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>GIE-FRP、Aliapur</td></tr>
+          <tr><td>化學品</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>EcoDDS</td></tr>
+          <tr><td>醫療穿刺設備</td><td class="ctr"><span class="no">—</span></td><td class="ctr"><span class="yes">✔</span></td><td>DASTRI</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">⚠️ 上表為德／法的類別對照（資料最完整的兩國）。<b>其他歐盟國家與英國也各有 EPR 制度</b>——請以後台 EPR 合規門戶當前顯示的收集項目，以及各國主管機關公告為準。</p>
+      <h4>五個核心站的「包裝」EPR 對應機構</h4>
+      <ul>
+        <li>🇩🇪 <b>德國：LUCID 註冊 + 與雙元回收系統簽約</b>（兩步都要做，只註冊 LUCID 不算完成）。註冊本身免費，回收合約約 US$60–330／年。</li>
+        <li>🇫🇷 法國：<b>CITEO</b>（或 Leko）　·　🇮🇹 義大利：<b>CONAI</b>　·　🇪🇸 西班牙：<b>Ecoembes</b>　·　🇬🇧 英國：2025 年起生效</li>
+      </ul>
+      <p><b>費用：</b>註冊費 €0 至 €250 以上不等（依 PRO）；環保款依銷量與類別計算，按月／季／年申報支付。</p>
+    </div></details>
+    <details class="acc"><summary>📌 亞馬遜「EPR 代付服務」：FR／ES／IT／BE／UK 有（依分類），德國沒有</summary><div class="acc-body">
+      <div class="note warn">
+        <b>這不是你主動選的服務。</b>在提供代付的歐盟國家，某個 EPR 分類沒在申報週期結束前交有效註冊號，亞馬遜就會<b>自動</b>把你納入代付、代為申報並繳環保費，再從你的帳戶扣回費用＋服務費（英國則是看你是否在英國設立）。
+        <b>所以真正的決策不是「要不要用」，而是「要不要退出、什麼時候退出」。</b><br>
+        📌 <b>先分清楚兩件事：</b>「是不是該國的生產者、要不要在該國登記」是法規義務；「代付」只是亞馬遜幫你申報與繳費的服務。PPWR 上路後（2026/8/12 起），包裝類的生產者<b>就算留在代付，也要在每個歐盟銷售國登記取得 EPR 註冊號（ERN）</b>，代付只處理申報與繳費。
+      </div>
+      <div class="tw"><table>
+        <thead><tr><th>站點</th><th>有代付服務？</th><th>費用</th><th>怎麼退出</th></tr></thead>
+        <tbody>
+          <tr><td>🇫🇷 法國<br>🇪🇸 西班牙</td><td class="ctr"><span class="yes">✔</span><br><small>依分類</small></td><td>服務費 <b>€25／年／分類</b>（未含適用 VAT；2026/1/1 起取消原本另加的環保費 3%）＋ 環保費（另付，Amazon 會先在帳戶預留準備金）</td><td>包裝以外的分類：在申報週期結束前提交有效註冊號即退出。<b>包裝</b>：要在後台選擇「自行申報與繳費」並提交有效註冊號（處理最多約兩週），不是取得註冊號就自動退出</td></tr>
+          <tr><td>🇮🇹 義大利<br>🇧🇪 比利時</td><td class="ctr"><span class="yes">✔</span><br><small>依分類（義大利：WEEE、電池、包裝、輪胎、聚乙烯）</small></td><td>服務費 <b>€25／年／分類</b>（未含適用 VAT）＋ 環保費</td><td>在申報週期結束前提交有效註冊號即退出；包裝與電池在新法下要各國提交註冊號，但可選擇繼續用代付申報繳費</td></tr>
+          <tr><td>🇬🇧 英國</td><td class="ctr"><span class="yes">✔</span><br><small>包裝、WEEE</small></td><td><b>£20／年／分類</b>（未含適用 VAT）＋ 環保費</td><td>⚠️ <b>未在英國設立的賣家，包裝與 WEEE 都由代付處理</b>；不想用代付，只能停止在英國站賣帶包裝的商品與電子電器，或成為英國設立企業（後台註冊營業地址在英國）</td></tr>
+          <tr><td>🇩🇪 德國</td><td class="ctr"><span class="no">✘ 沒有</span></td><td>—</td><td><b>一律要自己去 LUCID 註冊</b>，沒有代付可依賴；未註冊會被下架</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note danger">
+        <b>⚠️ 代付 ≠ 完整合規。</b>代付不處理產品標示、回收與生態設計等義務——例如法國仍要求包裝貼 <b>Triman 標識</b>，這是你要自己做到的。
+        <b>代付的定位是「進入市場的過渡期」，不是長期解。</b>
+      </div>
+      <p><b>💰 代付與自辦怎麼比：</b></p>
+      <ul>
+        <li><b>代付</b>的環保費沒有最低收費、按實際銷售計；但<b>每個分類每年另收固定服務費</b>（€25／£20）。2026/9 起，服務費在納入代付後 30 天內直接收取、不預留；環保費則會先在帳戶預留準備金，影響可撥款餘額。</li>
+        <li><b>自行註冊</b>有 PRO 的註冊費，部分 PRO 另有最低環保費（約 €50–200）。<br><small>自行註冊 = 註冊費 + 環保費（＋可能的最低費用）　｜　代付 = 服務費（每分類每年 €25／£20）+ 環保費</small></li>
+        <li>哪個划算依分類與銷量而定，請用當期費率試算。</li>
+      </ul>
+      <p><b>📅 想退出要提早半年動，而且時點綁報告週期：</b></p>
+      <ul>
+        <li>包裝生產者登記：主管機關收到<b>完整申請後</b>的程序期限最長 <b>12 週</b>（PPWR Art. 44(11)；這不是從準備文件到拿到號碼的全程）；亞馬遜再驗證 UIN 約 <b>5 個工作日</b>。</li>
+        <li>季度分類要在 <b>3/31、6/30、9/30、12/31</b> 前交號；半年度在 <b>6/30、12/31</b>；年度在 <b>12/31</b>。<b>錯過就多付一個週期。</b></li>
+      </ul>
+      <p class="small">📌 代付目前在法、西、義、比、英提供，依國家與分類而定（德國沒有），而且<b>只涵蓋</b>你在這些 Amazon 站點的銷售——其他平台的銷量亞馬遜不代付，那部分仍要自己處理。代付<b>不含</b>回收義務本身，也不含生態設計計畫。費率可能調整，最新金額以 Seller Central 代付服務頁面為準（<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GKXCMGQSRD8ERZ2Z" target="_blank" rel="noopener">EPR Pay on Behalf</a>、<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GV4ASVJRYBE2K8K6" target="_blank" rel="noopener">費用與準備金</a>）。</p>
+    </div></details>
+    <details class="acc"><summary>🔌 賣電子電器／含電池商品：WEEE 與電池 EPR 是額外的兩項</summary><div class="acc-body">
+      <ul>
+        <li><b>WEEE（電子電器廢棄物指令 2012/19/EU）：</b>在歐盟賣電子電器，要依各國規定<b>分別註冊</b>（DE／FR／IT／ES），歐盟站會要求提供 WEEE 註冊號（義大利另有代付可用）。時程 2–6 週／國，約 US$110–550／年／國。<br>🇬🇧 英國站：<b>未在英國設立的賣家，WEEE 自 2025/8/12 起由亞馬遜代付</b>環保費（與包裝相同）；英國法規上的其他義務，以 GOV.UK 說明為準。</li>
+        <li><b>電池 EPR：</b>含電池產品需在各國註冊電池回收。📌 <b>亞馬遜自 2025/08/18 起已強制執行</b>，未提供有效註冊號的後果依國家不同：<br>· <b>德國、荷蘭、波蘭、愛爾蘭、瑞典</b>：不合規商品會被<b>停用（下架）</b><br>· <b>法國、義大利、西班牙、比利時</b>：在代付可用的情況下，申報週期結束後會被<b>自動加入代付（Pay on Behalf）扣費</b></li>
+        <li>⚠️ 德國的電池義務：若你賣的是「含電池的電子電器商品」，<b>電子電器與電池兩個分類都要註冊</b>。</li>
+      </ul>
+      <p class="small">💡 這也是為什麼一台藍牙擴音器在單一國家就要三組 EPR（包裝 + EEE + 電池）——它同時觸發三套回收體系。</p>
+    </div></details>
+
+    <h3>🗓 歐洲合規時程表（含適用對象，先確認自己在不在範圍內）</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:112px">時間</th><th>項目</th><th>適用對象與要做什麼</th></tr></thead>
+      <tbody>
+        <tr><td>已生效</td><td><b>GPSR</b></td><td><b>幾乎所有非食品消費品。</b>指定歐盟責任人並在 Listing 揭露；持續有下架執行。</td></tr>
+        <tr><td>已適用<br><small>日期以後台為準</small></td><td><b>COO 原產國資訊</b></td><td><b>有跨境配送者（全球計畫／FBA 出口／遠端配送）。</b>SKU 層級填報，未填會被限制跨境銷售；官方手冊未載明生效日期，以 Seller Central 實際要求為準。詳見 <a href="#sec09">09</a>。</td></tr>
+        <tr><td>已執行<br><small>2025/08/18 起</small></td><td><b>電池 EPR 強制執行</b></td><td><b>含電池商品。</b>未提供有效註冊號：德、荷、波、愛、瑞會停用不合規商品；法、義、西、比在代付可用時，申報週期結束後轉入代付扣費。</td></tr>
+        <tr><td>已適用<br><small>2026/08/12 起</small></td><td><b>PPWR 包裝法規開始適用</b><br><small>(EU) 2025/40</small></td><td><b>所有賣家（無規模豁免）。</b>各項義務不是同一天全部上路；2026/08/12 起已適用的<b>主要義務</b>：<br>① <b>EU 符合性聲明（DoC）</b>：由<b>包裝製造商</b>就每一<b>種</b>包裝做符合性評估並出具（是每種包裝規格一份，不是每個 SKU 一份，見 Annex VII／VIII）；進口商要確認製造商已備妥並保存副本。你屬於哪一種角色要先確認，多數賣家是向包材供應商索取。<br>② <b>食品接觸包裝的 PFAS 限值</b>（Art. 5(5)）：PFAS 含量達限值以上的食品接觸包裝不得投放市場——只針對食品接觸包裝，不是全面禁用<br>③ <b>EPR 授權代表</b>（Art. 45(3)）：非歐盟生產者是否須委任，<b>依各銷售國規定</b>（例如西班牙要求），請逐國確認<br><b>舊庫存怎麼判斷：</b>看包裝是否已投放歐盟市場，不是看製造日期——2026/08/12 前已合法投放歐盟市場的包裝，可依過渡規定繼續流通。<br><small>📌 <b>包裝最小化與過度包裝（Art. 10）</b>：重量／體積最小化（Art. 10(1)）的法定期限是 <b>2030/01/01</b>；雙層壁、假底、多餘層次等「只為了讓商品看起來更大」的設計，相關要求的確切適用日請以條文與執委會指引為準。</small></td></tr>
+        <tr><td>2026/08/18<br><small>或更晚，以公報為準</small></td><td>電池<b>詳細資訊標籤</b>（Annex VI Part A）+ 容量標示</td><td><b>含電池商品。</b>檢查標籤內容。適用日是「<b>2026/8/18 或標籤實施法案生效後 18 個月，取較晚者</b>」；實施法案狀態請以歐盟公報為準。<br>📌 <b>分類收集標誌</b>（打叉垃圾桶）不在此列，已自 <b>2025/8/18</b> 起適用。</td></tr>
+        <tr><td>📅 2026/12/30<br><small>小微型 2027/06/30</small></td><td><b>EUDR 反森林砍伐法規</b><br><small>(EU) 2023/1115</small></td><td><b>含木材／紙／牛皮／可可／咖啡／棕櫚油／橡膠／大豆及其衍生品者。</b><br>📌 <b>先查商品的 CN 碼是否列在現行 Annex I</b>。只用來承載、保護其他商品的包裝，通常不在範圍；印刷品（CN 第 49 章）已由 (EU) 2025/2650 移出範圍。木玩具、家具、紙製品、皮革製品等請逐項對照現行清單。<br>✅ <b>延期到 2027/06/30 的條件：</b>於 <b>2024/12/31 前已成立</b>為該類的自然人或微型／小型經營者（operator），且符合第 38(3) 條（經 (EU) 2025/2650 替換）的條件；微型／小型依會計指令 2013/34/EU 判定（不是只看員工數加營收的單一公式）。是否符合請與合規顧問確認。<br>⚠️ <b>例外：</b>原本列在<b>歐盟木材法規（EUTR）</b>附件內的產品，不適用這個延期，仍是 <b>2026/12/30</b> 起適用。賣木製家具、木玩具、紙製品者請先確認自己的產品是否落在此例外。</td></tr>
+        <tr><td><b>📅 2027/02/18</b></td><td>電池 <b>QR Code</b> + <b>可拆換電池權利</b>（+ 數位電池護照，<b>僅特定電池</b>）</td><td><b>含電池商品。</b>此日期<b>固定、不順延</b>。<br>· <b>QR Code：所有電池都要</b>（Art. 13(6)）<br>· <b>可拆換／可更換</b>（Art. 11）：涉及<b>產品設計</b>，現在就要進設計流程才趕得上<br>· ✅ <b>數位電池護照只適用 LMT（輕型交通工具）電池、容量 &gt;2 kWh 的工業電池與電動車電池</b>（Art. 77）——一般消費電子內的<b>便攜式電池不在此列</b>，多數台灣賣家不需要做護照，但 QR Code 與可拆換仍要做。</td></tr>
+        <tr><td>2026/07/19<br><small>已生效</small></td><td>ESPR 未售服飾／鞋類<b>銷毀禁令</b><br><small>(EU) 2024/1781 Art. 25</small></td><td>✅ <b>微型與小型企業不適用</b>（&lt;50 人且年營收或資產總額 ≤€10M，依 Commission Recommendation 2003/361/EC）——<b>多數台灣賣家屬此類</b>。<br>📌 <b>中型企業</b>（&lt;250 人、營收 ≤€50M 或資產 ≤€43M）自 <b>2030/07/19</b> 起納管；<b>大型企業自 2026/07/19 起</b>已受規範。<br>📌 品項為 Annex VII 明列的 HS 碼：<b>4203／61／62（服飾與服飾配件，含皮製）、6504／6505（帽類）、6401–6405（鞋類）</b>；<b>不含</b>手提包與行李箱（4202）、珠寶、手錶、太陽眼鏡。<br><small>⚠️ 若有證據顯示以小企業規避禁令，Commission 可用委任法案把範圍擴及微型／小型企業。</small></td></tr>
+        <tr><td>2027–2030<br><small>分階段</small></td><td><b>DPP 數位產品護照</b>／包裝可回收性分級</td><td>紡織與電子優先。包裝可回收性分為 <b>A／B／C 三級</b>：自 <b>2030/1/1 或相關授權法案生效後 24 個月（取較晚者）</b>起，包裝須達 A、B 或 C 級才能上市；<b>2038 年起只剩 A、B 級</b>可上市。等級也影響 EPR 費率。<br>賣紡織／服飾／鞋類／電子者建議現在開始盤點材質成分。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">
+      <b>⚠️ 兩個容易被傳錯的細節，先講清楚：</b>
+      <ul>
+        <li><b>「包裝空隙率上限 50%」不是 2026/08/12 生效。</b>那是 PPWR <b>Article 24(1)</b>：<b>2030/01/01</b>，或計算方法學實施細則（Commission 須於 2028/02/12 前發布）生效後 3 年，<b>取較晚者</b>。重量體積最小化（Art. 10(1)）也是 2030/01/01；過度包裝（雙層壁、假底）相關要求的確切適用日，請以條文與執委會指引為準。<br>另有一個中間期限常被忽略：<b>銷售包裝</b>的空隙須於 <b>2028/02/12</b> 前降到功能所需的最低限度（Art. 24(4)）。（📌 填充材如氣泡袋、氣墊、碎紙、泡棉<b>依法算作空隙</b>，自發貨賣家要特別注意。）</li>
+        <li><b>電池法規不是新規。</b>它是 2023 年就通過的 (EU) 2023/1542 分階段上路——「今年突然要做很多事」的感覺，其實是多個階段的義務疊在同一時間點。把時程攤開看會輕鬆得多。</li>
+      </ul>
+    </div>
+    <div class="note info">
+      <b>📌 FBA 賣家 vs 自發貨賣家在 PPWR 下的差別：</b>亞馬遜的 FBA 出貨包裝也在規範範圍內。<b>亞馬遜執行 FBA 出貨包裝作業；賣家仍須履行適用的包裝 EPR 義務，德國已明文涵蓋 FBA 出貨包裝</b>（賣家被視為這些包裝的生產者）。<b>自發貨（FBM）賣家需自行確保出貨包裝符合 PPWR</b>——包含你自己買的箱子與填充材。
+    </div>
+    <div class="links">
+      <a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GYDCAK9ZR6VJH2X3" target="_blank" rel="noopener">🔗 官方 EPR 說明頁</a>
+      <a href="https://sellercentral-europe.amazon.com/spx/myc/eprcompliance" target="_blank" rel="noopener">🔗 後台 EPR 合規門戶</a>
+    </div>
+
+    <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
+      <ul>
+        <li><b>EPR 註冊號可以用上游的嗎？</b>如果你不是生產者，可以向<b>上游供應商索取</b>適用的註冊號提供給亞馬遜。但若拿不到，你就必須自己註冊。台灣賣家多數屬於「必須自己註冊」的情況。</li>
+        <li><b>自發貨（MFN）也要做 EPR。</b>不論 FBA 或 MFN，亞馬遜都必須確認銷售夥伴符合 EPR 要求。</li>
+        <li><b>一級與二級包裝的責任：</b>你要為一級（商品包裝）與二級（運輸外箱、填充材、膠帶、運輸標籤）包裝都負責。FBA 二級包裝在德國自 2022/07/01 起也由賣家負擔，亞馬遜會提供計算所需的包裝使用資料／報告。</li>
+        <li><b>後台不接受你的 EPR 號時：</b>依序檢查 ① 確認是 EPR 註冊號而非其他編號 ② 有沒有輸入錯誤 ③ 號碼是否對應到你註冊的正確分類 ④ 與該機構確認號碼與分類已正確關聯。</li>
+        <li><b>可向我索取：</b>生產者責任延伸（EPR）合規介紹手冊、歐盟授權代表合規介紹手冊 &amp; FAQ、GPSR 指南與 FAQ、賣家合規全品類與電池法規一頁式摘要、第三方服務商清單（含產品認證與檢驗）。</li>
+      </ul>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 06 ==================== -->
+<article class="chapter" id="sec06" data-stage="1" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">06</div>
+    <div class="ch-t">
+      <h2>金流與收款 💳</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>亞馬遜每 <b>14 天</b>結算一次、收支互抵。歐洲會同時收到 <b>GBP（英國）與 EUR（歐盟四國）</b>兩種貨幣，所以收款方式的「多幣別能力」比其他站點更重要。收款方式後續都可在後台切換。</div>
+
+    <div class="checklist" data-cl="06">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已選定收款方式（確認可收 GBP + EUR）</span></label>
+      <label><input type="checkbox"><span>已在後台完成存款方式設定，並<b>逐一指派</b>給各歐洲站點</span></label>
+      <label><input type="checkbox"><span>已備好一張可支付 GBP／EUR 的信用卡（扣月費與廣告費用）</span></label>
+    </div>
+
+    <div class="tw"><table>
+      <thead><tr><th>收款方式</th><th>說明</th><th>匯率彈性</th><th>適合</th></tr></thead>
+      <tbody>
+        <tr><td><b>第三方金流</b><br><small>Payoneer／Airwallex／SUNRATE／WorldFirst 等</small></td><td>依服務商計費。可開設多幣別收款帳戶。</td><td><b>高</b>——同幣別收款，<b>轉台幣的時間點自己決定</b></td><td>大多數台灣賣家</td></tr>
+        <tr><td><b>當地銀行帳戶</b></td><td>用 GBP／EUR 直接收款，費率依銀行。</td><td>—</td><td>已在歐洲設有帳戶的賣家</td></tr>
+        <tr><td><b>亞馬遜全球收款（ACCS）</b></td><td>以新台幣接收全球付款。費率約 1.5% + 海外跨行轉帳手續費。</td><td><b>低</b>——銀行打款當下決定匯率，無法自選時點</td><td>想直接用台幣收款、不想管匯率的賣家</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note warn">
+      <b>⚠️ 歐洲特有的兩個小坑：</b>
+      <ul>
+        <li><b>存款方式要「逐站點指派」。</b>只新增帳戶但沒指派給各站點，該站點的款項不會撥出。設定後請逐一確認每個歐洲站點都指派到了。</li>
+        <li><b>收不到驗證簡訊很常見</b>（跨國簡訊經多個電信單位轉送）。請改用 Google Authenticator，並在後台【登入設置】處調整驗證方式。</li>
+      </ul>
+    </div>
+    <p class="small">💡 需要第三方金流服務商名單，可向客戶經理索取<b>歐洲第三方服務商清單</b>（含金流、稅代、物流、檢驗、翻譯、商標等分類）。</p>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="2">
+  <span class="sb-t">🔵 階段二：上架期</span>
+  <span class="sb-d">07–09　品牌、上架與翻譯、物流　—　<b>官方翻譯全部免費，別自己花錢翻</b></span>
+</div>
+
+<!-- ==================== 07 ==================== -->
+<article class="chapter" id="sec07" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">07</div>
+    <div class="ch-t">
+      <h2>品牌註冊與品牌授權 ™️</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">既有賣家可走捷徑</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>如果你已在美／日／澳站完成品牌備案，可以用<b>「授權品牌身分」</b>讓歐洲站立刻擁有品牌主身分、提早使用品牌工具（旗艦店、A+、品牌推廣廣告、品牌分析），<b>不必等歐洲商標下來</b>。但長期仍應註冊歐洲商標，才有完整的品牌保護。</div>
+
+    <div class="checklist" data-cl="07">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>（既有賣家）已從其他站點完成品牌身分授權到歐洲站</span></label>
+      <label><input type="checkbox"><span>（新賣家）已申請商標並取得申請回執</span></label>
+      <label><input type="checkbox"><span>已完成亞馬遜品牌註冊</span></label>
+      <label><input type="checkbox"><span>已確認角色為 Brand Representative（品牌擁有者）+ Administrator</span></label>
+      <label><input type="checkbox"><span>已在首個 ASIN 上線後 6 個月內完成品牌註冊（禮包資格）</span></label>
+    </div>
+
+    <h3>🔄 路徑 A：品牌授權（既有賣家，最快）</h3>
+    <p>從已完成品牌註冊的站點（美／日／澳等）授權到歐洲站。要拿到完整的品牌權益與優惠，需完成兩層角色授權：</p>
+    <ol>
+      <li><b>銷售帳戶（Selling account）：</b>Brand Representative（品牌擁有者）</li>
+      <li><b>使用者權益（User permission）：</b>Administrator（管理員）＋ Brand Owner</li>
+    </ol>
+    <div class="note info">品牌後台 →【管理】→【管理銷售帳戶】→【連結您的帳戶】→ 選擇「連結銷售夥伴帳戶」→ 選擇「品牌代表」→ 依序填寫並送出。詳細 SOP 可向客戶經理索取。</div>
+
+    <h3>🆕 路徑 B：從商標開始（新賣家）</h3>
+    <ol>
+      <li><b>申請商標。</b>歐洲有兩個選擇：<b>EUIPO</b>（歐盟商標，一案涵蓋全部歐盟成員國）或各國商標局；<b>英國須另外向 UKIPO 申請</b>（脫歐後 EUIPO 不再涵蓋英國）。</li>
+      <li>提交申請後約 2–3 週可取得申請回執，<b>有回執就可以先做亞馬遜品牌註冊</b>（Pending TM）。</li>
+      <li>準備品牌註冊資料：
+        <ul>
+          <li>商標申請回執或商標證書（PDF）</li>
+          <li>實拍產品圖或包裝圖，須清楚呈現品牌名／logo（含 1 張有手入鏡、1 張無手）</li>
+          <li><b>⚠️ LOGO 必須以不可輕易移除的方式呈現</b>（印刷、雷射、雕刻）；<b>不接受貼紙</b></li>
+          <li>黑白高清 logo 圖檔或文字圖片</li>
+          <li>英文廠商與品牌合約書（製造商／工廠方與品牌方的合約證明）</li>
+          <li>英文 Invoice（品牌方向工廠方採購的發票）</li>
+        </ul>
+      </li>
+      <li>在品牌後台完成註冊，並依指示回覆驗證碼。</li>
+    </ol>
+    <div class="note ok"><b>💡 品牌註冊解鎖什麼？</b>A+ 內容、Premium A+、品牌旗艦店、品牌推廣廣告、品牌分析報告、Project Zero／Transparency 等品牌保護工具，以及<b>新賣家禮包的佣金抵扣資格</b>。這是歐洲站投報率最高的前期投入之一。</div>
+  </div>
+</article>
+
+<!-- ==================== 08 ==================== -->
+<article class="chapter" id="sec08" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">08</div>
+    <div class="ch-t">
+      <h2>上架與免費翻譯 🌍</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">官方翻譯全部免費</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>五個核心站就有五種語言（英、德、法、義、西），但<b>語言不該是你的障礙</b>——官方提供三種<b>免費</b>翻譯上架工具（LOSG／BIL／GSO）。選哪一種，取決於你的北美與歐洲帳號是否為同一個。</div>
+
+    <div class="checklist" data-cl="08">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已確認商品條碼方案（GS1 或申請 GTIN 豁免）</span></label>
+      <label><input type="checkbox"><span>已準備圖片與文案素材</span></label>
+      <label><input type="checkbox"><span>已透過 LOSG／BIL／GSO 完成各語系翻譯上架</span></label>
+      <label><input type="checkbox"><span>售價已含當地 VAT</span></label>
+      <label><input type="checkbox"><span>已在 Listing 上揭露歐盟責任人資訊（GPSR）</span></label>
+      <label><input type="checkbox"><span>已建立 A+ 頁面（需先完成品牌註冊）</span></label>
+    </div>
+
+    <h3>三種免費翻譯工具，怎麼選</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">工具</th><th>適用情況</th><th>怎麼用</th></tr></thead>
+      <tbody>
+        <tr><td><b>LOSG</b><br><small>一鍵 Listing 通全球</small></td><td>所有站點<b>整合在同一個亞馬遜帳戶</b>內（最常見）</td><td>到北美站編輯要拓展的 Listing →【報價】往下滑 → 會看到尚未開啟的歐洲站點 → 開啟並填入目標站點售價（<b>記得含當地 VAT</b>）即可同步。</td></tr>
+        <tr><td><b>BIL</b><br><small>Building International Listing</small></td><td>北美站與歐洲站<b>分屬不同帳號</b></td><td>在北美有 Listing、或用相同 UPC／EAN 在英國站上架好之後，啟動 BIL 即可自動翻譯上架到其他歐洲站點（德、法、義、西），並自動同步價格。</td></tr>
+        <tr><td><b>GSO</b><br><small>官方 Listing 翻譯上傳服務</small></td><td>需要<b>人工翻譯</b>品質時</td><td>填寫申請表後，人工翻譯團隊會來信索取上架內容，約 <b>7 個工作日</b>完成翻譯與上傳。<b>同樣免費。</b>申請方式請向客戶經理索取。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">⚠️ <b>用 LOSG／BIL 同步價格時，務必確認售價已含目標國 VAT。</b>歐洲前台顯示的是含稅價，直接搬美國未稅價過去等於自己吸收 19–22% 的稅。</div>
+
+    <h3>上架前的基本準備</h3>
+    <ul>
+      <li><b>商品條碼：</b>使用 GS1 國際條碼，或申請 <b>GTIN 豁免</b>（免條碼上架，由亞馬遜生成）。</li>
+      <li><b>Listing 八大要素：</b>分類節點、搜尋關鍵詞、圖片、標題、商品要點、商品描述、A+／Premium A+、品牌名稱。</li>
+      <li><b>合規欄位：</b>歐洲站有安全與合規（Safety &amp; Compliance）頁籤，需填寫歐盟責任人、警語、年齡標示等，缺填會影響可售狀態。</li>
+    </ul>
+    <details class="acc"><summary>只想針對特定歐洲站點換圖片，不影響其他站點？</summary><div class="acc-body">
+      <p>用後台的<b>「針對特定國家／地區的圖片上傳」</b>功能。這在歐洲很常用——例如需要在圖片上加當地語言的說明、或某國有特殊的包裝標示要求時。</p>
+    </div></details>
+    <details class="acc"><summary>跨站點同步後圖片顯示錯誤怎麼排查？</summary><div class="acc-body">
+      <ol>
+        <li>確認主圖為<b>純白背景（RGB 255, 255, 255）</b>，最長邊<b>介於 500 與 10,000 像素之間</b>（建議 1,000 像素以上，才能啟用縮放），且不含 logo 浮水印或任何文字。部分品類另有特殊規則，請查該品類的圖片要求。</li>
+        <li>確認圖片已完成處理（同步通常需 1–2 天）。</li>
+        <li>若同步始終不成功，改用「在目標站點直接輸入 ASIN 建立 Listing」或 Excel 批量上傳的方式。</li>
+        <li>以上都做過仍失敗，把 ASIN 與截圖給客戶經理，可協助開內部申訴請團隊調查。</li>
+      </ol>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 09 ==================== -->
+<article class="chapter" id="sec09" data-stage="2" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">09</div>
+    <div class="ch-t">
+      <h2>物流：EFN／Pan-EU 抉擇 🚚</h2>
+      <div class="badges"><span class="badge">所有賣家</span><span class="badge eu">歐洲最重要的一個決策</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>歐洲物流的核心決策只有一個問題——<b>你要在幾個國家擺庫存？</b>擺一國走 EFN（一國入倉、多國銷售，配送費較高、時效較長）；擺兩國以上可開 Pan-EU（享<b>當地配送費率</b>、時效最快隔天，但每個庫存國都要有 VAT 稅號，且後台列為必要的站點都要有在售 FBA offer）。</div>
+
+    <div class="checklist" data-cl="09">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已決定物流方案（EFN／Pan-EU／MCI）</span></label>
+      <label><input type="checkbox"><span>已媒合頭程物流服務商並確認清關方式</span></label>
+      <label><input type="checkbox"><span>已備好清關所需的合規文件</span></label>
+      <label><input type="checkbox"><span>（含電池／噴霧／易燃品）已通過危險品審核，並備好 SDS 或豁免聲明、UN38.3 報告</span></label>
+      <label><input type="checkbox"><span>（走自發貨 FBM）已安排當地語言客服與退貨路徑</span></label>
+      <label><input type="checkbox"><span>已完成包裝與貼標（FNSKU）</span></label>
+      <label><input type="checkbox"><span>已在後台建立貨件並完成頭程發運</span></label>
+      <label><input type="checkbox"><span>（英國+歐盟都賣）已理解兩地是獨立庫存池，需分別入倉</span></label>
+      <label><input type="checkbox"><span>已為所有子 SKU 填妥 <b>COO 原產國</b>（每個站點各填一次）</span></label>
+      <label><input type="checkbox"><span>（從歐盟境外發法國，或開 Pan-EU 發任何歐盟倉）已在首次到倉 60 天內提交 <b>MRN 與 EORI</b></span></label>
+      <label><input type="checkbox"><span>（發英國）已在首次到倉 60 天內提交 <b>IEN</b>（只有英國境內採購或 DDP 進口可改選原因選項）</span></label>
+    </div>
+
+    <!-- ===== TOOL: logistics decision ===== -->
+    <div class="tool" id="tool-logistics">
+      <h3>🛠 物流方案決策器</h3>
+      <div class="lead">回答三題，得到建議方案與「該辦哪幾國稅號」。<b>結果為方向性建議，實際請與客戶經理及稅代確認。</b></div>
+      <div class="q">
+        <div class="qt">1. 你現在的階段？</div>
+        <div class="opts" data-lg="stage">
+          <button class="opt" data-v="test">還在驗證需求，想先開賣</button>
+          <button class="opt" data-v="grow">已有穩定訂單，要降成本／提時效</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="qt">2. 你目前有幾個歐盟國家的 VAT 稅號？</div>
+        <div class="opts" data-lg="vat">
+          <button class="opt" data-v="0">還沒有</button>
+          <button class="opt" data-v="1">1 個</button>
+          <button class="opt" data-v="2+">2 個以上</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="qt">3. 你的主力市場？</div>
+        <div class="opts" data-lg="mkt">
+          <button class="opt" data-v="uk">主要英國</button>
+          <button class="opt" data-v="de">主要德國／中歐</button>
+          <button class="opt" data-v="south">主要南歐（IT／ES）</button>
+          <button class="opt" data-v="wide">想五站全鋪開</button>
+        </div>
+      </div>
+      <div class="result" id="lg-out"></div>
+    </div>
+
+    <h3>三種方案怎麼比</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">方案</th><th>怎麼運作</th><th>稅號要求</th><th>配送費／時效</th></tr></thead>
+      <tbody>
+        <tr><td><b>EFN</b><br><small>歐洲配送網路<br>「一國入倉，多國銷售」</small></td>
+          <td>在一國 FBA 擺庫存，亞馬遜用該倉<b>跨境</b>配送其他歐盟站點的訂單。頭程只需送一國。</td>
+          <td><b>只需庫存所在國 1 個</b></td>
+          <td>收<b>跨境配送費</b>（較高）、時效較長，但訂單仍具 Prime 資格</td></tr>
+        <tr><td><b>Pan-EU</b><br><small>泛歐洲計畫</small></td>
+          <td>把有稅號的國家視為「點」，兩點連成「線」。你只需把貨送到其中一國 FBA，亞馬遜用<b>虛擬庫存調撥</b>在多國倉之間最佳化配置。</td>
+          <td>① 在<b>至少 2 個可配置庫存國</b>（DE／FR／IT／ES／PL）啟用庫存配置，且當地 VAT 稅號可在 VIES 查到<br>② 後台 Pan-EU 庫存頁列為必要的站點都有<b>在售 FBA offer</b>（2026/9/3 起含荷蘭；2027/2/26 起另含比利時）</td>
+          <td>線上國家收<b>當地配送費</b>（明顯較低）、最快<b>隔天或 2 天內</b>到</td></tr>
+        <tr><td><b>MCI</b><br><small>多國庫存</small></td>
+          <td>你自己決定把庫存分別送到哪幾國，亞馬遜<b>不做</b>自動調撥。</td>
+          <td>每個入倉國各 1 個</td>
+          <td>當地配送費，庫存控制權在你手上</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note ok">
+      <b>Pan-EU 的實際運作（舉例）：</b>你已有法、德、西三國稅號，並在這三國啟用庫存配置、補齊必要站點的在售 offer → 三點連成線。你只需專注把頭程送到<b>德國</b>；貨到德國 FBA 後，亞馬遜依演算法計算 A 商品在法國、西班牙各有多少需求，透過<b>虛擬庫存調撥</b>把庫存配置過去。
+      德國訂單收德國本地配送費、法國訂單收法國本地配送費，依此類推。
+      <br><br>
+      那義大利的訂單呢？因為你沒有義大利稅號，這些訂單會<b>退回 EFN 模式</b>——照樣出得去，但收跨境配送費、時效較長。
+      <br><small>📌 庫存實際會被配置、移動到哪些國家，以後台 Pan-EU 庫存頁顯示為準。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G201855460" target="_blank" rel="noopener">官方說明</a></small>
+    </div>
+
+    <div class="note danger">
+      <b>🔴 英國與歐盟是兩個獨立的庫存池。</b>脫歐後 UK FBA 與 EU FBA 之間<b>不能自動調撥庫存</b>。若你要同時經營英國與歐盟：
+      <ul>
+        <li>方案一：<b>分別入倉</b>（英國一批、歐盟一批），兩邊各自跑一套頭程與清關</li>
+        <li>方案二：用<b>遠程配送</b>（Remote Fulfilment）從一邊服務另一邊，省下第二套頭程但配送費較高。<br><small>適用條件：單件售價上限歐盟站 <b>€150</b>、英國站 <b>£135</b>。2026/7/1 起，從歐盟境外直寄歐盟消費者、貨件價值 €150 以下的訂單（FBA、FBM 都算），報關單上每個品項／稅則列加收 <b>€3 關稅</b>——從英國庫存遠程配送到歐盟站的訂單也在內，亞馬遜會把這筆關稅加在買家看到的售價上。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJWD8NWLKSZ5N3JR" target="_blank" rel="noopener">遠程配送</a>／<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">€3 關稅說明</a></small></li>
+      </ul>
+      別把美國站「一個庫存池吃全國」的直覺帶到歐洲，這是跨站點賣家最常算錯的成本。
+    </div>
+
+    <h3>頭程物流與入倉</h3>
+    <ol>
+      <li><b>合規文件先備好</b>——清關會查（見 <a href="#sec05">05</a>）。文件不齊在海關卡住，比在後台被退件更貴。</li>
+      <li><b>媒合頭程物流服務商</b>：協助評估運輸方式、材積計費、進出口清關與稅費。可向客戶經理索取歐洲第三方服務商清單。</li>
+      <li><b>包裝與貼標</b>：務必遵守 FBA 包裝規範與標籤要求，違規會被拒收或加收費用。</li>
+      <li><b>後台建立貨件</b>：照<a href="https://eu-seller-101.netlify.app/fba" target="_blank" rel="noopener noreferrer">《建立 FBA 貨件》圖文教學</a>一步步做：選商品、裝箱、確認運送、印箱標、填每箱追蹤號，取得倉庫地址並填好交貨時段。</li>
+    </ol>
+    <div class="note warn">
+      <b>⚠️ 清關方式要和服務商講清楚。</b>頭程進口的稅費由誰承擔（DDP／DDU）、EORI 用誰的、進口 VAT 如何處理與抵扣，這些會直接影響你的到岸成本與現金流。這不是「交給貨代就好」的環節，你要看得懂報價包含什麼。
+    </div>
+
+    <details class="acc"><summary>🔋 危險品審核 — 含電池商品在「建貨件之前」就會被卡</summary><div class="acc-body">
+      <p>這是含電池賣家最常在時程上失算的一關：<b>它不在合規章節、也不在申報義務裡，而是在你要建 FBA 貨件的時候擋你</b>。商品被判定為危險品（Dangerous Goods／Hazmat）時，必須先通過危險品審核才能入倉。</p>
+      <div class="note">
+        <b>哪些商品會被判為危險品（比多數人以為的廣）：</b>
+        <ul>
+          <li><b>含鋰電池</b>的一切商品（含內建電池的電子產品、藍牙裝置、電動工具、含電池的玩具）</li>
+          <li>噴霧與加壓容器、易燃液體（含酒精成分的清潔劑、香水）、易燃固體</li>
+          <li>強磁性商品、腐蝕性或刺激性化學品、部分保養與美妝品</li>
+        </ul>
+      </div>
+      <ul>
+        <li><b>你要交的文件是這兩種之一：</b>安全資料表（<b>SDS／MSDS</b>），或<b>豁免聲明（Exemption Sheet）</b>——商品不含危險成分時用這份聲明。文件要與 ASIN／SKU 對得上，且內容要看得出電池的化學類型、瓦時數（Wh）、數量與包裝方式。</li>
+        <li><b>頭程（尤其空運）另外一套要求：</b>鋰電池需要 <b>UN38.3 測試報告</b>與 MSDS，並依 IATA 鋰電池包裝規範分類（<b>PI 965–970</b>：單獨電池／與設備同包裝／裝於設備內）。<b>單獨出貨的鋰離子電池（UN3480／PI 965）不得走客機、只能走貨機，且電量須維持在 30% 以下</b>——這會直接改變你的運費與可用航線。</li>
+        <li><b>實務順序：</b>① 先向供應商索取 UN38.3 + MSDS（工廠端多半已有，這是「待確認」不是「待支出」）→ ② 後台送危險品審核 → ③ 審核通過才建貨件、才排頭程。<b>改了電池容量、改了包裝或換工廠，要重新送審。</b></li>
+        <li>⚠️ <b>沒送審或審核未通過的後果：</b>建不了貨件；已入倉的可能被封存或要求移除，海外倉端處理成本很高。<b>旺季前才發現，等於整批備貨延誤。</b></li>
+      </ul>
+      <p class="small">危險品的判定範圍、所需文件與審核時效請以<b>賣家後台的危險品識別／審核頁面</b>與各站點 FBA 危險品政策為準；空運規則以當年度 IATA 危險品規則與貨代確認為準。</p>
+    </div></details>
+
+    <h3>📌 三項「文件沒交就出不了貨」的申報義務</h3>
+    <p class="small">這三項都不是產品認證，而是<b>進口與跨境的資料申報</b>。它們的共同特徵是：不做不會馬上被罰錢，但會<b>安靜地把你的銷售管道關掉</b>——所以很多賣家是「訂單突然沒了」才發現。</p>
+
+    <details class="acc"><summary>① COO 原產國資訊 — 未填會直接切斷跨境訂單（實際要求以後台為準）</summary><div class="acc-body">
+      <div class="note danger">
+        <b>這是「填了才能賣」的硬性欄位，不是文件備查。</b>商品若透過 FBA 尾程物流或自配送跨境送到歐盟／英國買家，必須在 Seller Central 提供原產國。
+        <b>未填的既有商品會被限制跨境銷售</b>（「歐盟境外→境內」、「英國境外→境內」皆禁），新品則是選不到 COO 就<b>建不了 listing</b>。
+      </div>
+      <p><b>🔍 先自查你在不在範圍內：</b>只要註冊了<b>「亞馬遜全球計畫」、「FBA 出口」、「FBA 遠端配送」任一項</b>就適用。路徑分別在【設定 &gt; 亞馬遜物流】（前兩者）與【庫存 &gt; 亞馬遜物流遠端配送 &gt; 商城註冊】。</p>
+      <p><b>怎麼補：</b>用<b>分類商品報告（Categorized Listings Report）</b>找出還沒填 COO 的 SKU。路徑：賣家平台 &gt; 報告 &gt; 庫存報告 &gt; 分類商品報告。<small>（若選單沒有此報告，需開 case 請賣家支援開通權限。）</small></p>
+      <div class="note warn">
+        <b>⚠️ 六個最常踩的地方：</b>
+        <ul>
+          <li><b>是 SKU 層級，不是 ASIN 層級</b>——這點最常搞錯。</li>
+          <li><b>父 SKU 不用填，但所有子 SKU 都要填。</b></li>
+          <li><b>分類商品報告是「分站點」的</b>：賣 5 個歐洲站就要各下載、各填、各上傳 5 次，<b>不能一份通用</b>。</li>
+          <li><b>不能填「歐盟」</b>，必須填具體成員國（德國、法國等）。</li>
+          <li><b>一個 SKU 只能填一個原產國</b>；真的多原產國要拆 SKU。</li>
+          <li><b>二手商品同樣要填</b>；暫時無庫存的 inactive SKU 若未來還要賣也要填。</li>
+        </ul>
+      </div>
+      <ul>
+        <li>✅ <b>不需要上傳原產地證書</b>——亞馬遜只要下拉選單的值，不收文件（但海關端是否另需證書要另外確認）。</li>
+        <li>💡 <b>多原產國怎麼判？</b>以最後發生「實質性轉變」的國家為準。不確定就問供應商，其次問報關行。</li>
+        <li>💡 批量上傳時 listing action 選 <b>Edit (Partial Update)</b>。官方做法是<b>只保留前 5 欄</b>（Status、Title、SKU、Product Type、Listing Action）<b>與 COO 欄</b>，其他儲存格的資料清空，以免誤改數量與價格；不要刪欄或改模板結構，否則會上傳失敗。</li>
+        <li>📌 各站點欄位名稱不同：DE <span class="mono">Ursprungsland</span>／FR <span class="mono">Pays d'origine</span>／IT <span class="mono">Paese di origine</span>／ES <span class="mono">Pais de origen</span>／UK <span class="mono">Country of Origin</span>。</li>
+        <li>📌 全部補完後，賣家平台首頁的合規提醒約 <b>10 天內</b>自動消失（不會即時消，別以為沒生效）。</li>
+      </ul>
+      <div class="note ok"><b>🔍 排查用途：如果賣家反映「listing 還在，但跨境訂單突然沒了」，這條應列為優先檢查點。</b></div>
+      <p class="small">⚠️ 亞馬遜官方 COO 說明頁未載明生效日期；你的帳號是否已受限制，以 Seller Central 實際提示為準。適用範圍、後果與操作細節出自<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GASP7CFPVS9UCWKR" target="_blank" rel="noopener">官方說明頁</a>。</p>
+    </div></details>
+
+    <details class="acc"><summary>② 🇪🇺 歐盟進口資料（MRN／EORI）— 發法國，或開了 Pan-EU 發任何歐盟倉都要交</summary><div class="acc-body">
+      <p>亞馬遜須為非歐盟賣家保存進口記錄，因此符合條件的賣家要在後台提供每批貨件的 <b>MRN（報關單號）與 EORI</b>。現行規則名稱是「Import details collection for FBA inbounds to EU」。</p>
+      <p><b>兩個條件都符合就適用：</b>(1) 賣家未在歐盟設立（台灣賣家屬此類）　(2) 從<b>歐盟境外</b>發貨到<b>法國</b>運營中心，或已啟用 <b>Pan-EU</b>、發貨到<b>任何歐盟國家</b>的運營中心。<br>判定看的是貨物<b>從哪裡發出</b>，不是商品原產地。開了 Pan-EU 的賣家，所有歐盟運營中心收到的貨件都要提供；沒開 Pan-EU 的，只有法國運營中心收到的貨件要提供。</p>
+      <div class="note warn">
+        <b>📅 期限與後果：</b>貨件<b>首次到倉後 60 天內</b>要提供 MRN 與 EORI。逾期仍有貨件缺資料，<b>就無法建立新的歐盟貨件</b>；已在歐盟的庫存照常銷售、在途貨件照常收貨。補齊後限制解除。
+      </div>
+      <p><b>申報路徑：</b>Seller Central →「<b>Manage shipments</b>」頁，每個適用貨件旁會顯示進口資料狀態（<b>Complete／Incomplete</b>）。點狀態開啟側邊欄，填入 MRN 與 EORI 後儲存。</p>
+      <ul>
+        <li><b>EORI</b>：可以填你自己的，也可以填代你報關的<b>報關行的 EORI</b>。</li>
+        <li><b>沒有 MRN 時</b>，在「Do you have import records?」選適用的選項：<br>·「No – I purchased the goods domestically in the EU」：貨是在歐盟境內採購的（要保留正式採購發票，不能用形式發票）<br>·「No – My broker did not provide MRN/EORI upon request」：報關行沒提供。這是<b>暫時措施</b>，亞馬遜會定期審查使用情況，之後的貨件仍要向報關行取得 MRN。</li>
+        <li>使用亞馬遜的報關服務時，MRN 可能透過承運商系統自動收集；但進口合規的責任仍在你。</li>
+      </ul>
+      <p><b>MRN 是什麼：</b>18 碼英數混合的報關單號（申報年份 2 碼＋申報國代碼 2 碼＋14 碼，例 <span class="mono">24FR12345678654345</span>），由歐盟海關在報關時產生，也就是貨物<b>最初進口國</b>的報關單號。一個貨件有多份報關單時，<b>每組 MRN 換一行</b>填入。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GSZF2Z6ZM2WDWSYT" target="_blank" rel="noopener">官方說明</a></p>
+      <div class="note ok"><b>💡 賣家無法自行產生 MRN，必須向貨代／清關行索取。建貨件時就先跟貨代講「清關後要 MRN」，不要等系統跳提醒才回頭找</b>——事後補要往往拖很久。</div>
+    </div></details>
+
+    <details class="acc"><summary>③ 🇬🇧 英國 IEN 進口條目編號 — 逾期會無法建立新貨件</summary><div class="acc-body">
+      <p>英國 FHDDS（Fulfilment House Due Diligence Scheme）制度要求：未在英國設立的賣家，把<b>從英國境外進口</b>的貨物送到英國 FC，須在<b>貨件首次到倉後 60 天內</b>於 Seller Central 提交 <b>IEN（Import Entry Number）</b>。</p>
+      <div class="note warn">
+        <b>逾期仍缺有效 IEN、且未提交適用的免填理由時：無法建立新的英國 FBA 入庫貨件</b>（既有庫存仍可正常銷售）。
+        <b>若正逢旺季補貨期，會直接打斷你的備貨節奏。</b>
+      </div>
+      <ul>
+        <li>📌 <b>只有兩種情況可以不填 IEN、改選原因選項</b>（在貨件的 Import details 頁）：①「No–I purchased the goods domestically in the UK」——貨是在英國境內採購的，要保留正式發票（不能用形式發票）；②「No–My goods were imported under Delivered Duty Paid (DDP) Incoterm」——以 DDP 條件進口，另要保留證明 DDP 的文件。亞馬遜會把這些選擇提供給海關查核，並可能隨時要求你出示記錄。<b>其他情況都要補 IEN。</b></li>
+        <li>IEN 由英國海關在報關時產生，發給報關人，需向<b>貨代或報關行索取</b>；對方不提供時，可向 HMRC 申請報關資料。</li>
+        <li>💡 使用<b>亞馬遜的報關服務</b>送英國倉時，IEN 會自動收集，不必自己填。</li>
+        <li>💡 <b>與歐盟 MRN 是兩套獨立制度</b>：發英國要 IEN、發歐盟（法國，或開 Pan-EU 發任何歐盟倉）要 MRN／EORI，兩邊都要各自提交。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G97ZA85WXA334DR2" target="_blank" rel="noopener">官方說明</a></li>
+        <li>📌 亞馬遜依規定保存記錄 <b>6 年</b>，可回溯查詢兩年前的貨件。</li>
+      </ul>
+    </div></details>
+    <p class="small">📌 以上三項的細部規則與畫面，以 Seller Central 實際顯示內容為準。</p>
+
+    <h3>📮 走自發貨（FBM）的話，歐洲有三件事會變成你自己的工作</h3>
+    <p class="small">很多賣家用美／日站的經驗評估 FBM，低估的不是配送成本，而是這三項「必須用當地語言、必須在當地落地」的營運義務。</p>
+    <div class="tw"><table>
+      <thead><tr><th style="width:150px">項目</th><th>你要自己做到什麼</th></tr></thead>
+      <tbody>
+        <tr><td><b>🗣 當地語言客服</b></td><td>買家用德文／法文／義文／西文來訊，就要用<b>同一語言</b>回覆，且回覆時效有要求（實務以 <b>24 小時內</b>為基準）。<b>不能只用英文應付歐陸四站</b>——這是 FBM 最常被低估的固定人力成本，用機器翻譯也要有人看得懂對方在客訴什麼。</td></tr>
+        <tr><td><b>📦 退貨路徑</b></td><td>歐洲買家預期「本地退貨」。三條路各有成本：① 當地退貨地址（自有據點或海外倉／退貨服務商）② 提供<b>預付國際退貨標籤</b> ③ 不要求退回、直接退款（低單價商品常這樣算更划算）。<b>沒有一條是「請買家自費寄回台灣」</b>，那在歐洲實務上等於放棄這筆訂單的評價與帳號健康。</td></tr>
+        <tr><td><b>⚖️ 法定 14 天無理由退貨</b></td><td>歐盟法律給買家的權利，不是平台政策；FBM 要自己履行（條文細節與退款時限見 <a href="#sec12">12</a>）。</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">📌 客服語言與回覆時效的具體條款以<b>各站點賣家後台的服務政策</b>為準；FBA 賣家的客服與退貨由亞馬遜依政策處理，但退貨造成的成本仍然是你的。</p>
+
+    <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
+      <ul>
+        <li><b>包裝與貼標的硬性限制</b>（違規會被拒收或加收費用）：標準件箱子任一邊不可超過規定上限、每箱重量與單件重量各有上限、超重箱需貼「重型包裹」標籤。<b>實際數值請以各站點的 FBA 包裝規範為準</b>，英國與歐盟的規範可能不同。</li>
+        <li><b>庫存績效指數（IPI）</b>會影響你的倉容配額。開賣初期不會有分數，但量起來後要開始顧——斷貨與滯銷都會扣分。</li>
+        <li><b>可維持銷售周數（WOC）</b>是判斷補貨時機的核心指標，比「還剩幾件」有用。</li>
+        <li><b>不用 FBA 也可以（FBM 自發貨）</b>，但要自己承擔配送時效、退貨處理與 Prime 資格的損失；歐洲的退貨率較高，自發貨的隱性成本容易被低估。</li>
+        <li><b>可向我索取：</b>亞馬遜物流歐洲費用價目表（中文）、第三方服務商清單（含頭程物流與海外倉、可協助評估清關與進出口合規）。</li>
+      </ul>
+    </div></details>
+    <div class="links">
+      <a href="https://sellercentral-europe.amazon.com/hz/fba/profitabilitycalculator/index" target="_blank" rel="noopener">🧮 Revenue Calculator：比較 FBA vs 自發貨</a>
+    </div>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="3">
+  <span class="sb-t">🟡 階段三：成長期</span>
+  <span class="sb-d">10–13　廣告、促銷、持續成長、企業購　—　<b>各站要分開優化，一組關鍵詞打不了全歐</b></span>
+</div>
+
+<!-- ==================== 10 ==================== -->
+<article class="chapter" id="sec10" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">10</div>
+    <div class="ch-t">
+      <h2>廣告 📣</h2>
+      <div class="badges"><span class="badge">新賣家重點</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>先用新賣家禮包的廣告折扣券開 <b>Sponsored Products</b>，再逐步優化並啟用其他廣告型態。歐洲要注意的是<b>各站點要分開投放與優化</b>——關鍵詞是當地語言，德國的高效詞不會等於法國的高效詞。</div>
+
+    <div class="checklist" data-cl="10">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已在首個 ASIN 上線後 90 天內建立第一個廣告活動（禮包資格）</span></label>
+      <label><input type="checkbox"><span>已啟動 Sponsored Products</span></label>
+      <label><input type="checkbox"><span>已設定每日預算上限</span></label>
+      <label><input type="checkbox"><span>已按站點分別檢視關鍵詞與 ACOS</span></label>
+      <label><input type="checkbox"><span>已規劃廣告折扣券的使用（發放後 30 天內不用會過期）</span></label>
+    </div>
+
+    <h3>階段一：啟動第一支廣告</h3>
+    <p>新賣家從 Sponsored Products 商品推廣開始，用階梯式廣告折扣券把前期試錯成本壓低（見 <a href="#sec01">01</a>）。</p>
+    <h3>階段二：系統性學習</h3>
+    <p>投放一段時間、累積數據後，再深入了解廣告邏輯：關鍵詞結構（自動／手動、廣泛／詞組／精準）、否定關鍵詞、報表判讀。</p>
+    <h3>階段三：進階優化</h3>
+    <ul>
+      <li><b>ACOS 優化</b>：先看是流量不足還是轉化不足，再決定調價還是改 Listing。ACOS 高不一定是廣告問題。</li>
+      <li><b>分站點優化</b>：歐洲各站的競爭強度、CPC 水位、消費者搜尋習慣差異大。<b>不要用一組關鍵詞打全歐。</b></li>
+      <li><b>搭配檔期</b>：把預算集中在官方大促期間（見 <a href="#sec11">11</a>），此時站外導流帶來的人流明顯高於平時。</li>
+    </ul>
+    <div class="links">
+      <a href="https://advertising.amazon.com/" target="_blank" rel="noopener">🔗 亞馬遜廣告官方頁</a>
+      <a href="https://gs.amazon.com.tw/learn" target="_blank" rel="noopener">🔗 賣家大學廣告課程</a>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 11 ==================== -->
+<article class="chapter" id="sec11" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">11</div>
+    <div class="ch-t">
+      <h2>促銷與歐洲檔期 🎯</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>新賣家先開 <b>Coupon</b>（門檻低、彈性大），排名穩定後再提報站內大促。歐洲的 Q4 集中度比日本更高——<b>Black Friday 到 Cyber Monday 這一週是全年最大量</b>，備貨與入倉截止日要往前推。</div>
+
+    <div class="checklist" data-cl="11">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已設定 Coupon（可用禮包的 Coupon 費用優惠）</span></label>
+      <label><input type="checkbox"><span>已訂閱／留意官方促銷活動通知與提報截止日</span></label>
+      <label><input type="checkbox"><span>已按檔期規劃備貨與入倉時程（一級大促提前 3 個月）</span></label>
+      <label><input type="checkbox"><span>已確認折扣價符合平台要求（通常需優於過去 30 天最低價）</span></label>
+    </div>
+
+    <h3>入門促銷工具</h3>
+    <ul>
+      <li><b>優惠券（Coupon）</b>：提報門檻低、要求折扣幅度低，可在搜尋結果頁與商品頁獲得額外曝光標示。適合新賣家累積銷量與評論。</li>
+      <li><b>價格折扣（Price Discount）／Deal</b>：Lightning Deal（LD）、Best Deal（BD）等，通常有折扣幅度門檻，且要求折扣價<b>優於過去 30 天最低價</b>。</li>
+      <li><b>Prime 專屬折扣、訂閱省（S&amp;S）</b>：適合耗材與復購型商品。</li>
+    </ul>
+
+    <h3>🗓 歐洲全年檔期節奏</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:100px">時間</th><th>檔期</th><th>等級</th><th>備註</th></tr></thead>
+      <tbody>
+        <tr><td>1 月</td><td>Winter Sale／年後清庫存</td><td>日常主題</td><td>Q4 後的庫存去化窗口</td></tr>
+        <tr><td>2–3 月</td><td>情人節、母親節（英國 3 月）</td><td>日常主題</td><td>⚠️ <b>英國母親節在 3 月，歐陸多在 5 月</b>，不要一起排</td></tr>
+        <tr><td>3–4 月</td><td>Spring Deal Days</td><td>次級大促</td><td>春季換季品類</td></tr>
+        <tr><td>5 月</td><td>母親節（歐陸）</td><td>日常主題</td><td></td></tr>
+        <tr><td><b>6–7 月</b></td><td><b>Prime Day</b></td><td><b>一級大促</b></td><td>年中最大檔，備貨提前 3 個月。2026 年已於 <b>6/23–6/26</b> 舉行</td></tr>
+        <tr><td>8–9 月</td><td>Back to School</td><td>次級大促</td><td>文具、電子、家居、辦公</td></tr>
+        <tr><td><b>10 月</b></td><td><b>Prime Big Deal Days</b></td><td><b>一級大促</b></td><td>Q4 的第一波，也是 BFCM 的暖身</td></tr>
+        <tr><td><b>11 月</b></td><td><b>Black Friday → Cyber Monday</b></td><td><b>全年最大</b></td><td>📌 <b>入倉截止日務必回推</b>，旺季倉容與物流都會擠</td></tr>
+        <tr><td>12 月</td><td>聖誕節檔期</td><td>一級大促</td><td>注意最後可送達日對 Listing 的影響</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note warn">
+      <b>⚠️ 上表為節奏參考，各檔期的<u>確切日期與提報截止日以後台公告與客戶經理通知為準</u></b>（大促日期在公布前屬機密）。<br>
+      <b>備貨原則：</b>一級大促<b>提前 3 個月</b>安排補貨；一般促銷<b>提前 2 個月</b>。Q4 旺季建議再往前多留 3–4 週緩衝。
+    </div>
+    <div class="note info">
+      <b>💡 歐洲檔期的兩個在地化重點：</b>
+      <ul>
+        <li><b>節日不同步。</b>英國母親節在 3 月、歐陸多在 5 月；各國國定假日、折扣季（法國 soldes 有法定期間）都不一樣。用「全歐一套行銷日曆」會錯過在地高峰。</li>
+        <li><b>退貨率。</b>歐洲部分品類（尤其服飾）退貨率高於美／日，做促銷 ROI 時要把退貨成本算進去，不要只看毛銷售額。</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 12 ==================== -->
+<article class="chapter" id="sec12" data-stage="3" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">12</div>
+    <div class="ch-t">
+      <h2>銷售持續成長 📈</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>上架後的<b>黃金 90 天</b>是關鍵期。用 Vine 與請求評論累積初期評論、用廣告數據優化 Listing、用促銷檔期放大聲量，三件事並行。<br>量起來之後有三件事會找上你：<b>帳號健康</b>（歐洲聯合帳戶共用，一站出事會波及其他站）、<b>14 天法定無理由退貨</b>的成本，以及<b>商業責任保險</b>的投保門檻。</div>
+
+    <h3>第 1–30 天：建立基礎</h3>
+    <div class="checklist" data-cl="12a">
+      <div class="ttl">✅ 本階段行動清單</div>
+      <label><input type="checkbox"><span>已註冊 Vine 取得早期評論（注意 90 天資格窗口）</span></label>
+      <label><input type="checkbox"><span>已啟動 Sponsored Products</span></label>
+      <label><input type="checkbox"><span>已設定 Coupon</span></label>
+      <label><input type="checkbox"><span>已確認庫存充足、不會斷貨（斷貨會重置排名動能）</span></label>
+    </div>
+
+    <h3>第 31–60 天：優化調整</h3>
+    <div class="checklist" data-cl="12b">
+      <div class="ttl">✅ 本階段行動清單</div>
+      <label><input type="checkbox"><span>已對有成交的顧客使用「請求評論」</span></label>
+      <label><input type="checkbox"><span>已依廣告與流量數據優化圖片／文案／A+</span></label>
+      <label><input type="checkbox"><span>已優化廣告關鍵字與 ACOS</span></label>
+      <label><input type="checkbox"><span>已檢視各站點表現差異，決定資源集中在哪一站</span></label>
+    </div>
+
+    <h3>第 61–90 天：擴大成長</h3>
+    <div class="checklist" data-cl="12c">
+      <div class="ttl">✅ 本階段行動清單</div>
+      <label><input type="checkbox"><span>已提報站內促銷檔期</span></label>
+      <label><input type="checkbox"><span>已做競品分析（關鍵字、定價、評論、廣告位）</span></label>
+      <label><input type="checkbox"><span>已評估是否加開站點／轉 Pan-EU 降低配送成本</span></label>
+      <label><input type="checkbox"><span>已檢視退貨原因並改善（歐洲退貨率較高）</span></label>
+      <label><input type="checkbox"><span>已開始定期看帳號健康（Account Health）各項指標</span></label>
+    </div>
+
+    <h3>🩺 帳號健康（Account Health）— 量起來之後，這是最容易「無預警」限制你銷售的東西</h3>
+    <p class="small">前 90 天單量小，指標分母也小，<b>一兩筆客訴就可能把比率推過門檻</b>。歐洲買家對配送時效與商品描述落差的容忍度不高，加上退貨率本來就較高，這條在歐洲比美／日更值得早看。</p>
+    <div class="tw"><table>
+      <thead><tr><th style="width:190px">指標</th><th style="width:110px">常見目標值</th><th>意義與常見踩雷點</th></tr></thead>
+      <tbody>
+        <tr><td><b>訂單缺陷率（ODR）</b></td><td><b>&lt; 1%</b></td><td>負評、A-to-z 索賠、信用卡拒付的合計比率。<b>這是最直接會導致銷售權被移除的指標。</b>FBA 訂單的物流問題多數不計入你的 ODR，但商品本身描述不符會計入。</td></tr>
+        <tr><td><b>取消率（出貨前取消）</b></td><td><b>&lt; 2.5%</b></td><td>僅適用<b>自發貨</b>。斷貨後才取消訂單是最常見原因——寧可先關閉 listing，也不要接了單再取消。</td></tr>
+        <tr><td><b>遲發率</b></td><td><b>&lt; 4%</b></td><td>僅適用自發貨。跨國自發貨很容易踩，尤其歐洲各國國定假日不同步、貨代收件日與你以為的不一樣。</td></tr>
+        <tr><td><b>有效追蹤率</b></td><td><b>&gt; 95%</b></td><td>僅適用自發貨。追蹤號要是<b>該站點承認的承運商</b>才算有效，用了對方系統查不到的號碼等於沒填。</td></tr>
+        <tr><td><b>政策違規</b></td><td><b>0</b></td><td>侵權投訴、商品安全與合規（歐洲最常見：缺歐盟責任人、缺 EPR、缺測試報告）、評論操縱。<b>歐洲的下架多從這一欄開始</b>，見 <a href="#sec05">05</a>。</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><b>怎麼看：</b>後台【績效】→【帳號健康】。它會給一個<b>帳號健康評分（AHR）</b>與各項指標，並在接近門檻時提示。<b>指標是「滾動期間」計算的</b>，所以問題會延後反映、也會延後修復——不要等到收到限制信才處理。</li>
+      <li><b>歐洲的特別提醒：</b>帳號健康是<b>整個歐洲聯合帳戶共用</b>的，一個站點出問題可能影響你在其他站點的銷售權限。這與「稅務與合規要各國分開」剛好相反，別搞混。</li>
+      <li>📌 <b>收到績效或政策通知信要當天處理</b>，並保留申訴所需的憑證（供應商發票、測試報告、DoC、物流簽收）。卡住時把通知截圖給客戶經理，我可以協助判讀與內部跟進。</li>
+    </ul>
+    <p class="small">指標名稱、門檻與計算期間可能調整，且部分指標僅適用自發貨——請以<b>後台帳號健康頁當前顯示的目標值</b>為準。</p>
+
+    <h3>🔄 歐洲的退貨：14 天無理由退貨是<u>法律</u>權利，不是平台政策</h3>
+    <p class="small">這是美／日站賣家最容易誤判的一條。你可以調整平台上的退貨政策細節，但<b>撤回權來自歐盟消費者權利指令（2011/83/EU），不能用政策排除</b>。</p>
+    <div class="tw"><table>
+      <thead><tr><th style="width:170px">規則</th><th>內容（條文對應）</th></tr></thead>
+      <tbody>
+        <tr><td><b>14 天無理由撤回</b></td><td>遠距契約的買家有 <b>14 天</b>可以無理由撤回，<b>不需說明原因</b>。期間自<b>買家收到商品之日</b>起算（Art. 9）。</td></tr>
+        <tr><td><b>沒告知就變 12 個月</b></td><td>⚠️ 若你<b>未事先告知買家有撤回權</b>，撤回期會延長到<b>初始期滿後 12 個月</b>（Art. 10）。這是最貴的一個疏漏。</td></tr>
+        <tr><td><b>退款時限與範圍</b></td><td>買家通知撤回後，你要在 <b>14 天內退還全部款項，包含原始的標準運費</b>（買家自選升級配送的差額不必退）。可以<b>等收到退貨、或買家提出寄回證明</b>後才退款（Art. 13）。</td></tr>
+        <tr><td><b>退貨運費誰付</b></td><td>買家須在通知後 14 天內寄回。<b>退貨直接運費由買家負擔——但前提是你事先告知過</b>；沒告知就變成你吸收（Art. 14）。</td></tr>
+        <tr><td><b>拆封使用的折損</b></td><td>買家只需為「超出檢查商品性質與功能所必要」的使用造成的價值減損負責；<b>若你沒告知撤回權，連這個都不能向買家請求</b>（Art. 14(2)）。</td></tr>
+        <tr><td><b>不適用的情況</b></td><td>客製化／個人化商品、易腐商品、<b>因衛生或健康理由密封而已拆封</b>的商品、密封影音或軟體已拆封、與其他物品不可分離混合者等（Art. 16）。<b>賣個人衛生類商品的賣家要特別確認自己是否落在此例外。</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">
+      <b>💰 財務上的三個含意（做定價與促銷 ROI 時要一起算）：</b>
+      <ul>
+        <li>退回品未必能再賣：拆封後轉為二手或報廢，服飾與電子尤其明顯。</li>
+        <li><b>原始出貨運費你要退給買家</b>，等於一筆退貨至少吃掉「去程運費 + 處理成本 + 可能的商品折損」。</li>
+        <li>FBA 賣家不必自己處理流程，但成本仍然計在你身上；FBM 賣家還要加上退貨路徑的建置成本（見 <a href="#sec09">09</a>）。</li>
+      </ul>
+    </div>
+    <p class="small">依據：Directive 2011/83/EU（消費者權利指令）Art. 9、10、13、14、16。各成員國轉換的細節可能略有差異，且平台政策可能提供比法定更寬的條件（例如更長的退貨窗口）——實際以站點退貨政策與您的法律顧問確認為準。</p>
+
+    <h3>📌 賣得好之後才會觸發的一件事：商業責任保險</h3>
+    <div class="note warn">
+      <b>依亞馬遜歐洲服務商業解決方案協議（BSA）<u>第 8 條</u>：任一月份的銷售總收入超過該站門檻（或亞馬遜另行要求）時，須在其後 30 天內投保第三方責任保險（涵蓋產品責任與人身傷害）並持續維持。</b>
+      <br><br>
+      ⚠️ 也就是說，<b>只要有一個月超過門檻就會觸發</b>，旺季單月衝量也算。
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th style="width:200px">站點</th><th>門檻（每月銷售總收入）</th></tr></thead>
+      <tbody>
+        <tr><td>🇩🇪 德國　🇫🇷 法國　🇮🇹 義大利　🇪🇸 西班牙</td><td><b>€5,000</b></td></tr>
+        <tr><td>🇬🇧 英國</td><td><b>£4,000</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="note danger">
+      <b>⚠️ 為什麼這條容易被漏掉：歐洲站目前沒有線上提交保單的固定入口</b>，亞馬遜多在<b>索賠發生或主動要求時</b>才索取憑證。所以後台不一定出現待辦提示，很容易被誤認為「不適用我」。
+      未能及時提供合格憑證，可能導致特定品類銷售受限或帳號權限受影響，直至補件完成。<b>就算沒到門檻，亞馬遜也可在判斷品類風險較高時主動要求。</b>
+    </div>
+    <details class="acc"><summary>投保前要確認的細節（保額、免賠額、保單類型）</summary><div class="acc-body">
+      <ul>
+        <li><b>被保險人名稱必須與亞馬遜帳戶的「法人實體名稱」一致</b>——這是最常見的憑證被退原因。</li>
+        <li><b>保額：</b>UK 最低約 <b>£400,000／每次事故</b>（產品責任與公共責任各自）；歐盟各站依當地要求，投保前向保險商確認對應站點的額度。<br>⚠️ <b>$1M 是美國站的數字</b>，不要直接套到歐洲。</li>
+        <li><b>免賠額（deductible）上限 €10,000／£10,000</b>，且須列在保險憑證上。</li>
+        <li><b>保單類型：</b>商業綜合責任（CGL）、傘式或超額責任，須為<b>「事故發生制」（occurrence basis）</b>。</li>
+        <li><b>保險商資格：</b>須具備全球索賠處理能力，財務評級達 S&amp;P A- 或 AM Best A- 以上（當地同等評級亦可）。</li>
+      </ul>
+      <div class="note ok">
+        <b>🆕 兩項 2025/01/01 起的變更，舊資料多半還是錯的：</b>
+        <ul>
+          <li><b>歐洲版已「取消」必須將 Amazon 列為附加被保險人的要求</b>——別再為此多付費用或改保單。</li>
+          <li>改為：保單<b>取消、變更或不續約時，通知亞馬遜的義務落在賣家身上</b>（不再是保險公司）。</li>
+        </ul>
+      </div>
+      <ul>
+        <li>💡 <b>已在美國站投保者不必然要重買</b>——先查現有保單的承保範圍是否含 EU／UK。</li>
+        <li>⚠️ <b>若保單是 2024/6 之前買的</b>，回頭找保險商確認是否涵蓋歐盟與英國，很可能<b>只保美國站</b>。</li>
+        <li>💡 索賠金額決定處理方式：低於 €1,000／$1,000 的客訴亞馬遜可能自行賠付（仍會要求保險憑證與製造商資訊）；超過則會找賣家共同審視。</li>
+        <li>每個銷售站點各自適用，需確認保單涵蓋你<b>實際銷售的國家</b>。</li>
+      </ul>
+      <p class="small">📌 依據：<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G201190440" target="_blank" rel="noopener">BSA 第 8 條</a>、<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G200386300" target="_blank" rel="noopener">商業責任保險政策</a>。<b>投保前仍請以後台政策頁與亞馬遜通知信為準</b>。</p>
+    </div></details>
+
+    <div class="note info">
+      <b>💡 歐洲成長的兩個特有槓桿：</b>
+      <ul>
+        <li><b>從 EFN 轉 Pan-EU。</b>當某一站的量體穩定後，多辦一國稅號轉入地入倉，配送費從跨境費率降到當地費率——這是不用改產品、不用降價就能改善毛利的動作。試算方式見 <a href="#sec09">09</a>。</li>
+        <li><b>把還沒上架的核心站補齊。</b>如果你目前只賣德國，用 LOSG／BIL 把 listing 同步到法、義、西——<b>不需另辦稅號</b>（EFN 已能覆蓋配送），翻譯官方免費，<b>邊際成本幾乎只有你的時間</b>。這通常是最快的一段增量。</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ==================== 13 ==================== -->
+<article class="chapter" id="sec13" data-stage="3" data-who="exist">
+  <div class="ch-head">
+    <div class="ch-num">13</div>
+    <div class="ch-t">
+      <h2>企業購 B2B（Amazon Business）🏢</h2>
+      <div class="badges"><span class="badge">進階功能</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <div class="keypoint"><b>📌 本章重點：</b>歐洲的企業採購（企業、政府、學校、醫院）在 Amazon Business 上的規模可觀，且採購<b>穩定、可重複、單筆量大</b>。適合辦公用品、工業耗材、五金、清潔、IT 周邊等品類。</div>
+
+    <div class="checklist" data-cl="13">
+      <div class="ttl">✅ 本章行動清單</div>
+      <label><input type="checkbox"><span>已確認我的品類適合企業購</span></label>
+      <label><input type="checkbox"><span>已開通企業購功能</span></label>
+      <label><input type="checkbox"><span>已設定企業專屬價格／數量折扣</span></label>
+      <label><input type="checkbox"><span>已建立開票流程：企業購訂單確認出貨後一個工作天內提供 VAT 發票（免 VAT 者提供收據），退貨確認後一個工作天內提供貸項通知</span></label>
+    </div>
+
+    <div class="tw"><table>
+      <thead><tr><th style="width:100px">面向</th><th>企業購買家</th><th>一般消費者</th></tr></thead>
+      <tbody>
+        <tr><td>買家身分</td><td>企業、政府、學校、醫院</td><td>個人消費者</td></tr>
+        <tr><td>採購量</td><td>較大，常有大宗訂單</td><td>單件或少量</td></tr>
+        <tr><td>價格機制</td><td>可設數量折扣、企業專屬價</td><td>統一定價</td></tr>
+        <tr><td>稅務</td><td><b>確認出貨後一個工作天內須提供 VAT 發票</b>（免 VAT 者提供收據）</td><td>一般收據即可</td></tr>
+        <tr><td>購買頻率</td><td>長期、穩定、可重複</td><td>多為一次性</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="note warn">
+      <b>⚠️ 歐洲 B2B 的關鍵前提是發票，而且這是義務、有期限。</b>歐洲企業買家需要符合當地要求的 VAT 發票才能扣抵進項稅。企業購訂單在<b>確認出貨後一個工作天內</b>，要提供合法有效的 VAT 發票（不需課 VAT 者改提供收據）；企業買家退貨，要在<b>退貨確認後一個工作天內</b>提供貸項通知（credit note）。<b>未遵守可能導致帳戶被處置。</b>
+      實務上可用亞馬遜免費的 VAT Calculation Service（VCS）自動開票，或與稅代確認開票流程——<b>在投入 B2B 前先把這件事解決</b>。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GCX8KQBHYZEVLZ4F" target="_blank" rel="noopener">官方說明</a>
+    </div>
+    <p><b>適合的品類：</b>辦公文具與設備、事務機耗材、工業耗材與五金工具、清潔用品、醫療耗材與實驗室用品、IT 周邊（線材、轉接器等大宗採購品）。</p>
+  </div>
+</article>
+
+<div class="stage-band" data-stage="4">
+  <span class="sb-t">⚪ 階段四：資源與支援</span>
+  <span class="sb-d">14–15　常見問題、資源與官方消息　—　<b>卡住的時候先來這裡</b></span>
+</div>
+
+<!-- ==================== 14 ==================== -->
+<article class="chapter" id="sec14" data-stage="4" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">14</div>
+    <div class="ch-t">
+      <h2>常見問題 ❓</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body faq">
+    <details class="acc"><summary>我需要在歐洲設立公司嗎？</summary><div class="acc-body">
+      <p><b>不需要。</b>用台灣公司即可註冊亞馬遜歐洲站。但要注意：正因為你沒有在當地設立公司，你在 EPR 上就被認定為「<b>生產者</b>」，且 GPSR 要求你指定<b>歐盟責任人</b>。這兩項義務是「沒有當地公司」的直接後果，不是額外選項。</p>
+    </div></details>
+    <details class="acc"><summary>一個帳號可以賣幾個歐洲站點？月費會變貴嗎？</summary><div class="acc-body">
+      <p><b>歐洲聯合帳戶</b>一組帳號可操作英國與歐盟各站（本手冊聚焦 UK／DE／FR／IT／ES 五個核心站），<b>專業賣家月費只收一次</b>，不會隨站點數增加。<br>但<b>稅務與合規義務不會因為帳號合一而合一</b>——庫存放幾國就要幾國稅號，賣到幾國就要幾國的 EPR 註冊。</p>
+    </div></details>
+    <details class="acc"><summary>我一定要先有 VAT 稅號才能開賣歐洲嗎？</summary><div class="acc-body">
+      <p>要在某國<b>擺放庫存</b>才需要該國稅號。所以最快的開賣路徑是：<b>先辦一國稅號、單國入倉、用 EFN 覆蓋其他站點</b>，之後再依量體決定要不要加辦。</p>
+      <p>不要陷入「等全部稅號到齊才開賣」的等待——那會讓你白等好幾個月。</p>
+    </div></details>
+    <details class="acc"><summary>亞馬遜幫我代繳 EPR 環保款了，我還要註冊嗎？</summary><div class="acc-body">
+      <p><b>要。</b>代繳解決的是「錢」，不解決「註冊義務」，而且代繳的錢最後仍會向你收取。<b>德國</b>若無有效註冊號會直接暫停你在 EPR 類別下的商品；<b>法國</b>會代繳並向你收費。包裝類在 PPWR 下，生產者就算用代付也要在各歐盟銷售國取得註冊號；要退出法國或西班牙的包裝代付，須在後台選擇自行申報與繳費，不是取得註冊號就自動退出。</p>
+      <p>另外請把兩件事分清楚：<b>產品標籤合規</b>（產品上要標什麼）與<b>平台上架資格</b>（EPR 註冊號）是不同的義務，做完一件不代表另一件也完成。</p>
+    </div></details>
+    <details class="acc"><summary>歐洲買家可以「無理由」退貨嗎？我可以不接受嗎？</summary><div class="acc-body">
+      <p><b>可以退，而且你不能拒絕。</b>歐盟消費者權利指令給遠距契約的買家 <b>14 天無理由撤回權</b>（自收到商品起算），這是<b>法律權利</b>，不是亞馬遜的政策，所以不能用自訂退貨政策排除。</p>
+      <p>⚠️ 最貴的疏漏是<b>沒有事先告知買家有這個權利</b>——那麼撤回期會從 14 天延長到<b>初始期滿後 12 個月</b>，而且買家連拆封使用造成的價值減損都不必負責。細節（退款時限、運費誰付、哪些商品例外）見 <a href="#sec12">12</a>。</p>
+    </div></details>
+    <details class="acc"><summary>我的商品含鋰電池，入倉前要多做什麼？</summary><div class="acc-body">
+      <p>兩套要求要分開處理：<b>① 亞馬遜端的危險品審核</b>（要交 SDS／MSDS 或豁免聲明，沒過就建不了 FBA 貨件）；<b>② 頭程運輸端</b>（鋰電池需 UN38.3 測試報告與 MSDS，空運另有 IATA 包裝分類與航線限制）。</p>
+      <p>實務上先向<b>供應商索取現有的 UN38.3 與 MSDS</b>（工廠端多半已經有），再送後台審核，通過後才排頭程。步驟與常見誤區見 <a href="#sec09">09</a>；電池的 EPR 與標籤義務是另一回事，見 <a href="#sec05">05</a>。</p>
+    </div></details>
+    <details class="acc"><summary>帳號健康（Account Health）在歐洲有什麼不一樣？</summary><div class="acc-body">
+      <p><b>最大的不同是：帳號健康是整個歐洲聯合帳戶共用的</b>，一個站點出問題可能影響你在其他歐洲站點的銷售權限——這與「稅務與合規要各國分開」剛好相反。</p>
+      <p>另外歐洲的違規多從<b>商品安全與合規</b>那一欄開始（缺歐盟責任人、缺 EPR、缺測試報告），不是從物流指標開始。各項指標與門檻見 <a href="#sec12">12</a>。</p>
+    </div></details>
+    <details class="acc"><summary>英國站和歐盟站可以共用庫存嗎？</summary><div class="acc-body">
+      <p><b>不能自動調撥。</b>脫歐後 UK FBA 與 EU FBA 是兩個獨立庫存池。要嘛分別入倉（兩套頭程與清關），要嘛用遠程配送從一邊服務另一邊（省頭程但配送費較高；單件售價上限歐盟站 €150、英國站 £135，且 2026/7/1 起從歐盟境外直寄歐盟消費者、€150 以下的貨件，每個品項／稅則列加收 €3 關稅，見 <a href="#sec09">09</a>）。</p>
+      <p>合規上也是兩套：UKCA vs CE、英國 EPR vs 歐盟 EPR、英國負責人 vs 歐盟責任人。</p>
+    </div></details>
+    <details class="acc"><summary>手機收不到驗證簡訊怎麼辦？</summary><div class="acc-body">
+      <p>跨國簡訊透過多個電信單位轉送，不穩定時收不到很常見。請<b>改用 Google Authenticator</b> 取代手機驗證。設定路徑在後台右上角齒輪【登入設置】。</p>
+    </div></details>
+    <details class="acc"><summary>Listing 被下架／被要求補件，怎麼查原因？</summary><div class="acc-body">
+      <ol>
+        <li>先看後台【庫存】→ 商品狀態與「安全與合規」頁籤的紅字提示——大多數歐洲下架都會明確指出缺哪一項（歐盟責任人、EPR、測試報告、標籤）。</li>
+        <li>用「合規性參考」工具反查該品類的完整要求，一次補齊而不是逐項猜。</li>
+        <li>仍不明確就開客服 Case，或把 ASIN 與畫面截圖給客戶經理協助判讀。</li>
+      </ol>
+    </div></details>
+    <details class="acc"><summary>DAC7 是什麼？跟我有關嗎？</summary><div class="acc-body">
+      <p>DAC7 是歐盟的平台申報指令，要求平台向稅務機關申報賣家的身分與收入資訊。<b>對賣家的實際影響是：平台會要求你補齊／確認稅務識別資訊，未完成可能影響帳戶。</b></p>
+      <p>如果你收到後台或信件要求提供 DAC7 相關資訊，<b>請在期限內完成</b>，不要當作行銷信忽略。細節與你的個案處理請與稅代或客戶經理確認。</p>
+    </div></details>
+  </div>
+</article>
+
+<!-- ==================== 15 ==================== -->
+<article class="chapter" id="sec15" data-stage="4" data-who="all">
+  <div class="ch-head">
+    <div class="ch-num">15</div>
+    <div class="ch-t">
+      <h2>其他資源與官方消息 📚</h2>
+      <div class="badges"><span class="badge">所有賣家</span></div>
+    </div>
+  </div>
+  <div class="ch-body">
+    <h3>常用官方連結</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:210px">資源</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://sellercentral-europe.amazon.com/" target="_blank" rel="noopener">歐洲站賣家後台</a></td><td>所有歐洲站點的操作入口</td></tr>
+        <tr><td><a href="https://sellercentral.amazon.com/incentives" target="_blank" rel="noopener">賣家福利／Incentives</a></td><td>查看新賣家禮包資格、額度與使用進度</td></tr>
+        <tr><td><a href="https://sellercentral-europe.amazon.com/spx/myc/eprcompliance" target="_blank" rel="noopener">EPR 合規門戶</a></td><td>上傳各國各類別 EPR 註冊號並查看驗證狀態</td></tr>
+        <tr><td><a href="https://sellercentral-europe.amazon.com/hz/fba/profitabilitycalculator/index" target="_blank" rel="noopener">Revenue Calculator</a></td><td>試算 FBA vs 自發貨的成本與利潤</td></tr>
+        <tr><td><a href="https://brandregistry.amazon.co.uk/" target="_blank" rel="noopener">品牌註冊後台（歐洲）</a></td><td>品牌註冊、品牌授權、品牌保護</td></tr>
+        <tr><td><a href="https://advertising.amazon.com/" target="_blank" rel="noopener">亞馬遜廣告</a></td><td>廣告投放與學習資源</td></tr>
+        <tr><td><a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">亞馬遜全球開店（台灣）</a></td><td>中文官方公告、部落格、賣家大學</td></tr>
+        <tr><td><a href="https://gs.amazon.com.tw/resources/government" target="_blank" rel="noopener">政府補助資源總整理</a></td><td>台灣政府相關補助（跨境電商、展會、驗證補助等）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>可向客戶經理索取的資料</h3>
+    <p class="small">以下是我手上的中文整理，需要的話跟我說，我直接寄給你：</p>
+    <ul>
+      <li><b>KYC Guidebook</b>（含逐項文件範例與退件原因）</li>
+      <li><b>UBO 最終受益人確認函／股權結構表範本</b>（持股無人達 25% 時使用）</li>
+      <li><b>歐洲第三方服務商清單</b>（稅代、金流、物流、檢驗、翻譯、商標、代營運等分類）</li>
+      <li><b>生產者責任延伸（EPR）合規介紹手冊</b> — 概念、類別對照、PRO 名單、FAQ</li>
+      <li><b>歐盟授權代表合規介紹手冊 &amp; 常見問題集錦</b> — GPSR 歐代</li>
+      <li><b>GPSR 指南與 FAQ</b>（中文）</li>
+      <li><b>亞馬遜物流歐洲費用價目表</b>（中文；請以最新版本為準）</li>
+      <li><b>西班牙 VAT 兩階段稅號 SOP</b> — 含四種狀態訊息判讀表</li>
+      <li><b>GS1 國際條碼申請流程</b>、<b>Payoneer 帳戶註冊教學</b></li>
+    </ul>
+
+    <h3>📌 需要留意的政策動態</h3>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">類別</th><th>動態</th></tr></thead>
+      <tbody>
+        <tr><td>費用</td><td>
+          · <b>數位服務費</b>：2026/3/20 起改按銷售站點計（台灣這類賣家：英國站 2%、法國站 3% 含 FBA 配送費；義、西站 3% 只加在銷售費用）。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GU67J5DQJRK9V5KD" target="_blank" rel="noopener">官方說明</a><br>
+          · <b>FBA 1.5% 燃油與物流附加費</b>：2026/4/17 起適用於英、法、德、義、西等站。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJWD8NWLKSZ5N3JR" target="_blank" rel="noopener">官方說明</a><br>
+          · <b>旺季配送費</b>：送達日在 2026/10/15–2027/1/14 的部分英國、德國 FBA 訂單將加收（限指定尺寸，不含超大件與低價商品）。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJ7N4DN3ZZBK4UC7" target="_blank" rel="noopener">官方說明</a><br>
+          <small>（已生效的歷史紀錄：2026 年歐洲多品類費用調整已自 2025/12/15 起分階段生效，部分品類如家居用品於 2026/02/01 生效。）</small></td></tr>
+        <tr><td>合規</td><td><b>PPWR 包裝法規已自 2026/08/12 起適用</b>（各義務分階段上路；當期主要義務包括包裝製造商出具的 DoC、食品接觸包裝的 PFAS 限值，EPR 授權代表依各國規定；最小化與空隙率是 2030 起，過度包裝要求的適用日以官方指引為準）；電池詳細標籤是 2026/08/18 或標籤實施法案生效後 18 個月（取較晚者，以公報為準）、電池 QR Code 與可拆換 2027/02/18（數位護照僅 LMT／工業／電動車電池）。見 <a href="#sec05">05</a> 時程表。</td></tr>
+        <tr><td>合規</td><td><b>GPSR</b> 持續執行下架；非歐盟賣家須指定歐盟責任人並在 Listing 揭露。</td></tr>
+        <tr><td>促銷</td><td><b>Coupon 費用自 2025/11/5 起</b>：英國 £2＋成交額 0.75%（變動費上限 £200）；德國 €4＋0.75%（變動費上限 €300）；法、義、西 €2＋0.5%（變動費上限 €100）。上限只限變動費，不含前置費——合計最多為英國 £202、德國 €304、法義西 €102。Deal 費用另計，大促另有費率。提報前以後台當期費率為準。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GM2HYLSWFBZ267BB" target="_blank" rel="noopener">Coupon 費用</a>／<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G202111590" target="_blank" rel="noopener">Deal 費用</a></td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">⚠️ 以上為整理時點的資訊，法規時程可能因實施細則而順延或提前。<b>請以官方公告為準</b>，有變動我會另行通知。</p>
+  </div>
+</article>
+
+<div class="nores" id="nores">找不到符合的章節。請調整搜尋關鍵字或把篩選條件改回「全部」。</div>
+
+</div><!-- /wrap -->
+
+<footer><div class="wrap">
+  <div class="fw">
+    <div>
+      <div style="color:#fff; font-weight:700; font-size:15px; margin-bottom:6px">📞 需要協助？</div>
+      <div>亞馬遜歐洲站 客戶經理　<b style="color:#fff">Jenny Kao</b></div>
+      <div style="margin-top:4px">✉️ <a href="mailto:chiawenk@amazon.com">chiawenk@amazon.com</a></div>
+      <div style="margin-top:4px">💬 <a href="https://line.me/ti/p/8Waszfsct_" target="_blank" rel="noopener">LINE 加好友</a></div>
+    </div>
+    <div style="font-size:12.5px">
+      <div style="color:#fff; font-weight:700; margin-bottom:6px">我可以協助的事</div>
+      KYC 文件備件與退件判讀　·　稅代／服務商媒合<br>
+      合規盤點與 EPR 註冊規劃　·　EFN／Pan-EU 成本試算<br>
+      跨站點上架與免費翻譯申請　·　廣告與促銷檔期規劃
+    </div>
+  </div>
+  <div class="fd">
+    本手冊為客戶經理額外整理之輔導參考資料，<b>不代表亞馬遜官方立場，亦不構成法律、稅務或合規意見</b>。
+    所有費率、優惠條件、法規生效日與操作路徑均可能變動，請以
+    <a href="https://sellercentral-europe.amazon.com/" target="_blank" rel="noopener">賣家後台</a>、
+    <a href="https://gs.amazon.com.tw/" target="_blank" rel="noopener">官方公告</a>
+    及各國主管機關最新公告為準。稅務與合規事項請與您的稅代／合規顧問確認後執行。
+  </div>
+</div></footer>
+
+<button class="totop" id="totop" title="回到頂端">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var STORE = "amzn-eu-guide-v1";
+
+  /* ---------- progress (localStorage) ---------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type=checkbox]'));
+  /* 用「章節 + 項目文字的雜湊」當 key，而不是全域序號——否則之後在任何清單中間新增一項，
+     後面所有項目的已勾選進度都會整批位移到錯誤的項目上。 */
+  function hkey(s){ var h = 5381, i; for(i = 0; i < s.length; i++){ h = ((h << 5) + h + s.charCodeAt(i)) | 0; } return (h >>> 0).toString(36); }
+  boxes.forEach(function(b){
+    var cl = b.closest('.checklist'), t = ((b.parentNode && b.parentNode.textContent) || '').replace(/\s+/g, ' ').trim();
+    b.dataset.key = (cl && cl.dataset.cl || 'x') + '-' + hkey(t);
+  });
+
+  function load(){
+    try{ return JSON.parse(localStorage.getItem(STORE)) || {}; }catch(e){ return {}; }
+  }
+  function save(state){
+    try{ localStorage.setItem(STORE, JSON.stringify(state)); }catch(e){}
+  }
+  var state = load();
+  boxes.forEach(function(b){ if(state[b.dataset.key]) b.checked = true; });
+
+  var ptext = document.getElementById('ptext'), pbar = document.getElementById('pbar');
+  function paint(){
+    var done = boxes.filter(function(b){ return b.checked; }).length;
+    ptext.textContent = done + ' / ' + boxes.length;
+    pbar.style.width = (boxes.length ? (done/boxes.length*100) : 0) + '%';
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      state[b.dataset.key] = b.checked;
+      if(!b.checked) delete state[b.dataset.key];
+      save(state); paint();
+    });
+  });
+  document.getElementById('preset').addEventListener('click', function(){
+    if(!confirm('確定清除所有勾選進度？')) return;
+    boxes.forEach(function(b){ b.checked = false; });
+    state = {}; save(state); paint();
+  });
+  paint();
+
+  /* ---------- filters + search ---------- */
+  var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
+  var whoSel = 'all', stageSel = 'all', term = '';
+  var nores = document.getElementById('nores');
+
+  function clearMarks(root){
+    root.querySelectorAll('mark').forEach(function(m){
+      var t = document.createTextNode(m.textContent);
+      m.parentNode.replaceChild(t, m);
+    });
+    root.normalize();
+  }
+  function markTerm(root, t){
+    if(!t) return;
+    var low = t.toLowerCase();
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode.nodeName;
+        if(p==='SCRIPT'||p==='STYLE'||p==='MARK') return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.toLowerCase().indexOf(low) > -1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var hits = [], n;
+    while((n = walker.nextNode())) hits.push(n);
+    hits.forEach(function(node){
+      var idx = node.nodeValue.toLowerCase().indexOf(low);
+      if(idx < 0) return;
+      var after = node.splitText(idx);
+      after.splitText(t.length);
+      var mk = document.createElement('mark');
+      mk.appendChild(document.createTextNode(after.nodeValue));
+      after.parentNode.replaceChild(mk, after);
+    });
+  }
+
+  var bands = Array.prototype.slice.call(document.querySelectorAll('.stage-band'));
+
+  function apply(){
+    var shown = 0;
+    chapters.forEach(function(ch){
+      clearMarks(ch);
+      var okWho = (whoSel === 'all') || (ch.dataset.who === 'all') || (ch.dataset.who === whoSel);
+      var okStage = (stageSel === 'all') || (ch.dataset.stage === stageSel);
+      var okTerm = true;
+      if(term){ okTerm = ch.textContent.toLowerCase().indexOf(term.toLowerCase()) > -1; }
+      var vis = okWho && okStage && okTerm;
+      ch.classList.toggle('hide', !vis);
+      if(vis){
+        shown++;
+        if(term){
+          markTerm(ch, term);
+          ch.querySelectorAll('details.acc').forEach(function(d){
+            if(d.textContent.toLowerCase().indexOf(term.toLowerCase()) > -1) d.open = true;
+          });
+        }
+      }
+    });
+    // 階段橫幅：該階段底下沒有任何可見章節時就隱藏，避免出現空橫幅
+    bands.forEach(function(b){
+      var any = chapters.some(function(ch){
+        return ch.dataset.stage === b.dataset.stage && !ch.classList.contains('hide');
+      });
+      b.classList.toggle('hide', !any);
+    });
+    nores.classList.toggle('show', shown === 0);
+  }
+
+  document.querySelectorAll('[data-who]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('[data-who]').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on'); whoSel = btn.dataset.who; apply();
+    });
+  });
+  document.querySelectorAll('.chip[data-stage]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.chip[data-stage]').forEach(function(b){ b.classList.remove('on'); });
+      btn.classList.add('on'); stageSel = btn.dataset.stage; apply();
+    });
+  });
+  var qi = document.getElementById('q'), tmr;
+  qi.addEventListener('input', function(){
+    clearTimeout(tmr);
+    tmr = setTimeout(function(){ term = qi.value.trim(); apply(); }, 200);
+  });
+
+  /* ---------- tool: logistics decision ---------- */
+  var lg = { stage:null, vat:null, mkt:null };
+  document.querySelectorAll('[data-lg]').forEach(function(grp){
+    grp.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        grp.querySelectorAll('.opt').forEach(function(x){ x.classList.remove('on'); });
+        o.classList.add('on');
+        lg[grp.dataset.lg] = o.dataset.v;
+        lgRender();
+      });
+    });
+  });
+  function lgRender(){
+    var out = document.getElementById('lg-out');
+    if(!lg.stage || !lg.vat || !lg.mkt){ out.classList.remove('show'); return; }
+    var plan, why = [], next = [];
+
+    if(lg.vat === '0'){
+      plan = '先辦 1 國稅號 → 單國入倉 → EFN';
+      why.push('你目前沒有稅號，所以第一步一定是「辦稅號」，而不是選方案。VAT 實務要 2–4 個月，這是關鍵路徑，今天就該啟動。');
+      why.push('在稅號到位前，可以並行處理帳號 KYC、合規盤點、素材與翻譯，不要串起來等。');
+    } else if(lg.vat === '1'){
+      if(lg.stage === 'test'){
+        plan = '維持 EFN（一國入倉，多國銷售）';
+        why.push('你有 1 國稅號、還在驗證需求階段——EFN 是正確選擇：只需一套頭程，就能覆蓋其他歐盟站點，訂單仍具 Prime 資格。');
+        why.push('這個階段的目標是「用最低成本測出哪個站點、哪個 ASIN 有需求」，不是把配送費壓到最低。');
+      } else {
+        plan = '評估加辦第 2 國稅號 → 開啟 Pan-EU';
+        why.push('你已有穩定訂單但只有 1 國稅號，配送費仍在付跨境費率。加辦第 2 國稅號、在至少 2 個可配置庫存國（DE／FR／IT／ES／PL）啟用庫存配置，各配置國的 VAT 號要能在 VIES 查到有效，並讓後台列為必要的站點都有在售 FBA offer（2026/9/3 起含荷蘭；2027/2/26 起另含比利時），才能開 Pan-EU，享當地配送費率、時效最快隔天到。');
+        why.push('這是不用改產品、不用降價就能改善毛利的動作——先用 Revenue Calculator 試算「配送費差額 × 月銷量」是否覆蓋稅代年費。');
+      }
+    } else {
+      plan = '開啟 Pan-EU（若尚未開啟）';
+      why.push('你已有 2 個以上稅號，但稅號只是 Pan-EU 的條件之一：還要在至少 2 個可配置庫存國（DE／FR／IT／ES／PL）啟用庫存配置、稅號可在 VIES 查到，並讓後台列為必要的站點都有在售 FBA offer（2026/9/3 起含荷蘭；2027/2/26 起另含比利時）。開啟後亞馬遜會用虛擬庫存調撥在多國倉之間配置，你只需管好送到其中一國的頭程；庫存實際移動範圍以後台為準。');
+      why.push('沒有稅號的國家（例如義大利）訂單會自動退回 EFN 模式照樣出貨，只是收跨境費、時效較長。');
+    }
+
+    if(lg.mkt === 'uk'){
+      next.push('⚠️ <b>主力英國要特別注意：英國與歐盟是兩個獨立庫存池，不能自動調撥。</b>Pan-EU 不涵蓋英國。若同時經營兩邊，要嘛分別入倉，要嘛用遠程配送（單件售價上限歐盟站 €150、英國站 £135；2026/7/1 起從英國等歐盟境外直寄歐盟消費者、€150 以下的貨件，每個品項／稅則列加收 €3 關稅）。');
+      next.push('英國合規另成一套：UKCA、英國 EPR、依品類法規可能需要的英國負責人，與歐盟的 CE／EU EPR／歐盟責任人要分開處理。');
+    } else if(lg.mkt === 'de'){
+      next.push('主力德國／中歐：<b>德國是最常見的第一個入倉國</b>（量體最大、物流網最密），也是 Pan-EU 的常見起點。');
+      next.push('德國 EPR 至少要處理「包裝（LUCID）」，若賣電子電器再加 EEE（stiftung ear）。');
+    } else if(lg.mkt === 'south'){
+      next.push('⚠️ <b>主力南歐要先看門檻：</b>義大利對非歐盟賣家有擔保金要求；西班牙的本國稅號與歐盟交易資格（ROI／VIES 登記）要分開確認（只有 <span class="mono">N</span> 開頭的本土號時，填進後台會被拒絕，那是正常的）。');
+      next.push('<b>建議先用德國或法國庫存走 EFN 服務 IT／ES 客戶</b>，驗證需求後再決定是否值得辦當地稅號轉在地入倉。稅號決定的是「能不能存貨」，不是「能不能賣」。');
+    } else {
+      next.push('想五站全鋪開：<b>先辦一國歐盟稅號、在該國單國入倉（例如德國），再用 LOSG／BIL 把 listing 同步到其餘歐盟三站</b>——EFN 已能覆蓋歐盟站配送、<b>不需為每個銷售國辦稅號</b>，官方翻譯免費，邊際成本很低。EFN 只在歐盟站之間運作；英國庫存要賣到歐盟站只能走遠程配送，有售價上限與 €3 關稅等條件。');
+      next.push('⚠️ 但<b>英國要獨立算一套</b>：英國與歐盟是兩個庫存池，且合規（UK EPR、依品類法規可能需要的英代）自成一組。實務上常見的做法是「先做透歐盟四國，英國當第二階段」，或反之——不建議兩邊同時從零開始。');
+      next.push('等各站量體出來後，再挑量最大的 2–3 國辦稅號、啟用庫存配置並補齊必要站點的在售 offer，轉 Pan-EU 把配送費降下來。');
+    }
+    next.push('別忘了：<b>擺庫存的每一國都要有 VAT 稅號</b>，<b>賣到的每一國都要有對應的 EPR 註冊</b>——這是兩套不同的義務。');
+
+    out.innerHTML =
+      '<div class="pill">建議方案</div>' +
+      '<h4>' + plan + '</h4>' +
+      '<div><b>為什麼：</b><ul><li>' + why.join('</li><li>') + '</li></ul></div>' +
+      '<div style="margin-top:10px"><b>接下來要注意：</b><ul><li>' + next.join('</li><li>') + '</li></ul></div>' +
+      '<div class="small" style="margin-top:10px">※ 方向性建議，實際請與客戶經理及稅代確認。</div>';
+    out.classList.add('show');
+  }
+
+  /* ---------- tool: compliance checklist ---------- */
+  var RULES = {
+    pack:      { name:'有包裝／外箱',          items:['<b>EPR — 包裝類別</b>：幾乎沒有賣家能豁免。每個歐盟銷售國各別註冊；🇬🇧 英國：未在英國設立者由亞馬遜代付。','<b>PPWR</b> 包裝法規已自 2026/08/12 起適用；包裝生產者須在每個歐盟銷售國登記取得註冊號（用代付也一樣）','PPWR 當期主要義務：包裝製造商就<b>每種包裝出具 EU DoC</b>（進口商確認並保存，多數賣家向包材供應商索取）+ 食品接觸包裝的 <b>PFAS 限值</b>；非歐盟生產者是否須委任 <b>EPR 授權代表</b>依各國規定（例如西班牙要求）。重量體積最小化（Art. 10(1)）是 <b>2030/01/01</b>；空隙率 50% 是 2030/01/01 或方法學實施細則生效後 3 年（取較晚者）；過度包裝（假底／雙層壁）要求的適用日以官方指引為準'] },
+    eee:       { name:'電子電器',              items:['<b>CE</b> 標記 + 符合性聲明（DoC）。✅ 已有 CE 者<b>多數不需要另做 UKCA</b>','<b>EPR — 電氣和電子設備（EEE）</b> 類別：歐盟各銷售國註冊（德國為 stiftung ear）；🇬🇧 英國：未在英國設立者由亞馬遜代付','<b>WEEE</b>：歐盟各國依當地規定分別註冊，歐盟站會要求提供 WEEE 註冊號（義大利另有代付）；🇬🇧 英國站未在英國設立的賣家，WEEE 由亞馬遜代付處理','注意當地<b>電壓與插頭規格</b>（歐陸 220–240V／英規三腳插頭）'] },
+    batt:      { name:'含電池',                items:['<b>EPR — 電池</b> 類別註冊 — 📌 亞馬遜自 <b>2025/08/18 起已強制執行</b>：未提供有效註冊號時，德、荷、波、愛、瑞會<b>停用不合規商品</b>；法、義、西、比在代付可用時，申報週期結束後<b>轉入代付扣費</b>','<b>電池法規 (EU)2023/1542</b>：詳細資訊標籤 + 容量標示的適用日是「2026/08/18 或標籤實施法案生效後 18 個月，取較晚者」（以公報為準）；分類收集標誌已自 2025/08/18 起適用；<b>2027/02/18 QR Code（所有電池）+ 可拆換電池權利（日期固定不順延）</b>。✅ <b>數位電池護照只適用 LMT 電池／&gt;2 kWh 工業電池／電動車電池</b>，一般消費品內的便攜式電池不需要','⚠️ 德國：賣「含電池的電子電器」須<b>電子電器與電池兩個分類都註冊</b>','鋰電池運輸屬<b>危險品</b>，頭程與 FBA 入倉均有額外要求，須先與物流商確認'] },
+    wireless:  { name:'無線功能',              items:['<b>RED 無線電設備指令</b>符合性評估（藍牙／WiFi 產品）','需在 DoC 中列明適用的無線電標準'] },
+    toy:       { name:'兒童玩具',              items:['<b>玩具安全指令</b>符合性 + 測試報告','包裝須有<b>年齡限制標識</b>與警語','須標示製造商名稱地址，以及<b>歐盟進口商／責任人</b>資訊'] },
+    textile:   { name:'紡織品／服飾／鞋靴',    items:['<b>纖維成分標示</b>（各國語言要求）','🇫🇷 法國另需 <b>EPR — 紡織品</b> 類別註冊（德國不需要）','📌 <b>ESPR 未售服飾／鞋類銷毀禁令</b>已於 2026/07/19 對大型企業生效，但<b>微型與小型企業不適用</b>（&lt;50 人且營收或資產 ≤€10M），<b>中型企業 2030/07/19 才納管</b>——多數台灣賣家目前不在範圍內'] },
+    furniture: { name:'傢俱',                  items:['🇫🇷 法國需 <b>EPR — 傢俱</b> 類別註冊','部分品類有防火與穩定性要求（尤其英國）'] },
+    ppe:       { name:'個人防護／醫療相關',    items:['<b>PPE 法規</b>或<b>醫療器材法規（MDR）</b>，多數需<b>第三方公告機構</b>介入','此類商品在亞馬遜屬<b>需審核類目</b>，上架前須先取得銷售權限'] },
+    food:      { name:'食品接觸材質／化妝品',  items:['<b>食品接觸材質（FCM）</b>符合性聲明，或<b>化妝品法規 (EC)1223/2009</b>','化妝品須完成 <b>CPNP 通報</b>並指定<b>責任人（RP）</b>','有效期商品有 FBA 剩餘架儲期要求，須先確認'] }
+  };
+  var MKNAME = { UK:'🇬🇧 英國', DE:'🇩🇪 德國', FR:'🇫🇷 法國', IT:'🇮🇹 義大利', ES:'🇪🇸 西班牙' };
+
+  function cpRender(){
+    var attrs = Array.prototype.slice.call(document.querySelectorAll('#cp-attr input:checked')).map(function(i){ return i.value; });
+    var mks   = Array.prototype.slice.call(document.querySelectorAll('#cp-mk input:checked')).map(function(i){ return i.value; });
+    var out = document.getElementById('cp-out');
+
+    if(!attrs.length || !mks.length){
+      out.innerHTML = '<div class="small">請至少勾選一個商品特性與一個銷售國。</div>';
+      return;
+    }
+
+    var html = '<div class="pill">你的合規清單</div>';
+
+    /* always-on */
+    var base = ['<b>用「合規性參考」工具</b>反查你的品類完整要求（商品／危險品／出口／進口四個面向）'];
+    var hasEU = mks.some(function(m){ return m !== 'UK'; });
+    if(hasEU) base.push('<b>GPSR：指定歐盟責任人（EU RP）</b>，並在 Listing 上揭露名稱與聯絡方式 — 非歐盟賣家必辦，缺件會被限制銷售');
+    if(mks.indexOf('UK') > -1) base.push('<b>英國：依品類法規確認是否須指定英國負責人（英代）</b> — 需要時與歐盟 RP 是兩套、不能互相取代，技術文件由誰保存也依法規確認。✅ <b>但 UKCA 多數賣家不需要做</b>（多數消費品類的 CE 已被持續接受、未設終止日；醫療器材另有期限）');
+    base.push('準備<b>符合性聲明（DoC）</b>：製造商資訊、產品資訊（品牌／型號）、適用法規、簽署人姓名職位簽名日期 + 產品照片');
+    base.push('<b>COO 原產國資訊</b>：有跨境配送者必填，<b>SKU 層級、每個站點各填一次</b>，未填會被切斷跨境訂單');
+    base.push('📌 <b>商業責任保險</b>：<b>任一月份</b>銷售額超過門檻（DE／FR／IT／ES €5,000、UK £4,000）或亞馬遜要求時，須在 30 天內投保 — <b>開站初期通常還不需要</b>，但要知道它存在');
+    html += '<h4>① 每個賣家都要做</h4><ul><li>' + base.join('</li><li>') + '</li></ul>';
+
+    /* per attribute */
+    html += '<h4>② 依你的商品特性</h4>';
+    attrs.forEach(function(a){
+      var r = RULES[a];
+      if(!r) return;
+      var its = r.items;
+      if(mks.every(function(m){ return m === 'UK'; })) its = its.filter(function(t){ return t.indexOf('PPWR') < 0; });
+      if(!its.length) return;
+      html += '<div style="margin:8px 0"><b>' + r.name + '</b><ul><li>' + its.join('</li><li>') + '</li></ul></div>';
+    });
+
+    /* EPR matrix */
+    var eprCats = [];
+    if(attrs.indexOf('pack') > -1) eprCats.push('包裝');
+    if(attrs.indexOf('eee') > -1) eprCats.push('電氣和電子設備');
+    if(attrs.indexOf('batt') > -1) eprCats.push('電池');
+    var frOnly = [];
+    if(attrs.indexOf('textile') > -1) frOnly.push('紡織品');
+    if(attrs.indexOf('furniture') > -1) frOnly.push('傢俱');
+
+    html += '<h4>③ EPR 註冊估算（銷售國 × 類別）</h4>';
+    if(!eprCats.length && !frOnly.length){
+      html += '<div class="small">依你勾選的特性，暫未對應到明確的 EPR 類別——但只要有包裝就需註冊包裝類別，請再確認。</div>';
+    } else {
+      var total = 0, rows = '';
+      mks.forEach(function(m){
+        var cats = eprCats.slice();
+        if(m === 'FR') cats = cats.concat(frOnly);
+        var pob = [];
+        if(m === 'UK'){ pob = cats.filter(function(c){ return c === '包裝' || c === '電氣和電子設備'; }); cats = cats.filter(function(c){ return pob.indexOf(c) < 0; }); }
+        var label = cats.length ? cats.join('、') : (pob.length ? '—' : '（請以該國當前收集項目確認）');
+        if(pob.length) label += '<br><small>' + pob.join('、') + '：未在英國設立者由亞馬遜代付，不需自行註冊</small>';
+        total += cats.length;
+        rows += '<tr><td>' + MKNAME[m] + '</td><td>' + label + '</td><td class="ctr"><b>' + cats.length + '</b></td></tr>';
+      });
+      html += '<div class="tw"><table><thead><tr><th>銷售國</th><th>需註冊的 EPR 類別</th><th class="ctr">組數</th></tr></thead><tbody>' + rows +
+              '<tr><td colspan="2" style="text-align:right"><b>合計約需</b></td><td class="ctr"><b>' + total + ' 組</b></td></tr></tbody></table></div>';
+      if(total) html += '<div class="note danger" style="margin:8px 0"><b>⚠️ EPR 不能通用。</b>同一件商品在不同國家銷售，須在各國分別註冊；不同類別也各需獨立註冊號。取號後上傳後台 EPR 合規門戶，並記得<b>持續向 PRO 申報與付款</b>——只給亞馬遜註冊號不等於合規完成。</div>';
+      if(frOnly.length && mks.indexOf('FR') > -1){
+        html += '<div class="note info" style="margin:8px 0"><b>💡 為什麼法國比德國多幾組？</b>法國把 ' + frOnly.join('、') + ' 也列為 EPR 類別，德國沒有。這就是「逐國確認」的必要性。</div>';
+      }
+      var pobHas = mks.filter(function(m){ return m==='FR'||m==='ES'||m==='IT'||m==='UK'; }).map(function(m){ return MKNAME[m]; });
+      if(pobHas.length || mks.indexOf('DE') > -1){
+        var pob = '<div class="note info" style="margin:8px 0"><b>💡 關於亞馬遜「EPR 代付服務」：</b><ul>';
+        if(pobHas.length) pob += '<li>' + pobHas.join('、') + ' <b>有</b>代付（依分類而定） — 在歐盟國家，申報週期結束前沒交有效註冊號會被<b>自動</b>納入並扣費。服務費每站點、每分類每年 €25（英國 £20），未含適用 VAT；法、西自 2026/1/1 起取消原本另加的環保費 3%。環保費另付，Amazon 會先在帳戶預留準備金；2026/9 起服務費於納入代付後 30 天內直接收取、不預留。</li>';
+        if(mks.indexOf('UK') > -1) pob += '<li>⚠️ <b>英國</b>：未在英國設立的賣家，包裝與 WEEE 都由代付處理；不想用代付，只能停止在英國站賣這些商品，或成為英國設立企業。</li>';
+        if(mks.indexOf('DE') > -1) pob += '<li>⚠️ <b>德國沒有代付服務</b> — 一律要自己去 LUCID 註冊並與雙元回收系統簽約，未註冊會被下架。</li>';
+        pob += '</ul>代付 ≠ 完整合規：代付只處理申報與繳費，不處理產品標示（例如法國的 Triman 標識）、回收與生態設計。' + (hasEU ? 'PPWR 下，包裝類的生產者就算用代付，也要在每個歐盟銷售國取得註冊號（ERN）。' : '') + '代付的定位是過渡期而非長期解。</div>';
+        html += pob;
+      }
+    }
+
+    html += '<div class="small" style="margin-top:10px">※ 本清單為方向性指引，非完整法規清單，亦不構成法律意見。正式送件前請與合規顧問或客戶經理確認，並以各國主管機關與後台合規門戶當前要求為準。</div>';
+    out.innerHTML = html;
+  }
+  document.querySelectorAll('#cp-attr input, #cp-mk input').forEach(function(i){
+    i.addEventListener('change', cpRender);
+  });
+  cpRender();
+
+  /* ---------- side nav: scrollspy + mobile toggle ---------- */
+  var sidenav = document.getElementById('sidenav');
+  var snLinks = Array.prototype.slice.call(sidenav.querySelectorAll('a'));
+  var snMap = {};
+  snLinks.forEach(function(a){ snMap[a.getAttribute('href').slice(1)] = a; });
+
+  if('IntersectionObserver' in window){
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) visible[e.target.id] = e.intersectionRatio;
+        else delete visible[e.target.id];
+      });
+      // pick the topmost currently-visible chapter
+      var best = null;
+      chapters.forEach(function(ch){
+        if(ch.classList.contains('hide')) return;
+        if(visible[ch.id] != null){ if(!best) best = ch.id; }
+      });
+      if(best){
+        snLinks.forEach(function(a){ a.classList.remove('active'); });
+        if(snMap[best]) snMap[best].classList.add('active');
+      }
+    }, { rootMargin:'-140px 0px -55% 0px', threshold:[0,1] });
+    chapters.forEach(function(ch){ io.observe(ch); });
+  }
+
+  var backdrop = document.getElementById('snBackdrop');
+  var navToggle = document.getElementById('navToggle');
+  function openNav(){ sidenav.style.transform='translateX(0)'; backdrop.classList.add('show'); }
+  function closeNav(){ sidenav.style.transform=''; backdrop.classList.remove('show'); }
+  navToggle.addEventListener('click', function(){
+    if(backdrop.classList.contains('show')) closeNav(); else openNav();
+  });
+  backdrop.addEventListener('click', closeNav);
+  snLinks.forEach(function(a){
+    a.addEventListener('click', function(){ if(window.innerWidth < 1200) closeNav(); });
+  });
+
+  /* ---------- print: 展開所有摺疊區，避免列印時內容消失 ---------- */
+  var reopened = [];
+  window.addEventListener('beforeprint', function(){
+    reopened = [];
+    document.querySelectorAll('details:not([open])').forEach(function(d){
+      d.open = true; reopened.push(d);
+    });
+  });
+  window.addEventListener('afterprint', function(){
+    reopened.forEach(function(d){ d.open = false; });
+    reopened = [];
+  });
+
+  /* ---------- to top ---------- */
+  var tt = document.getElementById('totop');
+  window.addEventListener('scroll', function(){
+    tt.classList.toggle('show', window.scrollY > 500);
+  });
+  tt.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+})();
+</script>
+</body>
+</html>
