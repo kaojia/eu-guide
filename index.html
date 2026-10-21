@@ -740,6 +740,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     <b>✅ 不必等稅號到齊才開賣。</b>只要在其中一國（例如 DE）持有 FBA 庫存並有該國稅號，就能用 <b>EFN／遠程配送</b>把商品賣給其他歐盟站點的買家，訂單<b>仍具 Prime 資格</b>。透過 Amazon 賣給歐盟消費者、貨已在歐盟境內的 B2C 訂單，非歐盟設立賣家的 VAT 多由 <b>Amazon 代收代繳</b>（視同供應商規則）；其他通路的跨境 B2C 要不要走 OSS，請與稅代確認（見 <a href="#sec04">04</a>）。
     建議路徑：<b>先單國入倉 EFN 開賣驗證需求 → 量體起來再加辦稅號轉在地入倉／Pan-EU</b>。
   </div>
+  <div class="note ok"><b>📞 準備好開始了嗎？</b>把 <a href="#sec02">02 章</a>的註冊資料整理好，<b>聯繫您的亞馬遜全球開店客戶經理</b>，由經理發出註冊連結（從該連結註冊才有完整輔導與優惠資格）。</div>
 </div>
 </section>
 
@@ -880,6 +881,30 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
         <tr><td><b>🔄 既有賣家</b></td><td>先找客戶經理確認欲開設站點的<b>輔導資格與優惠</b>，再由賣家後台點擊上方【店鋪名稱｜站點】下拉切換／新增歐洲站點。<br><small>若北美與歐洲帳號分屬不同帳戶，也可維持分開，但跨站點上架與品牌授權的做法不同（見 <a href="#sec07">07</a>、<a href="#sec08">08</a>）。</small></td></tr>
       </tbody>
     </table></div>
+    <div class="note info" style="margin-top:12px">
+      <b>📋 全新賣家：複製下方清單，填好後傳給客戶經理</b>
+      <pre id="regTpl" style="white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;font-family:inherit;font-size:14.5px">【亞馬遜歐洲站 新賣家註冊資料】
+公司名稱（中文）：
+公司名稱（英文）：
+聯絡人姓名：
+聯絡人電話：
+聯絡人 email：
+負責人姓名：
+負責人 email：
+註冊帳號用的 email（註冊後無法更改）：
+想開的站點（英／德／法／義／西）：
+主要品類（選填）：</pre>
+      <button type="button" id="regCopy" style="cursor:pointer;padding:6px 14px;border-radius:6px;border:1px solid var(--navy-2);background:var(--navy-2);color:#fff;font-size:14px">複製清單</button>
+      <span id="regCopyMsg" class="small" style="margin-left:8px"></span>
+    </div>
+    <script>
+    (function(){var b=document.getElementById('regCopy'),m=document.getElementById('regCopyMsg');if(!b)return;
+      b.addEventListener('click',function(){var t=document.getElementById('regTpl').innerText;
+        function ok(){m.textContent='已複製 ✓';setTimeout(function(){m.textContent='';},2000);}
+        if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,fb);}else{fb();}
+        function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){m.textContent='請手動選取複製';}document.body.removeChild(a);}
+      });})();
+    </script>
 
     <h3>🔐 KYC 賣家資質審核（歐洲站獨有）</h3>
     <p>KYC（Know Your Customer）是歐洲金融法規要求的身分查核，<b>在你註冊完成、進入 Seller Central 的當下就會開始</b>。</p>
@@ -1464,6 +1489,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       </ul>
     </div>
     <p class="small">💡 需要第三方金流服務商名單，可向客戶經理索取<b>歐洲第三方服務商清單</b>（含金流、稅代、物流、檢驗、翻譯、商標等分類）。</p>
+    <div class="note ok" style="margin-top:18px"><b>📞 準備期卡關了嗎？</b>KYC 被退件、找不到稅代、不確定商品要辦哪些合規？<b>請聯繫您的亞馬遜全球開店客戶經理。</b></div>
   </div>
 </article>
 
@@ -1853,6 +1879,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     <div class="links">
       <a href="https://sellercentral-europe.amazon.com/hz/fba/profitabilitycalculator/index" target="_blank" rel="noopener">🧮 Revenue Calculator：比較 FBA vs 自發貨</a>
     </div>
+    <div class="note ok" style="margin-top:18px"><b>📞 上架期需要協助嗎？</b>跨站點上架、免費翻譯申請、EFN 或 Pan-EU 拿不定主意？<b>請聯繫您的亞馬遜全球開店客戶經理。</b></div>
   </div>
 </article>
 
@@ -2142,6 +2169,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     </ol>
     <p class="small">符合績效標準並啟用 VCS 的賣家，商品會顯示「可下載 VAT 發票」標章，有助企業買家下單。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G201750810" target="_blank" rel="noopener">官方說明</a></p>
     <p><b>適合的品類：</b>辦公文具與設備、事務機耗材、工業耗材與五金工具、清潔用品、醫療耗材與實驗室用品、IT 周邊（線材、轉接器等大宗採購品）。</p>
+    <div class="note ok" style="margin-top:18px"><b>📞 想加速成長？</b>大促提報、廣告規劃、開通企業購？<b>請聯繫您的亞馬遜全球開店客戶經理。</b></div>
   </div>
 </article>
 
