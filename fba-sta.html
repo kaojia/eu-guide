@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>建立 FBA 貨件（Send to Amazon）｜從台灣發貨到歐洲</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2A44;--navy-2:#1F4E79;--line:#DCE3EA;--bg:#F5F7FA;--amber:#FF6201}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#1B2733;line-height:1.75;font-size:16px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);color:#fff;padding:34px 0 26px}header h1{margin:0 0 6px;font-size:30px}header p{margin:0;color:#C6D6E6}
+header a{color:#FFD9A0}
+.toc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
+.toc a{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;text-decoration:none;color:var(--navy);font-size:15px}
+.toc a span{display:inline-block;min-width:26px;font-weight:700;color:var(--amber)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+.card h2{margin:0 0 4px;font-size:22px;color:var(--navy)}.num{font-weight:700;color:var(--amber);font-size:14px}
+.lead{margin:0 0 12px;color:#3B4A58}
+.pts{margin:12px 0 0;padding-left:22px}.pts li{margin:6px 0}.pts li::marker{color:var(--amber);font-weight:700}
+.small{font-size:14.5px;color:#4A5D70}
+.tip{background:#EAF3FB;border:1px solid #C3D8EA;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:15px}
+.tip.warn{background:#FFF4E5;border-color:#F5C98B}
+.mockwrap{overflow-x:auto;border-radius:8px;border:1px solid var(--line);background:#eef1f4;padding:10px;margin:8px 0}
+.mock .scr{width:1000px!important;margin:0!important}
+.badge{display:inline-block;font-size:12.5px;background:#FFF4E5;color:#8A4B00;border:1px solid #F5C98B;border-radius:999px;padding:1px 9px;margin-left:6px}
+footer{color:#6B7B8B;font-size:13.5px;padding:10px 0 40px}
+@media(max-width:760px){.toc{grid-template-columns:1fr 1fr}header h1{font-size:24px}.card{padding:16px}}
+.mock{margin:0;background:#eef1f4;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#0f1111}
+.mock .scr{width:1200px;margin:0 0 30px;background:#fff;border:1px solid #c9cfd6}
+.mock .top{background:#232f3e;color:#fff;padding:10px 16px;font-size:14px;display:flex;gap:14px;align-items:center}
+.mock .top b{font-size:17px}
+.mock .crumb{padding:8px 16px;font-size:13px;color:#007185;border-bottom:1px solid #e3e6e8}
+.mock .ttl{font-size:26px;padding:14px 16px 4px}
+.mock .steps{display:flex;gap:6px;padding:0 16px 12px;font-size:13px}
+.mock .steps span{padding:5px 10px;border:1px solid #d5d9d9;border-radius:14px;color:#565959}
+.mock .steps .on{background:#007185;color:#fff;border-color:#007185}
+.mock .box{margin:0 16px 14px;border:1px solid #d5d9d9;border-radius:6px;padding:12px 14px;font-size:14px}
+.mock .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.mock .lbl{color:#565959;font-size:12px;display:block}
+.mock table{border-collapse:collapse;width:100%;font-size:13px}
+.mock th,.mock td{border-bottom:1px solid #e3e6e8;padding:8px;text-align:left}
+.mock th{background:#f7f8f8}
+.mock .btn{display:inline-block;background:#ffd814;border:1px solid #fcd200;border-radius:8px;padding:7px 16px;font-size:14px}
+.mock .btn2{display:inline-block;background:#fff;border:1px solid #d5d9d9;border-radius:8px;padding:6px 12px;font-size:13px}
+.mock .radio{display:inline-block;border:1px solid #d5d9d9;border-radius:6px;padding:8px 12px;margin-right:8px}
+.mock .radio.sel{border-color:#007185;box-shadow:0 0 0 1px #007185}
+.mock .mark{display:inline-block;background:#ff6201;color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;font-size:13px;line-height:22px;font-weight:700;margin-left:6px}
+.mock .wm{float:right;font-size:12px;color:#b12704;font-weight:700;border:1px dashed #b12704;padding:2px 6px}
+.mock .cap{font-size:12px;color:#565959;padding:6px 16px 12px}
+.mock .label{width:420px;border:2px solid #000;margin:16px;padding:10px;font-family:Arial,sans-serif;font-size:13px}
+.mock .bar{height:46px;background:repeating-linear-gradient(90deg,#000 0 2px,#fff 2px 4px,#000 4px 7px,#fff 7px 9px);margin:8px 0}
+.mock .side{margin:0 16px 14px;display:flex;gap:12px}
+.mock .side .list{flex:1}
+.mock .side .panel{width:380px;border:1px solid #d5d9d9;border-radius:6px;padding:12px;box-shadow:-4px 0 10px rgba(0,0,0,.08)}
+.mock input.f{border:1px solid #888c8c;border-radius:4px;padding:6px 8px;width:92%;font-size:13px}
+.mock .warn{color:#b12704;font-size:12px}
+</style></head><body>
+<header><div class="wrap">
+<h1>建立 FBA 貨件（Send to Amazon）</h1>
+<p>從台灣發第一批貨到歐洲站：選商品 → 裝箱 → 確認運送 → 印箱標 → 填追蹤號，最後補上歐盟專屬的進口資料。</p>
+<p style="margin-top:8px"><a href="./#sec09">← 回到歐洲站手冊（09 物流）</a></p>
+</div></header>
+<div class="wrap">
+<nav class="toc"><a href="#prep"><span>00</span>出發前先備齊四樣東西</a><a href="#s1"><span>01</span>步驟 1：選商品、決定怎麼裝箱</a><a href="#s1b"><span>02</span>步驟 1b：混裝箱要告訴亞馬遜每箱裝了什麼</a><a href="#s2"><span>03</span>步驟 2：確認運送</a><a href="#s3"><span>04</span>步驟 3：每一箱都要有自己的 FBA 箱標</a><a href="#s4"><span>05</span>最後一個步驟：一箱一個追蹤號</a><a href="#s5"><span>06</span>EU 專屬：到倉後補 MRN 和 EORI</a><a href="#pit"><span>07</span>最常翻車的四件事</a></nav>
+<p class="small">畫面為<b>示意圖</b>，商品、數量、倉庫代碼與單號皆為虛構；步驟名稱已對照實際中文後台，其餘按鈕字樣以你看到的後台為準。</p>
+<section class="card" id="prep"><div class="num">00</div><h2>出發前先備齊四樣東西</h2><p class="lead">做到一半去找資料，回來分倉選項可能已經變了，整個流程要重做。</p><ol class="pts"><li><b>商品已設成 Amazon 配送（FBA）</b>：只有設成 FBA 的 SKU 才會出現在清單裡；擱置（stranded）或危險品審核中的商品加不進貨件。</li><li><b>每箱實際的重量與尺寸</b>：用裝好、含緩衝材的外箱量。</li><li><b>貨代能給「每箱一個追蹤號」</b>：小包交貨（SPD）每一箱都要有自己的追蹤號，先跟貨代確認。</li><li><b>清關後拿得到 MRN</b>：發往法國倉或已開 Pan-EU 時，到倉後要補報關單號（見下方「EU 專屬」）。出貨前就先跟貨代講好。</li></ol><p class="small"><b>箱規：</b>每箱 ≤23 公斤、任一邊 ≤63.5 公分，最小 15.2×10×2.5 公分、0.15 公斤；超過 15 公斤要在頂部和四個側面共貼 5 張重件（Team Lift／Heavy Parcel）標籤，標籤要自己準備、用目的國語言。箱內只有一件超大商品時，最重可到 30 公斤。</p></section><section class="card" id="s1"><div class="num">01</div><h2>步驟 1：選商品、決定怎麼裝箱</h2><p class="lead">入口：<b>供應鏈 → Send to Amazon</b>。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>amazon</b> 你的商店｜德國 ▾</div>
+<div class="crumb">供應鏈 › Send to Amazon</div>
+<div class="ttl">Send to Amazon <span class="wm">示意圖</span></div>
+<div class="steps"><span class="on">步驟 1：確認要發送的庫存</span><span>步驟 1b – 包裝個別商品</span><span>步驟 2：確認運送</span><span>步驟 3：列印包裝箱標籤</span><span>最後一個步驟：追蹤詳情</span></div>
+<div class="box"><div class="row"><div><span class="lbl">出貨地點</span>你的公司 · Taipei, TW　<span style="color:#007185">從其他地址出貨</span><span class="mark">1</span></div><div><span class="lbl">商城目的地</span>德國 ▾<span class="mark">2</span></div><div><span class="lbl">SKU 選擇方式</span>從清單中選擇 ／ 檔案上傳<span class="mark">3</span></div></div></div>
+<div class="box"><table><tr><th>SKU 詳細資料</th><th>包裝詳情<span class="mark">4</span></th><th>資訊/動作</th><th>要發送的數量<span class="mark">5</span></th></tr>
+<tr><td>商品 A<br><small>SKU：DEMO-A</small></td><td>整箱範本 ▾<br><small>每包裝箱商品數量：20</small></td><td><small>不需要預處理</small></td><td>包裝箱 5（= 100 件）<br><span class="btn2">準備運送</span></td></tr>
+<tr><td>商品 B<br><small>SKU：DEMO-B</small></td><td>個別商品 ▾<br><small>要和其他 SKU 混裝 → 步驟 1b</small></td><td><small>製造商條碼</small></td><td>商品 30<br><span class="btn2">準備包裝</span></td></tr></table>
+<div style="margin-top:10px;text-align:right"><span class="btn">確認並繼續</span><span class="mark">6</span></div></div>
+<div class="cap">示意圖：商品與數量為虛構。步驟名稱已對照實際後台；其餘欄位字樣依公開教學，未逐一核對。</div></div></div></div><ol class="pts"><li><b>出貨地點</b>：填實際出貨的地址（台灣工廠或貨代倉）。步驟 2 確認後就不能改。</li><li><b>商城目的地</b>：選這批貨要進哪一站的倉，例如德國。</li><li><b>選商品</b>：SKU 少就逐筆選，多就下載範本、填好上傳。</li><li><b>包裝詳情</b>：整箱同款用「整箱範本」（每箱幾件、外箱尺寸、重量），下次補貨可直接套用；要和其他 SKU 混裝選「個別商品」。</li><li><b>填數量</b>：整箱範本填箱數，個別商品填件數。需要 Amazon 條碼的商品，記得印單品標籤貼在每件商品上。</li><li><b>確認並繼續</b>：有混裝的 SKU 會進步驟 1b；全部整箱同款就直接進步驟 2。</li></ol></section><section class="card" id="s1b"><div class="num">02</div><h2>步驟 1b：混裝箱要告訴亞馬遜每箱裝了什麼</h2><p class="lead">系統會把能放同一箱的 SKU 分成「包裝群組」，每組分開裝、分開填。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>amazon</b> 你的商店｜德國 ▾</div>
+<div class="ttl">Send to Amazon <span class="wm">示意圖</span></div>
+<div class="steps"><span>步驟 1</span><span class="on">步驟 1b – 包裝個別商品</span><span>步驟 2</span><span>步驟 3</span><span>最後一個步驟</span></div>
+<div class="box"><b>包裝群組 1</b>　<small>這些 SKU 可以包裝在一起：1 個 SKU（30 件商品）</small>
+<div style="margin:10px 0">所有商品都裝得進一個包裝箱嗎？<span class="mark">1</span><br><span class="radio">全部可以裝進一個包裝箱</span><span class="radio sel">需要多個包裝箱</span></div>
+<div style="margin:10px 0">要如何提供包裝箱內容資訊？<span class="mark">2</span>　<span class="btn2">透過網頁表單 ▾</span></div>
+<table><tr><th>SKU</th><th>第 1 箱</th><th>第 2 箱</th><th>第 3 箱</th></tr><tr><td>商品 B</td><td>10</td><td>10</td><td>10</td></tr><tr><td>重量（公斤）</td><td>9.0</td><td>9.0</td><td>9.0</td></tr><tr><td>尺寸（cm）</td><td>50×40×30</td><td>50×40×30</td><td>50×40×30</td></tr></table><span class="mark">3</span>
+<div style="margin-top:10px;text-align:right"><span class="btn">確認包裝資訊</span></div></div>
+<div class="cap">示意圖：數值虛構。「略過包裝並繼續」不適用跨境出貨（例如從台灣），要在這一步填好每箱內容。</div></div></div></div><ol class="pts"><li><b>一箱還是多箱</b>：裝得下一箱就填這一箱；要多箱就選「需要多個包裝箱」。</li><li><b>填寫方式</b>：箱數少用網頁表單，箱數多用 Excel 上傳。</li><li><b>逐箱填件數、重量、尺寸</b>：每箱件數加總要等於這個包裝群組的件數。裝箱時在箱子上寫好箱號，步驟 3 的箱標要照箱號貼。</li></ol><div class="tip">後台公告的「先建貨件、後包裝」（略過包裝並繼續）<b>不適用跨境出貨</b>，而且整個貨件只能有個別商品、不能選 AGL。從台灣出貨，要在這一步先填好每箱內容。</div></section><section class="card" id="s2"><div class="num">03</div><h2>步驟 2：確認運送</h2><p class="lead">亞馬遜會依商品和出貨地分配要送的倉庫，可能拆成好幾票，每票一個貨件編號。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>amazon</b> 你的商店｜德國 ▾</div>
+<div class="ttl">Send to Amazon <span class="wm">示意圖</span></div>
+<div class="steps"><span>步驟 1</span><span>步驟 1b</span><span class="on">步驟 2：確認運送</span><span>步驟 3</span><span>最後一個步驟</span></div>
+<div class="box"><div class="row"><div><span class="lbl">出貨日期</span>2026-11-02<span class="mark">1</span></div><div><span class="lbl">交貨時段（7 天）</span>2026-12-07 ～ 2026-12-13</div></div>
+<div style="margin:12px 0">運送方式<span class="mark">2</span><br><span class="radio sel">小包交貨 (SPD)</span><span class="radio">零擔貨運 (LTL)</span></div>
+<div style="margin:12px 0">選擇承運方<span class="mark">3</span><br><span class="radio">Amazon 合作承運方</span><span class="radio sel">非合作承運方：快遞公司 ▾</span></div></div>
+<div class="box"><div class="row"><div><b>貨件 1／共 2</b><br>配送至：XXX1 · 德國<br><small>包裝箱 3 · 單位 60</small></div><div><b>貨件 2／共 2</b><br>配送至：YYY2 · 波蘭<br><small>包裝箱 5 · 單位 70</small></div><span class="mark">4</span></div>
+<div style="margin-top:10px;text-align:right"><span class="btn">接受費用並確認運送</span><span class="mark">5</span></div></div>
+<div class="cap">示意圖：日期、倉庫代碼、件數皆虛構。「小包交貨 (SPD)」字樣已對照實際後台。</div></div></div></div><ol class="pts"><li><b>出貨日期與交貨時段</b>：交給承運方那天是出貨日期；用非合作承運方時，還要填 7 天的交貨時段（預計到倉區間），要把海運或空運時間算進去。</li><li><b>運送方式</b>：一箱一箱走快遞選「小包交貨 (SPD)」；打棧板選「零擔貨運 (LTL)」。確認後不能改。</li><li><b>承運方</b>：從台灣出貨要選「非合作承運方」，再選貨代實際使用的快遞公司。</li><li><b>每票送哪裡</b>：拆成幾票，就要分別送到各自的倉庫，不要全部送到第一個地址。</li><li><b>接受費用並確認運送</b>：按下去就確定分倉與預估費用。分倉資訊超過 24 小時沒確認可能會變，超過 72 小時就要刪掉重建，建議步驟 1 到 2 一次做完。</li></ol></section><section class="card" id="s3"><div class="num">04</div><h2>步驟 3：每一箱都要有自己的 FBA 箱標</h2><p class="lead">下載箱標 PDF；用非合作承運方時，運單由貨代另外出。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>FBA 包裝箱標籤 · PDF</b> <span class="wm" style="color:#ffb27a;border-color:#ffb27a">示意圖</span></div>
+<div style="display:flex;align-items:flex-start">
+<div class="label"><b>FBA (XXX1)</b>　Karton 1 von 5 - 9kg<span class="mark">3</span><br><br>ABSENDER: Your company, Taipei, Taiwan<br><br>EMPFÄNGER:<span class="mark">1</span><br>Amazon Fulfillment Center XXX1<br>Street 00, 00000 City, Deutschland<div class="bar"></div><b>FBA15XXXXXXXU000001</b><span class="mark">2</span><br><small>DIESES LABEL NICHT BESCHRIFTEN ODER BEKLEBEN</small></div>
+<div style="padding:16px;font-size:14px;line-height:1.8">① 收件地址以這張標籤為準<br>② 一箱一個箱號，不可影印<br>③ 德國站箱標為德文：「第 1 箱／共 5 箱」</div></div>
+<div class="cap">示意圖：標籤內容虛構，版面依公開教學繪製。</div></div></div></div><ol class="pts"><li><b>收件地址只用這張標籤上的</b>：這是這一次指派的地址，貨代運單的收件地址必須一字不差，不能沿用上一票。</li><li><b>一箱一個箱號</b>：U000001、U000002…每箱不同，照步驟 1b 的箱號貼；整份 PDF 都要印，不可影印。</li><li><b>箱標語言跟著目的站</b>：德國站是德文，「Karton 1 von 5」就是第 1 箱／共 5 箱。</li></ol><p class="small">箱標貼在運單旁的平整面，不要跨在封箱接縫或邊角上。</p></section><section class="card" id="s4"><div class="num">05</div><h2>最後一個步驟：一箱一個追蹤號</h2><p class="lead">用非合作承運方就要自己填追蹤號，填了之後倉庫能提前準備收貨。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>amazon</b> 你的商店｜德國 ▾</div>
+<div class="ttl">Send to Amazon <span class="wm">示意圖</span></div>
+<div class="steps"><span>步驟 1</span><span>步驟 1b</span><span>步驟 2</span><span>步驟 3</span><span class="on">最後一個步驟：追蹤詳情</span></div>
+<div class="box"><div class="row" style="justify-content:space-between"><div>貨件 FBA15XXXXXXX · 承運方：快遞公司</div><span class="btn2">大量上傳追蹤 ID</span></div>
+<table style="margin-top:8px"><tr><th>箱號</th><th>FBA 包裝箱標籤編號</th><th>追蹤 ID<span class="mark">1</span></th></tr>
+<tr><td>1</td><td>FBA15XXXXXXXU000001</td><td><input class="f" value="1234567801"></td></tr>
+<tr><td>2</td><td>FBA15XXXXXXXU000002</td><td><input class="f" value="1234567802"></td></tr>
+<tr><td>3</td><td>FBA15XXXXXXXU000003</td><td><input class="f" value="1234567801"><br><span class="warn">✗ 與第 1 箱重複</span></td></tr></table>
+<div style="margin-top:10px;text-align:right"><span class="btn">儲存</span></div></div>
+<div class="cap">示意圖：追蹤號虛構。「最後一個步驟：追蹤詳情」字樣已對照實際後台；送達前也可從「管理貨件 → 承運方更新」補填。</div></div></div></div><ol class="pts"><li><b>不能多箱共用一個號碼</b>：貨代只給主單號的話，請他們補齊每一箱的子單號，箱號和追蹤號一一對應。</li></ol><p class="small">國際貨比較晚拿到追蹤號也沒關係，在貨送達倉庫前補上即可：<b>管理貨件 → 檢視詳情 → 承運方更新</b>。</p></section><section class="card" id="s5"><div class="num">06</div><h2>EU 專屬：到倉後補 MRN 和 EORI</h2><p class="lead">適用：不在歐盟設立的賣家（台灣公司適用），從歐盟以外發貨到<b>法國倉</b>，或開了 Pan-EU 發到任何歐盟倉。</p><div class="mockwrap"><div class="mock"><div class="scr"><div class="top"><b>amazon</b> 你的商店｜德國 ▾</div>
+<div class="crumb">供應鏈 › 管理貨件</div>
+<div class="ttl">管理貨件 <span class="wm">示意圖</span></div>
+<div class="side"><div class="list"><table><tr><th>貨件名稱</th><th>狀態</th><th>動作</th></tr>
+<tr><td>DEMO-01<br><small>FBA15XXXXXXA</small></td><td>接收中<br><span class="warn">進口詳情不完整</span></td><td><span class="btn2">新增進口詳情</span><span class="mark">1</span></td></tr>
+<tr><td>DEMO-02<br><small>FBA15XXXXXXB</small></td><td>已關閉</td><td><span class="btn2">檢視詳情</span></td></tr></table></div>
+<div class="panel"><b>進口詳情</b><br><br><span class="lbl">MRN（每行一個）</span><input class="f" value="26DE12345678901234"><span class="mark">2</span><br><br><span class="lbl">EORI</span><input class="f" value="DE987654321"><br><br><small>沒有進口紀錄？選擇原因</small><span class="mark">3</span><br><div style="text-align:right;margin-top:10px"><span class="btn">儲存</span></div></div></div>
+<div class="cap">示意圖：MRN／EORI 為虛構。「進口詳情不完整」「新增進口詳情」字樣已對照實際後台；側邊欄欄位依公開教學繪製，未逐一核對。</div></div></div></div><ol class="pts"><li><b>找「進口詳情不完整」的貨件</b>：在管理貨件列表按「新增進口詳情」。</li><li><b>填 MRN 和 EORI</b>：MRN 是 18 碼的報關單號，由報關的貨代或清關行持有；EORI 填該次報關實際使用的那一組（可以是報關行的）。</li><li><b>真的沒有 MRN</b>：選擇對應的原因（例如貨物在歐盟境內採購）。</li></ol><div class="tip warn">到倉後 <b>60 天內</b>沒補，會<b>無法建立新的歐盟 FBA 貨件</b>。</div></section><section class="card" id="pit"><div class="num">07</div><h2>最常翻車的四件事</h2><ol class="pts"><li><b>貨代沿用舊的收件地址</b>：貨送到了卻一直沒入倉。出貨前比對運單地址和箱標地址。</li><li><b>多箱只填一個追蹤號</b>：亞馬遜只能追到一箱，出問題時很難逐箱舉證。</li><li><b>確認後才發現要改</b>：運送方式、出貨地點確認後都不能改；件數只能增減 5% 或每個 SKU 6 件（取較大者），超過就要取消重建。</li><li><b>取消貨件卻沒撕掉舊標籤</b>：取消後那批箱標和運單都作廢，不能拿貼著舊標籤的箱子出貨。</li></ol></section>
+<section class="card" id="check"><div class="num">✓</div><h2>交給貨代之前，再確認三件事</h2>
+<ol class="pts"><li><b>運單收件地址 ＝ 箱標地址</b>：拆成多票的話每票各自核對。</li>
+<li><b>每箱都有自己的 FBA 箱標</b>：箱號連號、不重複，張數與實際箱數一致。</li>
+<li><b>貨代答應回傳每箱追蹤號（＋MRN）</b>：追蹤號在送達前填好；需要時 MRN 在到倉 60 天內補上。</li></ol></section>
+</div>
+<footer><div class="wrap">依亞馬遜官方說明頁整理（2026/10/22 查證）：<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G200141510">包裝箱規定</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G201119120">合作承運方</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G4ZKN4DCCXL5XQWJ">交貨時段</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GWC4BVUFCZ2FKHQW">分倉時效</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GP29SYECJZGJ9XMR">修改數量</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GWKTQ4PADXXT58JY">追蹤號</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GSZF2Z6ZM2WDWSYT">進口詳情（MRN）</a>。規則與畫面以 Seller Central 實際顯示為準。</div></footer>
+</body></html>
