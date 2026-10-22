@@ -134,6 +134,9 @@ small,.small{font-size:14px; color:var(--ink-3)}
 @media(max-width:900px){.qcards{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.qstage{grid-template-columns:1fr}.qcards{grid-template-columns:1fr 1fr}}
 .toc li small{display:block; color:#5B6B7B; font-size:13px; font-weight:400; margin:1px 0 3px 30px}
+.infofig{margin:16px 0;border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px}
+.infofig img{display:block;width:100%;height:auto;border-radius:6px}
+.infofig figcaption{font-size:14px;color:#4A5D70;text-align:center;padding:6px 4px 2px}
 .toc{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 22px}
 .toc h2{margin:0 0 12px; font-size:17.5px; color:var(--navy)}
 .toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
@@ -422,7 +425,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     <a href="#q-vendors"><span class="e">🤝</span>要找哪些服務商？</a>
     <a href="#q-incentive"><span class="e">🎁</span>優惠怎麼領？</a>
     <a href="#q-register"><span class="e">📋</span>怎麼註冊？</a>
-    <a href="#tool-logistics"><span class="e">🚚</span>物流怎麼選？</a>
+    <a href="#fig-fulfillment"><span class="e">🚚</span>物流怎麼選？</a>
     <a href="#q-money"><span class="e">💶</span>錢怎麼收？</a>
     <a href="#glossary"><span class="e">📖</span>名詞看不懂</a>
     <a href="#q-contact"><span class="e">📞</span>聯繫客戶經理</a>
@@ -544,7 +547,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <tr><td><b>1 個帳號</b></td><td>用同一個歐洲帳號（sellercentral-europe）管理所有歐洲站點，不用每國各開一個</td></tr>
       <tr><td><b>5 種語言</b></td><td>英國用英文；德、法、義、西各用當地語言——官方有免費翻譯可用（見 <a href="#sec08">08</a>）</td></tr>
       <tr><td><b>2 種幣別</b></td><td>英國用英鎊（£），其餘四站用歐元（€）</td></tr>
-      <tr><td><b>2 個庫存池</b></td><td>英國與歐盟是兩個分開的庫存池，貨放在德國倉不等於能便宜地賣到英國（見 <a href="#sec09">09</a>）</td></tr>
+      <tr><td><b>2 個庫存池</b></td><td>英國與歐盟是兩個分開的庫存池，貨放在德國倉不等於能便宜地賣到英國（見 <a href="#fig-fulfillment">三種放貨方式總覽</a>）</td></tr>
     </tbody>
   </table></div>
   <h3>為什麼值得做</h3>
@@ -1614,6 +1617,11 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <label><input type="checkbox"><span>（發英國）已在首次到倉 60 天內提交 <b>IEN</b>（只有英國境內採購或 DDP 進口可改選原因選項）</span></label>
     </div>
 
+    <figure class="infofig" id="fig-fulfillment">
+      <a href="img/eu-fulfillment-full.png" target="_blank" rel="noopener"><img src="img/eu-fulfillment.webp" width="2000" height="1125" loading="lazy" decoding="async"
+        alt="歐洲站 FBA 三種放貨方式總覽。EFN：庫存只放一國（例如德國），同一批庫存出其他歐盟站的訂單，只要存放國註冊 VAT；MCI：自己選幾國、每國各建入庫貨件，每個存放國都要註冊 VAT；Pan-EU：在 DE、FR、IT、ES、PL 啟用至少 2 國，貨送進一國由亞馬遜調撥，每個存放國都要註冊 VAT。另有 Remote Fulfilment（英國與歐盟互賣）、賣家自配送 FBM（從台灣直寄）與多通路配送 MCF。"></a>
+      <figcaption>📊 三種放貨方式一張圖看懂（點圖開大圖，手機可用手指放大）</figcaption>
+    </figure>
     <!-- ===== TOOL: logistics decision ===== -->
     <div class="tool" id="tool-logistics">
       <h3>🛠 物流方案決策器</h3>
