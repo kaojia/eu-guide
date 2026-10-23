@@ -1,15 +1,15 @@
-# 亞馬遜歐洲站 — 經營指導手冊
+# Amazon Europe — Seller Operating Guide
 
-台灣賣家開站歐洲（英國 + 德/法/義/西）的單頁指導手冊。
+A single-page guide for Taiwanese sellers launching on Amazon Europe (UK + DE / FR / IT / ES).
 
-涵蓋：入駐優惠、開通帳號與 KYC、成本預估、稅務（VAT/EORI/OSS）、產品合規與 EPR、
-金流、品牌註冊、上架與免費翻譯、物流（EFN/Pan-EU）、廣告、促銷、成長、企業購。
+Covers: onboarding incentives, account registration and KYC, cost estimates, tax (VAT / EORI / OSS), product compliance and EPR,
+payments, Brand Registry, listing and free translation, fulfillment (EFN / Pan-EU), advertising, promotions, growth, and Amazon Business.
 
-內含兩個互動工具：
-- 物流方案決策器（該申請幾國稅號？）
-- 合規清單產生器（我的商品要辦什麼？）
+Includes two interactive tools:
+- Fulfillment plan selector (how many VAT registrations do I need?)
+- Compliance checklist generator (what does my product require?)
 
-## 免責
+## Disclaimer
 
-本手冊為客戶經理額外整理之輔導參考資料，不代表亞馬遜官方立場，
-亦不構成法律、稅務或合規意見。費率、優惠與法規時程請以賣家後台與官方公告為準。
+This guide is supplementary coaching material compiled by an account manager. It does not represent Amazon's official position
+and does not constitute legal, tax, or compliance advice. Always refer to Seller Central and official announcements for current fees, incentives, and regulatory timelines.
