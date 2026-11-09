@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>補齊 PID 商品編碼｜歐盟境外直寄買家的海關新規</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2A44;--navy-2:#1F4E79;--line:#DCE3EA;--bg:#F5F7FA;--amber:#FF6201}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#1B2733;line-height:1.75;font-size:16px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);color:#fff;padding:34px 0 26px}header h1{margin:0 0 6px;font-size:30px}header p{margin:0;color:#C6D6E6}
+header a{color:#FFD9A0}
+.toc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
+.toc a{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;text-decoration:none;color:var(--navy);font-size:15px}
+.toc a span{display:inline-block;min-width:26px;font-weight:700;color:var(--amber)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+.card h2{margin:0 0 4px;font-size:22px;color:var(--navy)}.num{font-weight:700;color:var(--amber);font-size:14px}
+.lead{margin:0 0 12px;color:#3B4A58}
+.pts{margin:12px 0 0;padding-left:22px}.pts li{margin:6px 0}.pts li::marker{color:var(--amber);font-weight:700}
+.small{font-size:14.5px;color:#4A5D70}
+.tip{background:#EAF3FB;border:1px solid #C3D8EA;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:15px}
+.tip.warn{background:#FFF4E5;border-color:#F5C98B}
+.tip.ok{background:#E8F6EF;border-color:#A9DCC1}
+.tw{overflow-x:auto;margin:10px 0}
+table.t{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+table.t th,table.t td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.t th{background:var(--navy);color:#fff;font-weight:700}
+table.t td.y{background:#E8F6EF}table.t td.n{background:#FDECEA}
+.ui{display:inline-block;background:#F1F4F7;border:1px solid var(--line);border-radius:5px;padding:0 6px;font-size:14.5px}
+.mockwrap{overflow-x:auto;border-radius:8px;border:1px solid var(--line);background:#eef1f4;padding:10px;margin:8px 0}
+.mock{margin:0;background:#eef1f4;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#0f1111}
+.mock .scr{width:1000px;margin:0;background:#fff;border:1px solid #c9cfd6}
+.mock .top{background:#232f3e;color:#fff;padding:10px 16px;font-size:14px;display:flex;gap:14px;align-items:center}
+.mock .top b{font-size:17px}
+.mock .ttl{font-size:22px;padding:12px 16px 4px}
+.mock .box{margin:0 16px 14px;border:1px solid #d5d9d9;border-radius:6px;padding:12px 14px;font-size:14px}
+.mock table{border-collapse:collapse;width:100%;font-size:13px}
+.mock th,.mock td{border:1px solid #e3e6e8;padding:6px 8px;text-align:left}
+.mock th{background:#f7f8f8}
+.mock .hl{background:#FFF4E5}
+.mock .miss{background:#FDECEA;color:#b12704}
+.mock .mark{display:inline-block;background:#ff6201;color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;font-size:13px;line-height:22px;font-weight:700;margin-left:6px}
+.mock .wm{float:right;font-size:12px;color:#b12704;font-weight:700;border:1px dashed #b12704;padding:2px 6px}
+.mock .cap{font-size:12px;color:#565959;padding:6px 16px 12px}
+footer{color:#6B7B8B;font-size:13.5px;padding:10px 0 40px}
+@media(max-width:760px){.toc{grid-template-columns:1fr 1fr}header h1{font-size:24px}.card{padding:16px}}
+</style></head><body>
+<header><div class="wrap">
+<h1>補齊 PID 商品編碼</h1>
+<p>2026/11/1 起，從歐盟境外直寄歐盟買家、貨值 €150 以下的訂單，報關都要附 PID。這頁教你先判斷要不要做，再用品類刊登資訊報告找出缺漏、一次補齊。</p>
+<p style="margin-top:8px"><a href="./#sec09-customs">← 回到歐洲站手冊（09 物流：2026 歐盟進口新規）</a></p>
+</div></header>
+<div class="wrap">
+<nav class="toc"><a href="#who"><span>00</span>先確認：我需要做嗎？</a><a href="#what"><span>01</span>三種 PID 各填什麼</a><a href="#find"><span>02</span>找出缺 PID 的商品</a><a href="#bulk"><span>03</span>用報告批量補齊（推薦）</a><a href="#one"><span>04</span>少量商品：逐筆補</a><a href="#fbm"><span>05</span>FBM：出貨時還要再交一次</a><a href="#verify"><span>06</span>補完後怎麼驗證</a><a href="#pit"><span>07</span>最常翻車的四件事</a></nav>
+<p class="small">後台選單同時列出<b>英文介面</b>與<b>簡體中文介面</b>的字樣（歐洲站後台沒有繁體中文介面）。畫面為<b>示意圖</b>，商品與編碼皆為虛構，實際欄位以你看到的後台為準。</p>
+
+<section class="card" id="who"><div class="num">00</div><h2>先確認：我需要做嗎？</h2>
+<p class="lead">PID 規定只看<b>「貨從哪裡出發」</b>，不是看你賣哪一站。</p>
+<div class="tw"><table class="t">
+<thead><tr><th style="width:44%">你的出貨方式</th><th>要不要補 PID</th></tr></thead>
+<tbody>
+<tr><td>貨放在<b>歐盟倉</b>（EFN／Pan-EU／多國庫存），出給歐盟買家</td><td class="y"><b>不適用</b>：歐盟境內出貨，沒有 €3、€2，也不用報 PID</td></tr>
+<tr><td>貨放在<b>英國倉</b>，用<b>遠程配送</b>（Remote Fulfilment）出給歐盟站買家</td><td class="n"><b>要補</b>：亞馬遜會從商品目錄抓 PID 報關，你要確保目錄資料齊全</td></tr>
+<tr><td>從<b>台灣或其他歐盟境外地點</b>自發貨（FBM）直寄歐盟買家</td><td class="n"><b>要補</b>：而且每次出貨都要把 PID 交給承運人（見 <a href="#fbm">05</a>）</td></tr>
+</tbody></table></div>
+<div class="tip"><b>貨值超過 €150 的訂單</b>不用報 PID，但 <b>€2 海關處理費照收</b>，FBM 也一樣要用 DDP（完稅後交貨）出貨。<b>就算目前全部用歐盟倉</b>，之後想開遠程配送或 FBM，建議也先把 PID 補好，可以順便讓刊登資料更完整。</div>
+</section>
+
+<section class="card" id="what"><div class="num">01</div><h2>三種 PID 各填什麼</h2>
+<p class="lead">每個適用的商品都要有 M-PID 和 NS-PID；S-PID 是「商品有這個編碼就必填」。</p>
+<div class="tw"><table class="t">
+<thead><tr><th style="width:160px">編碼</th><th>是什麼</th><th>後台對應欄位</th><th style="width:28%">要求</th></tr></thead>
+<tbody>
+<tr><td><b>M-PID</b><br><small>商家 PID</small></td><td>商品的 <b>ASIN</b></td><td>亞馬遜自動帶入，不用填</td><td>必填（自動）</td></tr>
+<tr><td><b>NS-PID</b><br><small>非標準 PID</small></td><td>製造商給的<b>零件號</b>或<b>型號</b></td><td><span class="ui">Part number／零件號</span>、<span class="ui">Model number／型號</span></td><td>必填。製造商沒有給的話，可以拿 S-PID（EAN 等）來填</td></tr>
+<tr><td><b>S-PID</b><br><small>標準 PID</small></td><td><b>EAN／GTIN／UPC</b>；出版品是 ISBN／ISSN</td><td><span class="ui">Product ID／商品編碼</span>（外部商品編碼）</td><td>商品有這個編碼就必填。<b>只有 UPC／EAN／GTIN 算數</b></td></tr>
+</tbody></table></div>
+<ol class="pts">
+<li><b>自有品牌、自己就是製造商</b>：你內部用的產品型號就是 NS-PID，填進 Model number 即可。</li>
+<li><b>有 GTIN 豁免、沒有條碼</b>：S-PID 這格可以空著，但 NS-PID（型號或零件號）一定要有。</li>
+<li><b>手工品豁免</b>：HS 編碼 4420、4602、4802、5702、5804、5805、7013 系列可免 S-PID，NS-PID 仍要有。</li>
+<li><b>醫療器材與藥品</b>：S-PID 有指定格式（MDR／IVDR 器材填 UDI-DI；尚未適用 UDI-DI 的舊器材在 2026/11/27 前填 CELEX 號「32017R0745」或「32017R0746」；藥品填 AI 01.8 產品碼）。這類商品請直接對照<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">官方說明頁</a>。</li>
+</ol>
+</section>
+
+<section class="card" id="find"><div class="num">02</div><h2>找出缺 PID 的商品</h2>
+<p class="lead">用<b>品類刊登資訊報告</b>（Category Listings Report，CLR）一次看全部刊登。<b>這份報告是分站點的</b>，有在哪幾站上架，就要每站各下載一份。</p>
+<ol class="pts">
+<li>後台主選單 → <span class="ui">Products（商品）</span> → <span class="ui">Product reports（商品報告）</span>。</li>
+<li>在 <span class="ui">Request an inventory report（申請庫存報告）</span> 選 <span class="ui">Category Listings report（分類商品報告）</span>。看不到這份報告的話，要聯絡銷售夥伴支援開權限。</li>
+<li><span class="ui">Listings created after（指定日期後創建的商品信息）</span> <b>留空</b>。</li>
+<li><span class="ui">Select status filter（選擇狀態篩選器）</span> 選 <b>ALL（全部）</b>。</li>
+<li>按 <span class="ui">Request report（請求報告）</span>，狀態變成 <b>Done（已完成）</b> 後按 <span class="ui">Download（下載）</span>，會下載一個或多個 Excel 檔。</li>
+<li>每個檔案打開 <b>Template（模板）</b> 分頁，找 <b>Product ID、Part number、Model number</b> 三欄，看哪幾列是空的。看不懂欄位名稱的話，把<b>第 5 列取消隱藏</b>就會顯示英文欄名。</li>
+</ol>
+<div class="mockwrap"><div class="mock"><div class="scr">
+<div class="top"><b>amazon</b> seller central</div>
+<div class="ttl">Category Listings Report · Template <span class="wm">示意圖</span></div>
+<div class="box"><table>
+<tr><th>Listing action</th><th>SKU</th><th>Product ID type</th><th class="hl">Product ID<span class="mark">1</span></th><th class="hl">Part number<span class="mark">2</span></th><th class="hl">Model number<span class="mark">2</span></th><th>Quantity</th><th>Your price</th></tr>
+<tr><td></td><td>DEMO-A</td><td>EAN</td><td>4710000000011</td><td>DA-100</td><td>DA-100</td><td>40</td><td>29.99</td></tr>
+<tr><td></td><td>DEMO-B</td><td>EAN</td><td>4710000000028</td><td class="miss">（空白）</td><td class="miss">（空白）</td><td>25</td><td>49.99</td></tr>
+<tr><td></td><td>DEMO-C</td><td>GTIN exempt</td><td class="miss">（空白）</td><td class="miss">（空白）</td><td>DC-300</td><td>12</td><td>19.99</td></tr>
+</table></div>
+<div class="cap">示意圖：SKU 與編碼皆為虛構，欄位順序依品類模板不同。DEMO-B 缺型號／零件號要補；DEMO-C 有型號（NS-PID 已滿足），GTIN 豁免、S-PID 可空。</div></div></div></div>
+<ol class="pts"><li><b>Product ID</b>：就是 S-PID，有 EAN／GTIN／UPC 的商品這欄要有值。</li><li><b>Part number／Model number</b>：就是 NS-PID，兩欄<b>至少要有一個</b>有值。</li></ol>
+<div class="tip warn">報告<b>只包含你自己提交過的資料</b>，不含 ASIN 的其他來源資料，也不含已刪除的刊登。所以報告裡是空的，就代表你的刊登沒有提供。</div>
+<p class="small">下載不了 CLR 的話，參考官方說明頁「<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GFYSJC946YKTD68L" target="_blank" rel="noopener">下載分類商品報告</a>」。</p>
+</section>
+
+<section class="card" id="bulk"><div class="num">03</div><h2>用報告批量補齊（官方推薦）</h2>
+<p class="lead">直接在剛下載的 CLR 裡補，再整份上傳回去。</p>
+<ol class="pts">
+<li>在 Template 分頁把缺漏的 <b>Product ID、Part number、Model number</b> 補上。</li>
+<li><b>最重要的一步</b>：每一列的 <span class="ui">Listing action（商品操作）</span> 都選 <b>Edit (partial update)（編輯（部分更新））</b>。</li>
+<li>存檔前檢查 <b>Quantity（庫存數量）</b>和 <b>Your price（商品售價）</b>兩欄是不是最新的，避免把舊數字一起上傳回去。</li>
+<li>上傳：<span class="ui">Products（商品）</span> → <span class="ui">Add products（添加商品／批量上傳商品）</span> → <span class="ui">Spreadsheet（表格）</span> 分頁 → <span class="ui">Upload file（上傳文件）</span> → <span class="ui">Submit products（提交商品）</span>。</li>
+<li>每個站點的檔案各做一次。</li>
+</ol>
+<div class="tip warn"><b>當天下載、當天改、當天上傳。</b>官方特別提醒不要隔天才上傳：中間有賣出或調價，舊檔案裡的庫存和價格就會把現況蓋掉。</div>
+</section>
+
+<section class="card" id="one"><div class="num">04</div><h2>少量商品：逐筆補</h2>
+<p class="lead">只缺幾個 SKU 的話，直接在刊登頁面改比較快。</p>
+<ol class="pts">
+<li><span class="ui">Products（商品）</span> → <span class="ui">Manage products（管理商品）</span>。</li>
+<li>在缺編碼的刊登旁按三個點 → <span class="ui">Edit listing（編輯商品）</span>。</li>
+<li><span class="ui">Product identity（商品身份信息）</span> → <span class="ui">External product ID（外部商品編碼）</span>：下拉選 UPC／EAN／GTIN，填入編碼。</li>
+<li><span class="ui">Product details（商品詳情）</span> → 右上角 <span class="ui">Filter attributes（篩選屬性）</span> 選 <b>All（全部）</b>，才會出現型號和零件號欄位。</li>
+<li>填 <b>Model number（型號）</b>或 <b>Part number（零件號）</b> → <span class="ui">Submit（提交）</span>。</li>
+<li>其他缺漏的刊登重複第 2～5 步。</li>
+</ol>
+</section>
+
+<section class="card" id="fbm"><div class="num">05</div><h2>FBM：出貨時還要再交一次</h2>
+<p class="lead">FBA 遠程配送由亞馬遜從商品目錄抓 PID 給承運人；<b>FBM 是你自己負責把 PID 交給承運人</b>，刊登裡有填也一樣。</p>
+<div class="tw"><table class="t">
+<thead><tr><th style="width:30%">你怎麼買運單</th><th>要做什麼</th></tr></thead>
+<tbody>
+<tr><td><b>用購買配送</b>（Buy Shipping）</td><td>買運單時<b>逐件填零件號或型號</b>（即使刊登裡已經有）。<b>11/1 起沒填就買不了運單</b>。亞馬遜會把 PID 和亞馬遜的 IOSS 編號一起傳給承運人。</td></tr>
+<tr><td><b>自己找承運人</b></td><td>貨值 ≤ €150：只能用<a href="https://sellercentral-europe.amazon.com/gc/sell-across-europe/out-of-region-carrier-list" target="_blank" rel="noopener">亞馬遜認可的承運人</a>，確認發貨時從下拉選單選（不能手動輸入承運人名稱，API 確認發貨也一樣）。確認後把<b>每件商品的 ASIN、PID、亞馬遜 IOSS 編號</b>和其他清關資料交給承運人，交付格式先跟承運人確認。</td></tr>
+</tbody></table></div>
+<ol class="pts">
+<li><b>所有 FBM 訂單</b>，不論貨值都要 <b>DDP</b>（完稅後交貨）：買家收貨時不能再被收任何關稅或稅費。</li>
+<li>報關單上<b>不能把買家列為申報人</b>；貨值 > €150 也不能把亞馬遜列為申報人。被海關查到可能駁回報關、影響該商品的跨境銷售權限。</li>
+<li>€2 海關處理費由承運人開發票向你收，再由承運人繳給歐盟海關。</li>
+<li>慣用的承運人不在認可名單上：請承運人自己寫信到 <b>eu-customs-reform-carrier-self-request@amazon.com</b> 申請，附上公司法定名稱、設立國家、地址、聯絡人全名和 email。</li>
+</ol>
+</section>
+
+<section class="card" id="verify"><div class="num">06</div><h2>補完後怎麼驗證</h2>
+<ol class="pts">
+<li>上傳後等系統處理完，<b>重新下載一份 CLR</b>（同樣日期留空、狀態選 ALL）。</li>
+<li>在 Template 分頁確認每一列的 Product ID、Part number／Model number 都有值。</li>
+<li>有在多個歐盟站上架的話，每站各驗一次。</li>
+</ol>
+<div class="tip ok">11/1 之後還沒補齊的商品，跨境訂單可能清不了關，該商品在亞馬遜的銷售權限也可能受影響。越早補越好。</div>
+</section>
+
+<section class="card" id="pit"><div class="num">07</div><h2>最常翻車的四件事</h2>
+<ol class="pts">
+<li><b>上傳 CLR 時沒選「部分更新」</b>：整份刊登被覆蓋，庫存和價格回到檔案裡的舊值。</li>
+<li><b>只下載一個站點的報告</b>：CLR 是分站點的，德國站補了，法國站還是空的。</li>
+<li><b>以為刊登有填就好（FBM）</b>：用購買配送時還是要在買運單時再填一次；自己找承運人要另外把 PID 交給對方。</li>
+<li><b>把 €3 和 €2 當成二選一</b>：€2 是疊加在 €3 上面，≤ €150 每個品項／稅則列合計 €5；> €150 也要收 €2。</li>
+</ol>
+</section>
+</div>
+<footer><div class="wrap">依亞馬遜官方說明頁整理（2026/11/9 查證）：<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z">歐盟 B2C 低價值進口海關要求</a>・<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GFYSJC946YKTD68L">下載分類商品報告</a>・<a href="https://sellercentral-europe.amazon.com/gc/sell-across-europe/out-of-region-carrier-list">認可承運人名單</a>。法規：<a href="https://eur-lex.europa.eu/eli/reg/2026/382/oj/eng">Regulation (EU) 2026/382</a>（€3 關稅）・<a href="https://eur-lex.europa.eu/eli/reg/2026/2108/oj/eng">Regulation (EU) 2026/2108</a>・<a href="https://eur-lex.europa.eu/eli/reg_del/2026/2152/oj">Delegated Regulation (EU) 2026/2152</a>（€2 處理費）。延伸閱讀：<a href="https://m.media-amazon.com/images/G/01/CN_Compliance_Team/EU_CR_Guidebook.pdf">亞馬遜全球開店《欧盟 B2C 进口商品海关监管要求 卖家行动指南》（簡中 PDF）</a>。規則與畫面以 Seller Central 實際顯示為準。</div></footer>
+</body></html>

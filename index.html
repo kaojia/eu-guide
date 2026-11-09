@@ -1115,7 +1115,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
         <tr><td><b>VAT 稅號</b></td><td>在該國擺放庫存（用該國 FBA、或當地第三方倉）就必須有。<b>從備件到拿號約 2–4 個月</b>（稅局審核依國家 2 週到 3 個月），請最早啟動。</td></tr>
         <tr><td><b>EORI 號</b></td><td>進出口報關用的經濟營運者註冊識別號，<b>一號通用全歐盟</b>。申請 VAT 時通常同步辦理（官方免費，1–3 週）。<b>英國 EORI 與歐盟分開</b>（GB + 編號，GOV.UK 線上申請，1–5 個工作天、免費）。<br><b>EORI 不能任選國家。</b>非歐盟設立的業者，要向<b>首次辦理報關（或首次申請海關決定）所在的會員國</b>申請。若在德國申請被拒，先確認被拒原因與首次報關地，再向有管轄權的海關申請（例如首次報關在法國或荷蘭，就向當地申請）。</td></tr>
         <tr><td><b>OSS<br>（One Stop Shop）</b></td><td>歐盟 B2C 跨境銷售的<b>單一申報</b>機制。讓你不必為每個「銷售目的國」各自申報，只在一國申報全部歐盟跨境 B2C 銷售。<b>它取代不了「庫存所在國」的當地稅號義務。</b><br>要不要用 OSS，看三件事：① 這筆 B2C 交易是否已由平台代收代繳 VAT（非歐盟設立賣家透過 Amazon、貨在歐盟境內的訂單，多由 Amazon 代收代繳）② 是否賣到其他會員國 ③ 貨從哪一國出貨。有自營官網等其他通路時，請稅代依你的實際通路判斷。</td></tr>
-        <tr><td><b>IOSS</b></td><td>針對從歐盟境外直送、單筆價值 €150 以下的 B2C 進口簡化申報機制。若你走境外直發（非 FBA）模式會用到。</td></tr>
+        <tr><td><b>IOSS</b></td><td>針對從歐盟境外直送、單筆價值 €150 以下的 B2C 進口簡化申報機制。若你走境外直發（非 FBA）模式會用到。在亞馬遜從境外 FBM 直寄 ≤ €150 的訂單，用的是<b>亞馬遜的 IOSS 編號</b>，由認可承運人清關（見 <a href="#sec09-customs">09</a>）。</td></tr>
       </tbody>
     </table></div>
 
@@ -1700,7 +1700,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <b>🔴 英國與歐盟是兩個獨立的庫存池。</b>脫歐後 UK FBA 與 EU FBA 之間<b>不能自動調撥庫存</b>。若你要同時經營英國與歐盟：
       <ul>
         <li>方案一：<b>分別入倉</b>（英國一批、歐盟一批），兩邊各自跑一套頭程與清關</li>
-        <li>方案二：用<b>遠程配送</b>（Remote Fulfilment）從一邊服務另一邊，省下第二套頭程但配送費較高。<br><small>適用條件：單件售價上限歐盟站 <b>€150</b>、英國站 <b>£135</b>。2026/7/1 起，從歐盟境外直寄歐盟消費者、貨件價值 €150 以下的訂單（FBA、FBM 都算），報關單上每個品項／稅則列加收 <b>€3 關稅</b>——從英國庫存遠程配送到歐盟站的訂單也在內，亞馬遜會把這筆關稅加在買家看到的售價上。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJWD8NWLKSZ5N3JR" target="_blank" rel="noopener">遠程配送</a>／<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">€3 關稅說明</a></small></li>
+        <li>方案二：用<b>遠程配送</b>（Remote Fulfilment）從一邊服務另一邊，省下第二套頭程但配送費較高。<br><small>適用條件：單件售價上限歐盟站 <b>€150</b>、英國站 <b>£135</b>。2026/7/1 起，從歐盟境外直寄歐盟消費者、貨件價值 €150 以下的訂單（FBA、FBM 都算），報關單上每個品項／稅則列加收 <b>€3 關稅</b>；2026/11/1 起所有貨值再加 <b>€2 海關處理費</b>（與 €3 疊加），≤ €150 還要報 PID 商品編碼——從英國庫存遠程配送到歐盟站的訂單也在內，亞馬遜會把關稅和處理費加在買家看到的售價上（見下方<a href="#sec09-customs">2026 歐盟進口新規</a>）。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJWD8NWLKSZ5N3JR" target="_blank" rel="noopener">遠程配送</a>／<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">€3／€2／PID 官方說明</a></small></li>
       </ul>
       別把美國站「一個庫存池吃全國」的直覺帶到歐洲，這是跨站點賣家最常算錯的成本。
     </div>
@@ -1849,6 +1849,45 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     </div></details>
     <p class="small">以上三項的細部規則與畫面，以 Seller Central 實際顯示內容為準。</p>
 
+    <h3 id="sec09-customs">🛃 2026 歐盟進口新規：只影響「從歐盟境外直寄歐盟買家」的訂單</h3>
+    <div class="note ok"><b>先看你在不在範圍內：</b>貨放在<b>歐盟倉</b>（EFN／Pan-EU）出給歐盟買家，<b>下面全部不適用</b>。會受影響的是：從<b>英國倉遠程配送</b>到歐盟站，或從<b>台灣 FBM 直寄</b>歐盟買家。€3 和 €2 都是歐盟海關依法收取，<b>不是亞馬遜的費用</b>。</div>
+    <div class="tw"><table>
+      <thead><tr><th style="width:110px">生效日</th><th>變化</th><th style="width:150px">適用貨值</th></tr></thead>
+      <tbody>
+        <tr><td>2026/7/1<br><small>已生效</small></td><td>取消低價值進口免關稅，報關單上每個品項／稅則列收 <b>€3 關稅</b>（暫行措施，預計到 2028/7/1）</td><td>≤ €150</td></tr>
+        <tr><td>2026/11/1<br><small>已生效</small></td><td>報關必須附 <b>PID 商品編碼</b></td><td>≤ €150</td></tr>
+        <tr><td>2026/11/1<br><small>已生效</small></td><td>每個品項／稅則列加收 <b>€2 海關處理費</b>，跟 €3 <b>疊加</b>，不是取代</td><td><b>所有貨值</b></td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">「品項」是指同一個稅則號列的商品，不是件數：一張訂單 5 件同款 T 恤算 1 個品項，收一次 €3＋€2；T 恤加一支手錶算 2 個品項。</p>
+    <div class="tw"><table>
+      <thead><tr><th style="width:130px"></th><th>貨值 ≤ €150</th><th>貨值 > €150</th></tr></thead>
+      <tbody>
+        <tr><td><b>FBA 遠程配送</b></td><td>€3＋€2；商品目錄要有 PID</td><td>€2＋從價關稅＋進口 VAT</td></tr>
+        <tr><td><b>FBM 境外直寄</b></td><td>€3＋€2；把 PID 交給承運人；DDP；<b>只能用亞馬遜認可的承運人</b>；不能把買家列為申報人</td><td>€2＋從價關稅＋進口 VAT；DDP；不能把買家列為申報人</td></tr>
+      </tbody>
+    </table></div>
+    <details class="acc"><summary>FBA 遠程配送：買家看到的價格會比你設的高</summary><div class="acc-body">
+      <p>亞馬遜會把 €3 關稅和 €2 處理費加在<b>商品頁、購物車、結帳頁</b>的價格上，賣家後台（例如管理所有庫存）顯示的仍是你設的價格。用自動定價、競爭價規則或 BIL 同步價格的話，要重新檢查設定，不然跟歐盟倉出貨的競品比會變貴。實際售價可以在 <a href="https://sellercentral-europe.amazon.com/revcal" target="_blank" rel="noopener">Revenue Calculator</a> 查。</p>
+    </div></details>
+    <details class="acc"><summary>FBM 境外直寄：承運人、DDP、申報人三個硬規定</summary><div class="acc-body">
+      <ul>
+        <li><b>貨值 ≤ €150 只能用<a href="https://sellercentral-europe.amazon.com/gc/sell-across-europe/out-of-region-carrier-list" target="_blank" rel="noopener">認可承運人</a></b>（可使用亞馬遜 IOSS 編號清關的承運人）：確認發貨時要從下拉選單選，不能再手動輸入承運人名稱，用 API／ERP 確認發貨也一樣，否則會失敗。慣用的承運人不在名單上，請對方寫信到 eu-customs-reform-carrier-self-request@amazon.com 申請。> €150 可以自選承運人或報關行。</li>
+        <li><b>所有 FBM 訂單都要 DDP</b>：買家收貨時不能再被收關稅或稅費。€2 處理費由承運人開發票向你收。</li>
+        <li><b>報關單不能把買家列為申報人</b>；> €150 也不能列亞馬遜。被海關查到可能駁回報關、影響該商品的跨境銷售權限。</li>
+      </ul>
+    </div></details>
+    <details class="acc"><summary>PID 商品編碼：要準備哪三種、怎麼補</summary><div class="acc-body">
+      <ul>
+        <li><b>M-PID</b>＝ASIN（自動帶入）；<b>NS-PID</b>＝製造商的型號或零件號（必填，沒有的話可以用 EAN 代替）；<b>S-PID</b>＝EAN／GTIN／UPC（商品有就必填）。</li>
+        <li><b>FBA</b>：亞馬遜從商品目錄抓 PID，你要確保刊登裡有填。<b>FBM</b>：你負責交給承運人；用購買配送的話，買運單時要再填一次型號或零件號。</li>
+        <li>缺 PID 或 PID 無效，報關可能被駁回，該商品的跨境銷售權限也可能受影響。</li>
+      </ul>
+      <p><a href="pid-guide.html" target="_blank" rel="noopener">👉 看《補齊 PID 商品編碼》圖文教學</a>：用品類刊登資訊報告找出缺漏、批量補齊和驗證。</p>
+    </div></details>
+    <div class="note info"><b>想完全避開這些費用：</b>把庫存放進歐盟倉（EFN／Pan-EU，見本章前面的方案比較）。歐盟境內出貨給買家不收 €3、€2，也不用報 PID；但存放庫存的國家要辦 VAT（見 <a href="#sec03">03</a>）。</div>
+    <p class="small">依官方說明頁整理（2026/11/9 查證）：<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">歐盟 B2C 低價值進口海關要求</a>。法規：<a href="https://eur-lex.europa.eu/eli/reg/2026/382/oj/eng" target="_blank" rel="noopener">(EU) 2026/382</a>（€3）、<a href="https://eur-lex.europa.eu/eli/reg/2026/2108/oj/eng" target="_blank" rel="noopener">(EU) 2026/2108</a>＋<a href="https://eur-lex.europa.eu/eli/reg_del/2026/2152/oj" target="_blank" rel="noopener">(EU) 2026/2152</a>（€2）。延伸閱讀：<a href="https://m.media-amazon.com/images/G/01/CN_Compliance_Team/EU_CR_Guidebook.pdf" target="_blank" rel="noopener">全球開店《卖家行动指南》簡中 PDF</a>。</p>
+
     <h3>📮 走自發貨（FBM）的話，歐洲有三件事會變成你自己的工作</h3>
     <p class="small">很多賣家用美／日站的經驗評估 FBM，低估的不是配送成本，而是這三項「必須用當地語言、必須在當地落地」的營運義務。</p>
     <div class="tw"><table>
@@ -1860,6 +1899,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       </tbody>
     </table></div>
     <p class="small">客服語言與回覆時效的具體條款以<b>各站點賣家後台的服務政策</b>為準；FBA 賣家的客服與退貨由亞馬遜依政策處理，但退貨造成的成本仍然是你的。</p>
+    <div class="note warn"><b>🛃 從台灣直寄歐盟買家，還有海關規定：</b>所有 FBM 訂單都要 <b>DDP</b>、報關單不能把買家列為申報人；貨值 ≤ €150 只能用亞馬遜認可的承運人，並把 PID 商品編碼交給承運人。另有 €3 關稅／€2 處理費，見<a href="#sec09-customs">2026 歐盟進口新規</a>。</div>
 
     <details class="more"><summary>💡 其他資訊</summary><div class="acc-body">
       <ul>
@@ -2241,8 +2281,11 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <p>另外歐洲的違規多從<b>商品安全與合規</b>那一欄開始（缺歐盟責任人、缺 EPR、缺測試報告），不是從物流指標開始。各項指標與門檻見 <a href="#sec12">12</a>。</p>
     </div></details>
     <details class="acc"><summary>英國站和歐盟站可以共用庫存嗎？</summary><div class="acc-body">
-      <p><b>不能自動調撥。</b>脫歐後 UK FBA 與 EU FBA 是兩個獨立庫存池。要嘛分別入倉（兩套頭程與清關），要嘛用遠程配送從一邊服務另一邊（省頭程但配送費較高；單件售價上限歐盟站 €150、英國站 £135，且 2026/7/1 起從歐盟境外直寄歐盟消費者、€150 以下的貨件，每個品項／稅則列加收 €3 關稅，見 <a href="#sec09">09</a>）。</p>
+      <p><b>不能自動調撥。</b>脫歐後 UK FBA 與 EU FBA 是兩個獨立庫存池。要嘛分別入倉（兩套頭程與清關），要嘛用遠程配送從一邊服務另一邊（省頭程但配送費較高；單件售價上限歐盟站 €150、英國站 £135，且從歐盟境外直寄歐盟消費者的貨件，€150 以下每個品項／稅則列加收 €3 關稅（2026/7/1 起），所有貨值再加 €2 海關處理費（2026/11/1 起），見 <a href="#sec09-customs">09</a>）。</p>
       <p>合規上也是兩套：UKCA vs CE、英國 EPR vs 歐盟 EPR、英國負責人 vs 歐盟責任人。</p>
+    </div></details>
+    <details class="acc"><summary>貨都放在歐盟倉，€3 關稅、€2 處理費、PID 跟我有關嗎？</summary><div class="acc-body">
+      <p><b>沒有關係。</b>這三項只適用「從歐盟境外直寄歐盟買家」的訂單，例如從英國倉遠程配送到歐盟站，或從台灣 FBM 直寄。歐盟倉（EFN／Pan-EU）出貨給歐盟買家不收 €3、€2，也不用報 PID。之後如果要開遠程配送或 FBM，再照 <a href="#sec09-customs">09</a> 和<a href="pid-guide.html" target="_blank" rel="noopener">《補齊 PID 商品編碼》</a>準備。</p>
     </div></details>
     <details class="acc"><summary>手機收不到驗證簡訊怎麼辦？</summary><div class="acc-body">
       <p>跨國簡訊透過多個電信單位轉送，不穩定時收不到很常見。請<b>改用 Google Authenticator</b> 取代手機驗證。設定路徑在後台右上角齒輪【登入設置】。</p>
@@ -2309,6 +2352,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
           · <b>FBA 燃油與物流附加費</b>：英、法、德、義、西、波、瑞、荷、愛、比站 FBA 配送費 2026/4/17 起加收 1.5%，<b>2026/11/2 起調高為 2%</b>（MCF 2026/11/19 起同步調為 2%）。<a href="https://sellercentral-europe.amazon.com/seller-forums/discussions/t/cb3452e9-3803-435b-bfc2-e3b6a10a9e42" target="_blank" rel="noopener">原公告</a>／<a href="https://sellercentral-europe.amazon.com/seller-forums/discussions/t/7273b612-67c1-44db-bfba-24eb6f3a46d9" target="_blank" rel="noopener">調高公告</a><br>
           · <b>旺季配送費</b>：送達日在 2026/10/15–2027/1/14 的部分英國、德國 FBA 訂單將加收（限指定尺寸，不含超大件與低價商品）。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GJ7N4DN3ZZBK4UC7" target="_blank" rel="noopener">官方說明</a><br>
           <small>（已生效的歷史紀錄：2026 年歐洲多品類費用調整已自 2025/12/15 起分階段生效，家居用品等品類的佣金調降提前於 2026/01/05 生效，其餘調整於 2026/02/01 生效。）</small></td></tr>
+        <tr><td>海關</td><td><b>歐盟境外直寄買家的訂單</b>：2026/7/1 起 ≤ €150 每個品項／稅則列收 €3 關稅；<b>2026/11/1 起</b> ≤ €150 報關須附 PID 商品編碼，所有貨值再加 €2 海關處理費（與 €3 疊加）。歐盟倉出貨不適用。見 <a href="#sec09-customs">09</a>。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GT3ESJ7JMGHMNQ3Z" target="_blank" rel="noopener">官方說明</a></td></tr>
         <tr><td>合規</td><td><b>PPWR 包裝法規已自 2026/08/12 起適用</b>（各義務分階段上路；當期主要義務包括包裝製造商出具的 DoC、食品接觸包裝的 PFAS 限值，EPR 授權代表依各國規定；最小化與空隙率是 2030 起，過度包裝要求的適用日以官方指引為準）；電池詳細標籤是 2026/08/18 或標籤實施法案生效後 18 個月（取較晚者，以公報為準）、電池 QR Code 與可拆換 2027/02/18（數位護照僅 LMT／工業／電動車電池）。見 <a href="#sec05">05</a> 時程表。</td></tr>
         <tr><td>合規</td><td><b>GPSR</b> 持續執行下架；非歐盟賣家須指定歐盟責任人並在 Listing 揭露。</td></tr>
         <tr><td>促銷</td><td><b>Coupon 費用自 2025/11/5 起</b>：英國 £2＋成交額 0.75%（變動費上限 £200）；德國 €4＋0.75%（變動費上限 €300）；法、義、西 €2＋0.5%（變動費上限 €100）。上限只限變動費，不含前置費——合計最多為英國 £202、德國 €304、法義西 €102。Deal 費用另計，大促另有費率。提報前以後台當期費率為準。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GM2HYLSWFBZ267BB" target="_blank" rel="noopener">Coupon 費用</a>／<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/G202111590" target="_blank" rel="noopener">Deal 費用</a></td></tr>
@@ -2389,7 +2433,9 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
         <tr><td><b>COO</b></td><td><small>Country of Origin</small></td><td>原產地，建貨件與報關要填</td></tr>
         <tr><td><b>MRN</b></td><td><small>Movement Reference Number</small></td><td>歐盟海關報關單號；發往法國或 Pan-EU 倉的貨件要提供（見 <a href="#sec09">09</a>）</td></tr>
         <tr><td><b>IEN</b></td><td><small>Import Entry Number</small></td><td>英國進口報關編號</td></tr>
-        <tr><td><b>DDP／DDU</b></td><td><small>Delivered Duty Paid／Unpaid</small></td><td>國際貿易條件：進口稅費由賣方付／由買方付</td></tr>
+        <tr><td><b>DDP／DDU</b></td><td><small>Delivered Duty Paid／Unpaid</small></td><td>國際貿易條件：進口稅費由賣方付／由買方付。歐盟站所有 FBM 訂單都要 DDP</td></tr>
+        <tr><td><b>PID</b></td><td><small>Product Identifier</small></td><td>報關用商品編碼：M-PID＝ASIN、NS-PID＝型號／零件號、S-PID＝EAN／GTIN／UPC；境外直寄歐盟 ≤ €150 的訂單要報（見 <a href="#sec09-customs">09</a>）</td></tr>
+        <tr><td><b>IOSS</b></td><td><small>Import One-Stop Shop</small></td><td>歐盟境外直寄、≤ €150 的 B2C 進口 VAT 簡化申報；亞馬遜 FBM 訂單用的是亞馬遜的 IOSS 編號（見 <a href="#sec03">03</a>）</td></tr>
         <tr><td colspan="3" style="background:var(--blue-bg)"><b>廣告與促銷</b></td></tr>
         <tr><td><b>BFCM</b></td><td><small>Black Friday／Cyber Monday</small></td><td>黑色星期五到網路星期一，歐洲全年最大檔期</td></tr>
         <tr><td><b>SP／SB／SD</b></td><td><small>Sponsored Products／Brands／Display</small></td><td>商品推廣／品牌推廣／展示型推廣廣告</td></tr>
@@ -2607,7 +2653,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
     }
 
     if(lg.mkt === 'uk'){
-      next.push('⚠️ <b>主力英國要特別注意：英國與歐盟是兩個獨立庫存池，不能自動調撥。</b>Pan-EU 不涵蓋英國。若同時經營兩邊，要嘛分別入倉，要嘛用遠程配送（單件售價上限歐盟站 €150、英國站 £135；2026/7/1 起從英國等歐盟境外直寄歐盟消費者、€150 以下的貨件，每個品項／稅則列加收 €3 關稅）。');
+      next.push('⚠️ <b>主力英國要特別注意：英國與歐盟是兩個獨立庫存池，不能自動調撥。</b>Pan-EU 不涵蓋英國。若同時經營兩邊，要嘛分別入倉，要嘛用遠程配送（單件售價上限歐盟站 €150、英國站 £135；從英國等歐盟境外直寄歐盟消費者的貨件，€150 以下每個品項／稅則列加收 €3 關稅，2026/11/1 起所有貨值再加 €2 海關處理費）。');
       next.push('英國合規另成一套：UKCA、英國 EPR、依品類法規可能需要的英國負責人，與歐盟的 CE／EU EPR／歐盟責任人要分開處理。');
     } else if(lg.mkt === 'de'){
       next.push('主力德國／中歐：<b>德國是最常見的第一個入倉國</b>（量體最大、物流網最密），也是 Pan-EU 的常見起點。');
