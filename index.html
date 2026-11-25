@@ -1122,7 +1122,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <thead><tr><th style="width:130px">概念</th><th>是什麼／什麼時候需要</th></tr></thead>
       <tbody>
         <tr><td><b>VAT 稅號</b></td><td>在該國擺放庫存（用該國 FBA、或當地第三方倉）就必須有。<b>從備件到拿號約 2–4 個月</b>（稅局審核依國家 2 週到 3 個月），請最早啟動。</td></tr>
-        <tr><td><b>EORI 號</b></td><td>進出口報關用的經濟營運者註冊識別號，<b>一號通用全歐盟</b>。申請 VAT 時通常同步辦理（官方免費，1–3 週）。<b>英國 EORI 與歐盟分開</b>（GB + 編號，GOV.UK 線上申請，1–5 個工作天、免費）。<br><b>EORI 不能任選國家。</b>非歐盟設立的業者，要向<b>首次辦理報關（或首次申請海關決定）所在的會員國</b>申請。若在德國申請被拒，先確認被拒原因與首次報關地，再向有管轄權的海關申請（例如首次報關在法國或荷蘭，就向當地申請）。</td></tr>
+        <tr><td><b>EORI 號</b></td><td>進出口報關用的經濟營運者註冊識別號，<b>一號通用全歐盟</b>。申請 VAT 時通常同步辦理（官方免費，1–3 週）。<b>英國 EORI 與歐盟分開</b>（GB + 編號，GOV.UK 線上申請，1–5 個工作天、免費）。<br><b>EORI 不能任選國家。</b>非歐盟設立的業者，要向<b>首次辦理報關（或首次申請海關決定）所在的會員國</b>申請。若在德國申請被拒，先確認被拒原因與首次報關地，再向有管轄權的海關申請（例如首次報關在法國或荷蘭，就向當地申請）。<br>格式：國碼 2 碼＋最多 15 碼英數（例 <span class="mono">DE987654321</span>）；一家公司固定一個，和<b>每批貨件都不同</b>的 MRN 不一樣。<b>進口報關不一定要先有 VAT 號，但一定要有 EORI</b>（你的或報關行的）。可在<a href="https://ec.europa.eu/taxation_customs/dds2/eos/eori_validation.jsp" target="_blank" rel="noopener noreferrer">歐盟 EORI 查詢頁</a>驗證號碼是否有效。</td></tr>
         <tr><td><b>OSS<br>（One Stop Shop）</b></td><td>歐盟 B2C 跨境銷售的<b>單一申報</b>機制。讓你不必為每個「銷售目的國」各自申報，只在一國申報全部歐盟跨境 B2C 銷售。<b>它取代不了「庫存所在國」的當地稅號義務。</b><br>要不要用 OSS，看三件事：① 這筆 B2C 交易是否已由平台代收代繳 VAT（非歐盟設立賣家透過 Amazon、貨在歐盟境內的訂單，多由 Amazon 代收代繳）② 是否賣到其他會員國 ③ 貨從哪一國出貨。有自營官網等其他通路時，請稅代依你的實際通路判斷。</td></tr>
         <tr><td><b>IOSS</b></td><td>針對從歐盟境外直送、單筆價值 €150 以下的 B2C 進口簡化申報機制。若你走境外直發（非 FBA）模式會用到。在亞馬遜從境外 FBM 直寄 ≤ €150 的訂單，用的是<b>亞馬遜的 IOSS 編號</b>，由認可承運人清關（見 <a href="#sec09-customs">09</a>）。</td></tr>
       </tbody>
@@ -1638,7 +1638,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
       <label><input type="checkbox"><span>已在後台建立貨件並完成頭程發運</span></label>
       <label><input type="checkbox"><span>（英國+歐盟都賣）已理解兩地是獨立庫存池，需分別入倉</span></label>
       <label><input type="checkbox"><span>已為所有子 SKU 填妥 <b>COO 原產國</b>（每個站點各填一次）</span></label>
-      <label><input type="checkbox"><span>（從歐盟境外發法國，或開 Pan-EU 發任何歐盟倉）已在首次到倉 60 天內提交 <b>MRN 與 EORI</b></span></label>
+      <label><input type="checkbox"><span>（從歐盟境外發法國，或開 Pan-EU 發任何歐盟倉）已在首次到倉 60 天內提交 <b>MRN 與 EORI</b>（先進歐盟海外倉再轉 FBA 的也要交）</span></label>
       <label><input type="checkbox"><span>（發英國）已在首次到倉 60 天內提交 <b>IEN</b>（只有英國境內採購或 DDP 進口可改選原因選項）</span></label>
     </div>
 
@@ -1838,8 +1838,20 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
         <li><b>沒有 MRN 時</b>，在「Do you have import records?」選適用的選項：<br>·「No – I purchased the goods domestically in the EU」：貨是在歐盟境內採購的（要保留正式採購發票，不能用形式發票）<br>·「No – My broker did not provide MRN/EORI upon request」：報關行沒提供。這是<b>暫時措施</b>，亞馬遜會定期審查使用情況，之後的貨件仍要向報關行取得 MRN。</li>
         <li>使用亞馬遜的報關服務時，MRN 可能透過承運商系統自動收集；但進口合規的責任仍在你。</li>
       </ul>
-      <p><b>MRN 是什麼：</b>18 碼英數混合的報關單號（申報年份 2 碼＋申報國代碼 2 碼＋14 碼，例 <span class="mono">24FR12345678654345</span>），由歐盟海關在報關時產生，也就是貨物<b>最初進口國</b>的報關單號。一個貨件有多份報關單時，<b>每組 MRN 換一行</b>填入。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GSZF2Z6ZM2WDWSYT" target="_blank" rel="noopener">官方說明</a></p>
+      <p><b>MRN 是什麼：</b>18 碼英數混合的報關單號（申報年份 2 碼＋申報國代碼 2 碼＋14 碼，例 <span class="mono">24FR12345678654345</span>），由歐盟海關在報關時產生，也就是貨物<b>最初進口國</b>的報關單號。一個貨件有多份報關單時，可以填多組 MRN，用<b>逗號、空格或換行</b>分隔都可以；目前<b>不能批量上傳</b>。<a href="https://sellercentral-europe.amazon.com/help/hub/reference/external/GSZF2Z6ZM2WDWSYT" target="_blank" rel="noopener">官方說明</a></p>
       <div class="note ok"><b>💡 賣家無法自行產生 MRN，必須向貨代／清關行索取。建貨件時就先跟貨代講「清關後要 MRN」，不要等系統跳提醒才回頭找</b>——事後補要往往拖很久。</div>
+      <p><b>MRN 拿不拿得到，看登記進口商（IOR）是誰：</b>你是 IOR，就有權向貨代／承運商索取 MRN；IOR 是貨代或其他服務商時，亞馬遜仍然要收 MRN，所以<b>簽約時就要寫明會提供</b>。服務商不肯提供時，可以：① 改和服務商的配送安排　② 換一家會提供 MRN 的服務商　③ 改用亞馬遜含報關的物流服務（會自動取得並保存 MRN；台灣出發能否使用請先確認）。</p>
+      <h4>常見情境</h4>
+      <table>
+        <tr><th>情境</th><th>要不要交？交哪一份？</th></tr>
+        <tr><td>先發到<b>歐盟海外倉／第三方倉</b>，再轉進亞馬遜運營中心</td><td><b>要交。</b>商品是從歐盟境外來的，就算中間先進第三方倉，還是要提供當初進口報關的 MRN。出貨前就跟海外倉講好要保留 MRN。</td></tr>
+        <tr><td>貨先進<b>德國倉</b>，之後被 Pan-EU 調到<b>法國倉</b></td><td><b>要交。</b>填<b>首次進入歐盟清關那一國</b>的資料：德國的 MRN＋清關時用的 EORI。</td></tr>
+        <tr><td>一份<b>合併報關單</b>涵蓋好幾個亞馬遜貨件</td><td>可以<b>多個貨件填同一組 MRN</b>（亞馬遜可能抽查是否合理）。</td></tr>
+        <tr><td>先填了「報關行未提供」，後來才拿到 MRN</td><td>已存的 MRN、EORI 和「沒有 MRN 的原因」<b>都可以回頭修改</b>，拿到後直接補填。</td></tr>
+        <tr><td>貨件<b>已取消或關閉</b>，實際沒出貨</td><td><b>不用交。</b>沒報關、沒到倉的貨件不需要 MRN／EORI。</td></tr>
+        <tr><td><b>只做 FBM</b>，貨放在法國的第三方倉</td><td>不用交給亞馬遜；但非歐盟原產的貨仍要正確報關，報關責任在你。</td></tr>
+      </table>
+      <div class="note info"><b>這些資料會被查：</b>亞馬遜會把你提供的 MRN 與 EORI <b>至少保存 6 年</b>，法國稅務機關和歐盟海關可以調閱，並核對 MRN 有沒有缺漏或填錯。選「在歐盟境內採購」的貨件，亞馬遜可能交給海關查核，也可能隨時要你出示正式採購發票，否則可能影響後續入倉。</div>
     </div></details>
 
     <details class="acc"><summary>③ 🇬🇧 英國 IEN 進口條目編號 — 逾期會無法建立新貨件</summary><div class="acc-body">
@@ -2409,7 +2421,7 @@ mark{background:#FFF1A8; color:inherit; padding:0 1px}
         <tr><td colspan="3" style="background:var(--blue-bg)"><b>稅務</b></td></tr>
         <tr><td><b>VAT</b></td><td><small>Value Added Tax</small></td><td>增值稅；在某國擺庫存就要辦該國 VAT 稅號（見 <a href="#sec04">04</a>）</td></tr>
         <tr><td><b>稅務代表</b></td><td><small>Fiscal Representative</small></td><td>法國、義大利要求非歐盟企業指定的當地稅務代理人</td></tr>
-        <tr><td><b>EORI</b></td><td><small>Economic Operators Registration and Identification</small></td><td>進出口報關用的業者編號；歐盟一號通用、英國另辦</td></tr>
+        <tr><td><b>EORI</b></td><td><small>Economic Operators Registration and Identification</small></td><td>進出口報關用的業者編號（公司固定一個，MRN 則每批不同）；歐盟一號通用、英國另辦</td></tr>
         <tr><td><b>OSS</b></td><td><small>One-Stop Shop</small></td><td>歐盟跨境 B2C 銷售的 VAT 一站式申報機制</td></tr>
         <tr><td><b>VIES</b></td><td><small>VAT Information Exchange System</small></td><td>歐盟 VAT 號碼驗證系統；能做歐盟跨境 B2B 交易的稅號要在此登記</td></tr>
         <tr><td><b>ROI（西班牙）</b></td><td><small>Registro de Operadores Intracomunitarios</small></td><td>西班牙的歐盟交易登記，取得本土稅號後要另外申請（ROI 在促銷章節則是「投資報酬率」）</td></tr>
